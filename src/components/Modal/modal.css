@@ -1,0 +1,98 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  height: 100%;
+  font-family: 'Arial', sans-serif;
+}
+
+.intro-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-image: url('/public/fundo_introducao.png');
+}
+
+.container {
+  text-align: center;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.8);
+  /* Fundo translúcido */
+  border-radius: 8px;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #000;
+}
+
+p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.btn {
+  padding: 10px 20px;
+  margin: 5px;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.primary {
+  background-color: #000;
+  color: #fff;
+}
+
+.primary:hover {
+  background-color: #444;
+}
+
+.secondary {
+  background-color: #333;
+  color: #fff;
+}
+
+.secondary:hover {
+  background-color: #555;
+}
+
+.buttons-group {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilo global para o corpo da página */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  color: #333;
+  height: 100%;
+  line-height: 1.6;
+}
+
+/* Garantir que a página ocupe 100% da altura da janela */
+html,
+body {
+  height: 100%;
+}
