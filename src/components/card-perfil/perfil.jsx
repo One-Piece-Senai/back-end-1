@@ -12,7 +12,7 @@ export default function CardPerfil() {
                 </div>
                 <section>
                     <article>
-                        <h3>Maria José</h3>
+                        <h3 className="title-card" >Maria José</h3>
                         <p>XP 100</p>
                     </article>
                     <div className="barra-xp"></div>

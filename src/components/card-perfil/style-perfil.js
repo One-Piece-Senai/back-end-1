@@ -37,6 +37,9 @@ export const ContainerPerfil = styled.div`
     article {
         display: flex;
         gap: 10px;
+        margin-right: 519px;
+        margin-left: 198px;
+
     }
 
     section > .barra-xp {
@@ -44,7 +47,10 @@ export const ContainerPerfil = styled.div`
         border-radius: 50px;
         height: 18px;
         background-color: #8b8b8b;
-        margin: 20px;
+       
+    }
+    .title-card {
+        /* margin-right: 100px; */
     }
 
 `
