@@ -21,7 +21,8 @@ export default function Header() {
                     <a href="#">BUSINESS</a>
                     <a href="#">BLOG</a>
                     <Botao> <a href="/Login">ENTRAR </a></Botao>
-                    <Botao style={{ backgroundColor: '#FFEA96'}}> CRIAR CONTA</Botao>
+                    <Botao> <a href="/register/cliente">Criar conta de Cliente </a></Botao>
+                    <Botao> <a href="/register/projetista">Criar conta de Projetista </a></Botao>
                 </SegundaParte>   
                 <div className='SegundaMetade'></div>
         </HeaderST>
