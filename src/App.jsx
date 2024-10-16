@@ -8,6 +8,7 @@ import RegisterCliente from './pages/Cadastro/RegisterCliente'; // Renomeie o ar
 import RegisterProjetista from './pages/Cadastro/RegisterProjetista'; // Renomeie o arquivo se necessário
 import Modal from '../src/components/Modal/modal';
 import Detalhes from './/components/card-perfil/Detalhes'; // O componente para mostrar os detalhes do item
+import Pedidos from './pages/pedidos/pedidos';
 
 
 function Nav() {
@@ -24,6 +25,8 @@ function Nav() {
         <Route path="/edit" element={<Editar />} />
         <Route path="/modal" element={<Modal /> } />
         <Route path="/detalhes/:indice" element={<Detalhes  />} />
+        <Route path="/pedidos" element={<Pedidos />} />
+
       </Routes>
     </Router>
    )

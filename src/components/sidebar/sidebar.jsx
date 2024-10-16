@@ -15,7 +15,7 @@ export default function SideBar() {
             <SidebarComponent>
                 <img src={logo} alt="" />
                 <ul>
-                    <li><img src={carrinho} /> Fazer Pedido</li>
+                    <li><img src={carrinho} /> Fazer Orcamento</li>
                     <li><img src={box} />      Pedidos</li>
                     <li><img src={people} />   Clientes</li>
                     <li><img src={settings} /> Configurações</li>

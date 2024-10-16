@@ -11,14 +11,37 @@ export const ContainerPerfil = styled.div`
     height: 482px;
 
     .botao_novo {
-        background-color: #F2B929;
-        padding: 15px 15px;
-        height: 48px;
+        background-color: #FFD32C;
+        padding: 15px;
+        height: 45px;
         border-radius: 35px;
-        border: 0
+        border: 0;
         font-weight: 700;
         width: 100px;
-       height: 45px;   
-}
+    }
 
-`
+    .botao_aceitar {
+        background-color: green;
+        padding: 15px;
+        height: 45px;
+        border-radius: 35px;
+        border: 0;
+        font-weight: 700;
+        width: 100px;
+    }
+    .botao_voltar {
+        background-color: red;
+        padding: 15px;
+        height: 45px;
+        border-radius: 35px;
+        border: 0;
+        font-weight: 700;
+        width: 100px;
+    }
+    .buttons { 
+        display: flex;
+        padding: 15px;
+        margin: 3%;
+
+    }
+`;
