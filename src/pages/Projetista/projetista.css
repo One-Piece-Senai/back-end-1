@@ -1,0 +1,10 @@
+.App {
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    width: 100%;
+    position: absolute;
+}
+.Conteudo{
+    margin-top: 20vh;
+    margin-left: 20vw;
+}

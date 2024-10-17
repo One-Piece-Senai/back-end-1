@@ -1,21 +1,27 @@
 import styled from "styled-components";
 
 export const BarraBusca = styled.div`
+    position: fixed;
+    height: 20vh;
+    width: 80vw;
+    margin-left: 20vw;
+    padding-right: 5vw;
     display: flex;
     align-items: center;
-    gap: 20px;
-    /* border: solid 1px; */
-    width: 100%;
-    height: 100px;
-    padding: 30px;
+    justify-content: end;
 
-    img {
-        width: auto;
-        height: 64px;
+    background-color: white;
+
+    .conteudo-busca{
+        width: 40%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
     }
-
+    img {
+        width: 20%;
+    }
     .sino{
-        width: 40px;
-        height: auto;
+        width: 10%;
     }
 `

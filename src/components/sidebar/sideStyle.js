@@ -1,16 +1,16 @@
 import styled from "styled-components";
 
 export const SidebarComponent = styled.aside`
-    padding: 30px;
+    background: ${props => props.corfundo ? "#F2B929" : "grey"};
+
+    position: fixed;
+    width: 20vw;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 30px;
     gap: 30px;
-
-    background-color: #F2B929;
-
-    height: 100vh;
-
     ul {
         display: flex;
         flex-direction: column;
@@ -23,5 +23,13 @@ export const SidebarComponent = styled.aside`
         align-items: center;
         gap: 15px;
     }
-`
+    
+    .logo{
+        width: 100%
+    }
+    
+    .icone{
+        width: 20%;
+    }
+`;
 

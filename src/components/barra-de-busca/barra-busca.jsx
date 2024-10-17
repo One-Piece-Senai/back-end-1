@@ -6,10 +6,12 @@ import sino from "../../assets/sino.png"
 export default function BarraDeBusca() {
     return (
         <>
-            <BarraBusca className="top-bar">
-                <input type="text" placeholder="Pesquisar..." />
-                <img src={sino} alt="" className='sino'/>
-                <img src={profileImage} alt="Perfil" className="profile-image" />
+            <BarraBusca>
+                <div className='conteudo-busca'>
+                    <input type="text" placeholder="Pesquisar..." />
+                    <img src={sino} alt="" className='sino'/>
+                    <img src={profileImage} alt="Perfil" className="profile-image" />
+                </div>
             </BarraBusca>
         </>
     )
