@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const BarraBusca = styled.div`
     position: fixed;
-    height: 20vh;
+    height: 15vh;
     width: 80vw;
     margin-left: 20vw;
     padding-right: 5vw;
