@@ -21,12 +21,12 @@ function RegisterProjetista() {
     }
 
     try {
-      const response = await axios.post('http://localhost:8080/usuario', {
+      const response = await axios.post('http://localhost:8080/usuario/criar', {
         id: 0,
         username: name,
         senha: password,
         email: email,
-        tipo: 'projetista'
+        tipo: 'PROJETISTA'
       });
 
       if (response.status === 201) {

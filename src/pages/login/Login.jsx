@@ -6,39 +6,57 @@ import { useNavigate } from 'react-router-dom'; // Importar o hook de navegaçã
 import axios from 'axios'; // Importar axios
 
 const Login = () => {
-  const [formData, setFormData] = useState({
-    email: '',
-    password: ''
-  });
-
-  const [message, setMessage] = useState('');
-  const [errorMessage, setErrorMessage] = useState('');
-  const navigate = useNavigate(); // Definir o hook de navegação
-
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+  const navigate = useNavigate(); // Inicializa o useNavigate
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
+      e.preventDefault();
+      setError('');
 
-    try {
-      const response = await axios.post('http://localhost:8080/login', formData);
-      // Supondo que a resposta positiva significa login bem-sucedido
-      if (response.status === 200) {
-        setErrorMessage('');
-        navigate('/home'); // Redireciona para outra página (exemplo de dashboard)
+      try {
+          const response = await fetch('http://localhost:8080/login', {
+              method: 'POST',
+              headers: {
+                  'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({ email, password }),
+          });
+
+          if (!response.ok) {
+              if (response.status === 401) {
+                  setError('Usuário ou Senha incorreta');
+              } else if (response.status === 404) {
+                  setError('Usuário não encontrado');
+              } else {
+                  setError('Erro inesperado');
+              }
+              return;
+          }
+
+          const data = await response.json();
+          console.log('Usuário autenticado:', data);
+
+          switch (data.tipoUser) {
+            case 'CLIENTE':
+              navigate('/home'); // Rota para CLIENTE
+              break;
+            case 'ADMIN':
+              navigate('/admin'); // Rota para ADMIN
+              break;
+            case 'PROJETISTA':
+              navigate('/home'); // Rota para FUNCIONARIO
+              break;
+            default:
+              setError('Tipo de usuário desconhecido');
+          }
+          //navigate('/home');
+          // Aqui você pode armazenar os dados do usuário ou redirecionar para outra página
+      } catch (error) {
+          console.error('Erro ao fazer login:', error);
+          setError('Erro ao fazer login');
       }
-    } catch (error) {
-      if (error.response && error.response.status === 401) {
-        setErrorMessage('Credenciais inválidas. Por favor, tente novamente.');
-      } else {
-        setErrorMessage('Ocorreu um erro. Por favor, tente novamente.');
-      }
-    }
   };
 
   return (
@@ -50,14 +68,22 @@ const Login = () => {
       <div className="form-section">
         <h1>Login</h1>
         <p>Já possui uma conta? <a href="#">Entre aqui</a></p>
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className="input-group">
             <label>E-mail:</label>
-            <input type="text" placeholder="seuemail@exemplo.com" />
+            <input type="email" placeholder="seuemail@exemplo.com" 
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+            />
           </div>
           <div className="input-group">
             <label>Senha:</label>
-            <input type="email" placeholder="Digite sua senha" />
+            <input type="password" placeholder="Digite sua senha" 
+             value={password}
+             onChange={(e) => setPassword(e.target.value)}
+             required
+            />
           </div>
           <p className="password-hint">
             Escolha uma senha com, no mínimo, 8 caracteres.
@@ -69,6 +95,7 @@ const Login = () => {
             </label>
           </div>
           <button type="submit" className="submit-btn">Sign in</button>
+          {error && <p style={{ color: 'red' }}>{error}</p>}
         </form>
         <p className="login-link">Já possui uma conta? <a href="#">Log in</a></p>
       </div>
