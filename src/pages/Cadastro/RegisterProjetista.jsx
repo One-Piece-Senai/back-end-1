@@ -26,7 +26,7 @@ function RegisterProjetista() {
         username: name,
         senha: password,
         email: email,
-        tipo: 'PROJETISTA'
+        tipo: 'projetista'
       });
 
       if (response.status === 201) {
