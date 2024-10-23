@@ -1,13 +1,6 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 
 function Tabela({ vetor, selecionar }) {
-
-    // const navigate = useNavigate(); // Hook para navegação
-
-    // const handleDetalhes = (index) => {
-    //     navigate(`/formulario/${index}`); // Redireciona para a página do formulário com o índice na URL
-    // };
     return (
         <table className="table">
             <thead>

@@ -7,6 +7,7 @@ import Editar from './pages/Editar_cadastro/edit'
 import Detalhes from './/components/card-perfil/Detalhes'; // O componente para mostrar os detalhes do item
 import Pedidos from './pages/pedidos/pedidos';
 import Perfil from './components/card-perfil/perfil'
+import CadastraProjeto from './pages/NovoProjeto/Projeto'
 
 function Nav() {
    return(
@@ -18,7 +19,9 @@ function Nav() {
         <Route path="/edit" element={<Editar />} />
         <Route path="/detalhes/:indice" element={<Detalhes  />} />
         <Route path="/pedidos" element={<Pedidos />} />
-        <Route path="/perfil" element={<Perfil  />} />        
+        <Route path="/perfil" element={<Perfil  />} />
+        <Route path="/cadastrar_Projeto" element={<CadastraProjeto  />} />
+
 
 
 
