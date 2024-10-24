@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const DivsInputs = styled.div`
+export const    DivsInputs = styled.div`
     border: 0;
     border-radius: 16px;
     flex-direction: column;
@@ -10,13 +10,16 @@ export const DivsInputs = styled.div`
     input{
         width: 150px;
         border-radius: 10px;
-        background-color: #FFEA96;
+        background-color: white;
         border: 0;
+    }
+    input[type="image"]{
+        width: 150px;
     }
     textarea{
         width: 150px;
         border-radius: 10px;
-        background-color: #FFEA96;
+        background-color: white;
         border: 0;
         padding: 10px;
         resize: vertical;
@@ -50,7 +53,7 @@ export const DivsInputs = styled.div`
     .arquivo::file-selector-button{
         height: 80px;
         border-radius: 10px;
-        background-color: #FFEA96;
+        background-color: white;
         border: 0;
         transition: 1s;
     }
