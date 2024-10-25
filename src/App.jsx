@@ -21,10 +21,6 @@ function Nav() {
         <Route path="/pedidos" element={<Pedidos />} />
         <Route path="/perfil" element={<Perfil  />} />
         <Route path="/cadastrar_Projeto" element={<CadastraProjeto  />} />
-
-
-
-
       </Routes>
     </Router>
    )

@@ -6,13 +6,14 @@ export const Cardprojetista = styled.div`
     align-items: center;
     gap: 20px;
     width: 100%;
-    height: 100px;
+    height: 1000px;
     padding: 10px;
     border-radius: 10%;
     margin-bottom: 1%;
     
+    
     .modulo{
-        background-color: green;
+        background-color: white;
         display: flex;
         border-radius: 16px;
         padding: 30px;
@@ -32,24 +33,27 @@ export const Cardprojetista = styled.div`
     
     .botao_novo{
         position: absolute;
-        right: 31px;
+        right: 310px;
     }
     .projetista{
         position: absolute;
         left: 10px;
         top: 60px;  /* Posição no topo */
-
-    }.progress-container {
+    }
+        .progress-container {
   display: flex;
   justify-content: space-between;
   width: 80%;
   margin: 0 auto;
+  border-radius: 30%;
 }
 
 .progress-bar {
-  width: 18%;
+  width: 18%; /* Define a largura de cada barra (5 barras = 18% cada) */
   height: 30px;
-  transition: background-color 0.3s ease;
+  background-color: #d3d3d3;
+  transition: background-color 0.3s ease; /* Transição suave da cor */
+  border-radius: 30%;
 }
 
 .progress-button {
