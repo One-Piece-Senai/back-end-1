@@ -1,11 +1,13 @@
 import React from 'react';
 import { DivsInputs } from "./inputs";
+import img from "../../assets/16410.png";
 
 export default function Input ()  {
   return (
     <div>
         <DivsInputs>
-          <h1>Especificações do projeto:</h1>
+          <h1 style={{color: "black", fontSize: "40px"}}
+          >Especificações do projeto:</h1>
 
           <label style={{width:"100%"}} >Descrição do Projeto:
             <textarea type="text" style={{width:"100%", height: "200px"}}/>
@@ -37,7 +39,7 @@ export default function Input ()  {
                 <input type="file"  className='arquivo' style={{width:"40%", height:"80px", padding: "0px"}}/>
               </label>
               <label style={{width:"33%"}} >Adicionar Imagem:
-                <input type="image"  style={{width:"40%", height:"80px"}}/>
+                <input type="image" src={img} style={{width:"40%", height:"80px"}}/>
               </label>
 
               <button style={{marginRight: "20px"}}>Solicitar Projeto</button>
