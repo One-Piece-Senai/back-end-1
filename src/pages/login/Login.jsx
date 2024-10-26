@@ -12,51 +12,51 @@ const Login = () => {
   const navigate = useNavigate(); // Inicializa o useNavigate
 
   const handleSubmit = async (e) => {
-      e.preventDefault();
-      setError('');
+    e.preventDefault();
+    setError('');
 
-      try {
-          const response = await fetch('http://localhost:8080/login', {
-              method: 'POST',
-              headers: {
-                  'Content-Type': 'application/json',
-              },
-              body: JSON.stringify({ email, password }),
-          });
+    try {
+      const response = await fetch('http://localhost:8080/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email, password }),
+      });
 
-          if (!response.ok) {
-              if (response.status === 401) {
-                  setError('Usuário ou Senha incorreta');
-              } else if (response.status === 404) {
-                  setError('Usuário não encontrado');
-              } else {
-                  setError('Erro inesperado');
-              }
-              return;
-          }
-
-          const data = await response.json();
-          console.log('Usuário autenticado:', data);
-
-          switch (data.tipoUser) {
-            case 'CLIENTE':
-              navigate('/home'); // Rota para CLIENTE
-              break;
-            case 'ADMIN':
-              navigate('/admin'); // Rota para ADMIN
-              break;
-            case 'PROJETISTA':
-              navigate('/home'); // Rota para FUNCIONARIO
-              break;
-            default:
-              setError('Tipo de usuário desconhecido');
-          }
-          //navigate('/home');
-          // Aqui você pode armazenar os dados do usuário ou redirecionar para outra página
-      } catch (error) {
-          console.error('Erro ao fazer login:', error);
-          setError('Erro ao fazer login');
+      if (!response.ok) {
+        if (response.status === 401) {
+          setError('Usuário ou Senha incorreta');
+        } else if (response.status === 404) {
+          setError('Usuário não encontrado');
+        } else {
+          setError('Erro inesperado');
+        }
+        return;
       }
+
+      const data = await response.json();
+      console.log('Usuário autenticado:', data);
+
+      switch (data.tipoUser) {
+        case 'CLIENTE':
+          navigate('/home'); // Rota para CLIENTE
+          break;
+        case 'ADMIN':
+          navigate('/admin'); // Rota para ADMIN
+          break;
+        case 'PROJETISTA':
+          navigate('/home'); // Rota para FUNCIONARIO
+          break;
+        default:
+          setError('Tipo de usuário desconhecido');
+      }
+      //navigate('/home');
+      // Aqui você pode armazenar os dados do usuário ou redirecionar para outra página
+    } catch (error) {
+      console.error('Erro ao fazer login:', error);
+      setError('Erro ao fazer login');
+    }
   };
 
   return (
@@ -71,18 +71,18 @@ const Login = () => {
         <form onSubmit={handleSubmit}>
           <div className="input-group">
             <label>E-mail:</label>
-            <input type="email" placeholder="seuemail@exemplo.com" 
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
+            <input type="email" placeholder="seuemail@exemplo.com"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
             />
           </div>
           <div className="input-group">
             <label>Senha:</label>
-            <input type="password" placeholder="Digite sua senha" 
-             value={password}
-             onChange={(e) => setPassword(e.target.value)}
-             required
+            <input type="password" placeholder="Digite sua senha"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
             />
           </div>
           <p className="password-hint">
