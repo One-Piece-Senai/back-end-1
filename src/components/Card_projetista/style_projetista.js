@@ -4,9 +4,9 @@ import styled from "styled-components";
 export const Cardprojetista = styled.div`
     display: flex;
     align-items: center;
-    gap: 20px;
-    width: 100%;
-    height: 1000px;
+    gap: 200px;
+    width: 80%;
+    height: 100px;
     padding: 10px;
     border-radius: 10%;
     margin-bottom: 1%;
@@ -14,7 +14,7 @@ export const Cardprojetista = styled.div`
     
     .modulo{
         background-color: white;
-        display: flex;
+        display: grid;
         border-radius: 16px;
         padding: 30px;
         width: 900px;
@@ -33,7 +33,7 @@ export const Cardprojetista = styled.div`
     
     .botao_novo{
         position: absolute;
-        right: 310px;
+        right: 100px;
     }
     .projetista{
         position: absolute;
@@ -50,16 +50,20 @@ export const Cardprojetista = styled.div`
 
 .progress-bar {
   width: 18%; /* Define a largura de cada barra (5 barras = 18% cada) */
-  height: 30px;
+  height: 20px;
   background-color: #d3d3d3;
   transition: background-color 0.3s ease; /* Transição suave da cor */
   border-radius: 30%;
 }
+.tex_botao{
+  display: flex;
+  justify-content: space-between;
+}
 
 .progress-button {
   margin-top: 20px;
-  padding: 10px 20px;
-  font-size: 16px;
+  padding: 15px 10px;
+  font-size: 10px;
   background-color: #6200ea;
   color: white;
   border: none;

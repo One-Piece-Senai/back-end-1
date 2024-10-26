@@ -4,7 +4,7 @@ export const SidebarComponent = styled.aside`
     /* background: ${props => props.corfundo ? "#F2B929" : "grey"}; */
     background-color: #FFEA96;
     position: fixed;
-    width: 15vw;
+    width: 20vw;
     height: 100vh;
     display: flex;
     flex-direction: column;
