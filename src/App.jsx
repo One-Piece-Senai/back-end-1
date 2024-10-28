@@ -9,13 +9,14 @@ import Pedidos from './pages/pedidos/pedidos';
 import Perfil from './components/card-perfil/perfil'
 import CadastraProjeto from './pages/NovoProjeto/Projeto'
 import PerfilProjetista from './pages/perfil-projetista/perfil-projetista';
+import Register from './pages/Cadastro/Register'
 
 function Nav() {
    return(
     <Router>
       <Routes>
         <Route path="/" element={<Home/>} />  
-        <Route path="/projetista" element={<Projetista />} />
+        <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="/edit" element={<Editar />} />
         <Route path="/detalhes/:indice" element={<Detalhes  />} />
