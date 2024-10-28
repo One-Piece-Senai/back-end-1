@@ -15,11 +15,13 @@ export default function card_projetista() {
         <>
             <Cardprojetista>
                 <div className="modulo">
-
                     <h2 className='titulo'>Engrenagens de um Motor</h2>
-                    <button className="progress-button" onClick={handleButtonClick}>
-                        Avançar
-                    </button>
+                    <div className="tex_botao">
+                        <h3 className="projetista">Fabricio</h3>
+                        <button className="progress-button" onClick={handleButtonClick}>Avançar
+                        </button>
+
+                    </div>
                     <div className="progress-container">
                         {/* Renderiza as cinco barras */}
                         {[...Array(5)].map((_, index) => (
@@ -32,9 +34,8 @@ export default function card_projetista() {
                             ></div>
                         ))}
                     </div>
-                    <h3 className="projetista">Fabricio</h3>
                 </div>
-                </Cardprojetista>
+            </Cardprojetista>
         </>
     )
 }

@@ -12,19 +12,11 @@ function Pedidos() {
   return (
     <div className="App">
       <SideBar />
-      <div>
-        <BarraDeBusca />
-        <div className="Conteudo">
-          <ContainerPerfil>
-            <h1>Pedidos</h1>
-            <Cardprojetista/>
-            <Cardprojetista/>
-            <Cardprojetista/>
-            <Cardprojetista/>
-
-
-          </ContainerPerfil>
-        </div>
+      <BarraDeBusca />
+      <div className="Conteudo">
+      <ContainerPerfil style={{ borderRadius: "10px" }}>
+          <h1>Pedidos</h1>
+        </ContainerPerfil>
       </div>
     </div>
 

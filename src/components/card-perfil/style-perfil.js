@@ -7,8 +7,9 @@ export const ContainerPerfil = styled.div`
     border-radius: 16px;
     padding: 30px;
     margin-left: 70px;
-    width: 1000px;
-    height: 500px;
+    background-color: white;
+    /* width: 1000px; */
+    /* height: 500px; */
 
     .botao_novo {
         background-color: #FFD32C;
