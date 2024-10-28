@@ -3,8 +3,9 @@ import styled from "styled-components";
 
 export const Cardprojetista = styled.div`
     display: flex;
+    /* flex-direction: row; */
     align-items: center;
-    gap: 20px;
+    gap: 30px;
     width: 100%;
     height: 100px;
     padding: 10px;
@@ -12,12 +13,15 @@ export const Cardprojetista = styled.div`
     margin-bottom: 1%;
     
     .modulo{
-        background-color: green;
+        background-color: white;
+        box-shadow: 10px 10px gray;
         display: flex;
+        flex-direction: row-reverse ;
         border-radius: 16px;
-        padding: 30px;
+        padding: 20px;
         width: 900px;
-        height: 100px;
+        height: 110px;
+        gap: 20px;
         position: relative;
     }
     
@@ -28,7 +32,7 @@ export const Cardprojetista = styled.div`
         margin: 10px; /* Espaçamento opcional */
         font-size: 24px;
         color: black;
-    }
+        }
     
     .botao_novo{
         position: absolute;
@@ -37,29 +41,33 @@ export const Cardprojetista = styled.div`
     .projetista{
         position: absolute;
         left: 10px;
-        top: 60px;  /* Posição no topo */
+        top: 35px; 
 
-    }.progress-container {
+    }
+    
+    .progress-container {
   display: flex;
-  justify-content: space-between;
+  
   width: 80%;
   margin: 0 auto;
+  align-items: flex-end;
 }
 
 .progress-bar {
-  width: 18%;
-  height: 30px;
+  width: 17%;
+  height: 25px;
   transition: background-color 0.3s ease;
+  border-radius: 30px;
 }
 
 .progress-button {
   margin-top: 20px;
   padding: 10px 20px;
-  font-size: 16px;
-  background-color: #6200ea;
-  color: white;
+  font-size: 16px;  
+  background-color: #FFD32C;
+  color: black;
   border: none;
-  border-radius: 5px;
+  border-radius: 20px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }

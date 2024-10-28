@@ -5,9 +5,10 @@ export const ContainerPerfil = styled.div`
     flex-direction: column;
     background-color: #FFEA96;
     border-radius: 16px;
-    padding: 30px;
+    padding: 20px;
     margin-left: 70px;
     width: 927px;
+    gap: 20px;
     height: 482px;
 
     .botao_novo {
