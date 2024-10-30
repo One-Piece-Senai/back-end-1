@@ -21,7 +21,7 @@ export const SidebarComponent = styled.aside`
         gap: 30px;
         list-style: none;
     }
-
+    
     li {
         display: flex;
         align-items: center;
