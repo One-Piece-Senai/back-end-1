@@ -10,6 +10,7 @@ import Perfil from './components/card-perfil/perfil'
 import CadastraProjeto from './pages/NovoProjeto/Projeto'
 import PerfilProjetista from './pages/perfil-projetista/perfil-projetista';
 import Register from './pages/Cadastro/Register'
+import PerfilCliente from './pages/CLIENTE/perfil-cliente/perfil-cliente';
 
 function Nav() {
    return(
@@ -24,6 +25,7 @@ function Nav() {
         <Route path="/perfil" element={<Perfil  />} />
         <Route path="/cadastrar_Projeto" element={<CadastraProjeto  />} />
         <Route path="/projetista-perfil" element={<PerfilProjetista />} />
+        <Route path="/cliente-perfil"    element={<PerfilCliente />} />
       </Routes>
     </Router>
    )
