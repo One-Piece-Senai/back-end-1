@@ -1,0 +1,75 @@
+.perfil-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    background-color: #fff;
+  }
+  
+  .foto-perfil {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .carregar-foto {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #555;
+    cursor: pointer;
+  }
+  
+  h2 {
+    font-family: sans-serif;
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #333;
+  }
+  
+  .secao-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .grupo-form {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    flex: 1;
+    min-width: 200px;
+  }
+  
+  label {
+    font-family: sans-serif;
+    font-size: 14px;
+    color: #666;
+  }
+  
+  input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+  }
+  
+
+  
+  .add-especialidade {
+    background-color: #FFD700;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    align-self: flex-start;
+  }
+  
+  .add-especialidade:hover {
+    background-color: #FFC300;
+  }  
