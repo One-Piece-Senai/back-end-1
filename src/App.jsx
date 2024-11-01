@@ -11,6 +11,7 @@ import CadastraProjeto from './pages/NovoProjeto/Projeto'
 import PerfilProjetista from './pages/perfil-projetista/perfil-projetista';
 import Register from './pages/Cadastro/Register'
 import PerfilCliente from './pages/CLIENTE/perfil-cliente/perfil-cliente';
+import Ajuda from './pages/Ajuda/ajuda';
 
 function Nav() {
    return(
@@ -27,6 +28,7 @@ function Nav() {
         <Route path="/projetista-perfil" element={<PerfilProjetista />} />
         <Route path="/cliente-perfil"    element={<PerfilCliente />} />
         <Route path="/projetista"        element={<Projetista />} />
+        <Route path="/ajuda" element={<Ajuda />} />
         
       </Routes>
     </Router>

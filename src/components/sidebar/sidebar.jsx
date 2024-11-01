@@ -21,7 +21,7 @@ export default function SideBar(props) {
                     <li><img className='icone' src={box}/> <Link to="/pedidos">Meus projetos</Link></li>
                     <li><img className='icone' src={people}/>   Clientes</li>
                     <li><img className='icone' src={settings}/> Configurações</li>
-                    <li><img className='icone' src={askIcon}/>  Ajuda</li>
+                    <li><img className='icone' src={askIcon}/><Link to="/ajuda">FAQ</Link>  Ajuda</li>
                 </ul>
             </SidebarComponent>
         </>
