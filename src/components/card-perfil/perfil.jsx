@@ -24,10 +24,11 @@ export default function CardPerfil() {
   };
 
   return (
-    <div className="App">
-      <SideBar />
+    <div className="App" style={{ display: 'flex' }}>
+    <SideBar />
+    <div style={{ flex: 1 }}>
       <BarraDeBusca />
-      <div className="Conteudo">
+      <div className="box-branco">
         <ContainerPerfil>
           <input type="button" value="Cadastrar" className="botao_novo" />
           <div>
@@ -36,5 +37,7 @@ export default function CardPerfil() {
         </ContainerPerfil>
       </div>
     </div>
+    </div>
+ 
   );
 }
