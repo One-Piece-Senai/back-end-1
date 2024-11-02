@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home/home';
 import Projetista from './pages/CLIENTE/Projetista/projetista'
 import Login from "./pages/login/Login";
-import Editar from './pages/Editar_cadastro/edit'
+import Editar from './pages/inputs_completo/FormPerfil'
 import Detalhes from './/components/card-perfil/Detalhes'; // O componente para mostrar os detalhes do item
 import Pedidos from './pages/pedidos/pedidos';
 import Perfil from './components/card-perfil/perfil'
@@ -29,6 +29,8 @@ function Nav() {
         <Route path="/cliente-perfil"    element={<PerfilCliente />} />
         <Route path="/projetista"        element={<Projetista />} />
         <Route path="/ajuda" element={<Ajuda />} />
+        <Route path="/editar" element={<Editar />} />
+
         
       </Routes>
     </Router>

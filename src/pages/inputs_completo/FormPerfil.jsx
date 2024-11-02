@@ -1,12 +1,16 @@
 import React from 'react';
 import './FormPerfil.css';
-import imagemperfil from './assets/fabroxa.png'
+import SideBar from '../../components/sidebar/sidebar';
+import BarraDeBusca from '../../components/barra-de-busca/barra-busca';
 
 function ProfileForm() {
   return (
+    <div className="App" style={{ display: 'flex' }}>
+    <SideBar />
+    <div style={{ flex: 1 }}>
+      <BarraDeBusca />
     <div className="perfil-form">
       <div className="foto-perfil">
-        <img src={imagemperfil} alt="teste" />
       </div>
       <h2>Informações pessoais</h2>
       <div className="secao-form">
@@ -44,6 +48,8 @@ function ProfileForm() {
         </div>
         <button className="add-especialidade">Adicionar uma especialidade</button>
       </div>
+    </div>
+    </div>
     </div>
   );
 }

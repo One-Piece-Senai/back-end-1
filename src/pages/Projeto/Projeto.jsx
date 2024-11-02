@@ -6,14 +6,10 @@ import Input from "../../components/Inputs/Input";
 
 export default function Projeto (){
   return (
-    <div style={{
-     display: 'flex',
-    height: '100vh',
-    fontFamily: 'Arial, sans-serif'
-    }}>
-        <SideBar />
-        <div>
-            <BarraDeBusca />
+    <div className="App" style={{ display: 'flex' }}>
+      <SideBar />
+      <div style={{ flex: 1 }}>
+        <BarraDeBusca />
             <ContainerPerfil style={{borderRadius:"10px"}}>
                 <Input />
             </ContainerPerfil>
