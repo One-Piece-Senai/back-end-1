@@ -36,7 +36,7 @@ const Login = () => {
       }
 
       const data = await response.json();
-      console.log('Usuário autenticado:', data);
+      console.log('Usuário autenticado:', data.id);
 
       switch (data.tipoUser) {
         case 'CLIENTE':

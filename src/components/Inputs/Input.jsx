@@ -2,6 +2,8 @@ import React from 'react';
 import { DivsInputs } from "./inputs";
 import img from "../../assets/16410.png";
 
+
+
 export default function Input ()  {
   return (
     <div>

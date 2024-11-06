@@ -6,9 +6,14 @@ import { useNavigate } from 'react-router-dom'; // Importar o hook de navegaçã
 
 const Signup = () => {
   const [formData, setFormData] = useState({
-    name: '',
+    username: '',
+    nome: '',
     email: '',
-    password: ''
+    cpf_cnpj: '',
+    cep: '',
+    telefone: '',
+    senha: '',
+    //tipo: {value}
   });
 
   const [message, setMessage] = useState('');
@@ -24,7 +29,7 @@ const Signup = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     
-    fetch('http://localhost:8080/api/users/register', {
+    fetch('http://localhost:8080/usuario/criar', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -57,13 +62,25 @@ const Signup = () => {
         <p>Já possui uma conta? <a href="#">Entre aqui</a> </p>
         <form onSubmit={handleSubmit}>
           <div className="input-group">
+            <label>Usuário:</label>
+            <input 
+            type="text" 
+            className="form-control" 
+            id="username" 
+            name="username" 
+            value={formData.username} 
+            onChange={handleChange} 
+            required 
+          />          
+          </div>
+          <div className="input-group">
             <label>Nome:</label>
             <input 
             type="text" 
             className="form-control" 
-            id="name" 
-            name="name" 
-            value={formData.name} 
+            id="nome" 
+            name="nome" 
+            value={formData.nome} 
             onChange={handleChange} 
             required 
           />          
@@ -81,16 +98,61 @@ const Signup = () => {
           />          
           </div>
           <div className="input-group">
+            <label>CPF/CNPJ:</label>
+            <input 
+            type="text" 
+            className="form-control" 
+            id="cpf_cnpj" 
+            name="cpf_cnpj" 
+            value={formData.cpf_cnpj} 
+            onChange={handleChange} 
+            required 
+          />  
+          </div>
+          <div className="input-group">
+            <label>CEP:</label>
+            <input 
+            type="text" 
+            className="form-control" 
+            id="cep" 
+            name="cep" 
+            value={formData.cep} 
+            onChange={handleChange} 
+            required 
+          />  
+          </div>
+          <div className="input-group">
+            <label>Telefone:</label>
+            <input 
+            type="text" 
+            className="form-control" 
+            id="telefone" 
+            name="telefone" 
+            value={formData.telefone} 
+            onChange={handleChange} 
+            required 
+          />  
+          </div>
+          <div className="input-group">
             <label>Senha:</label>
             <input 
             type="password" 
             className="form-control" 
-            id="password" 
-            name="password" 
-            value={formData.password} 
+            id="senha" 
+            name="senha" 
+            value={formData.senha} 
             onChange={handleChange} 
             required 
-          />          </div>
+          />  
+          </div>
+          <p/>
+          <form id="tipoForm">
+            <label for="tipo">Tipo de Usuário:</label>
+            <select id="tipo" name="tipo">
+            <option value="CLIENTE">Cliente</option>
+            <option value="PROJETISTA">Projetista</option>
+            </select>
+          </form>
           <p className="password-hint">
             Escolha uma senha com, no mínimo, 8 caracteres.
           </p>
