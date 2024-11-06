@@ -36,17 +36,20 @@ const Login = () => {
       }
 
       const data = await response.json();
-      console.log('Usuário autenticado:', data);
+      console.log('Usuário autenticado:', data.id);
+
+      localStorage.setItem('userId', data.id);
+
 
       switch (data.tipoUser) {
         case 'CLIENTE':
-          navigate('/home'); // Rota para CLIENTE
+          navigate('/'); // Rota para CLIENTE
           break;
         case 'ADMIN':
           navigate('/admin'); // Rota para ADMIN
           break;
         case 'PROJETISTA':
-          navigate('/home'); // Rota para FUNCIONARIO
+          navigate('/'); // Rota para FUNCIONARIO
           break;
         default:
           setError('Tipo de usuário desconhecido');

@@ -13,6 +13,9 @@ import Register from './pages/Cadastro/Register'
 import PerfilCliente from './pages/CLIENTE/perfil-cliente/perfil-cliente';
 import Ajuda from './pages/Ajuda/ajuda';
 
+const API_BASE_URL = 'http://localhost:8080/usuario';
+
+
 function Nav() {
    return(
     <Router>
