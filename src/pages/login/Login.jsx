@@ -40,13 +40,13 @@ const Login = () => {
 
       switch (data.tipoUser) {
         case 'CLIENTE':
-          navigate('/home'); // Rota para CLIENTE
+          navigate('/cliente-perfil'); // Rota para CLIENTE
           break;
         case 'ADMIN':
           navigate('/admin'); // Rota para ADMIN
           break;
         case 'PROJETISTA':
-          navigate('/home'); // Rota para FUNCIONARIO
+          navigate('/projetista-perfil'); // Rota para PROJETISTA
           break;
         default:
           setError('Tipo de usuário desconhecido');

@@ -13,7 +13,7 @@ const Signup = () => {
     cep: '',
     telefone: '',
     senha: '',
-    //tipo: {value}
+    tipo: '',
   });
 
   const [message, setMessage] = useState('');
@@ -24,6 +24,7 @@ const Signup = () => {
       ...formData,
       [e.target.name]: e.target.value
     });
+    console.log(formData.tipo)
   };
 
   const handleSubmit = (e) => {
@@ -62,25 +63,13 @@ const Signup = () => {
         <p>Já possui uma conta? <a href="#">Entre aqui</a> </p>
         <form onSubmit={handleSubmit}>
           <div className="input-group">
-            <label>Usuário:</label>
+            <label>Nome do Usuário:</label>
             <input 
             type="text" 
             className="form-control" 
             id="username" 
             name="username" 
             value={formData.username} 
-            onChange={handleChange} 
-            required 
-          />          
-          </div>
-          <div className="input-group">
-            <label>Nome:</label>
-            <input 
-            type="text" 
-            className="form-control" 
-            id="nome" 
-            name="nome" 
-            value={formData.nome} 
             onChange={handleChange} 
             required 
           />          
@@ -97,6 +86,46 @@ const Signup = () => {
             required 
           />          
           </div>
+
+          <div className="input-group">
+            <label>Telefone:</label>
+            <input 
+            type="text" 
+            className="form-control" 
+            id="telefone" 
+            name="telefone" 
+            value={formData.telefone} 
+            onChange={handleChange} 
+            required 
+          />  
+          </div>
+
+          <div className="input-group">
+            <label>Senha:</label>
+            <input 
+            type="password" 
+            className="form-control" 
+            id="senha" 
+            name="senha" 
+            value={formData.senha} 
+            onChange={handleChange} 
+            required 
+          />  
+          </div>
+
+          <div className="input-group">
+            <label>Nome (completo):</label>
+            <input 
+            type="text" 
+            className="form-control" 
+            id="nome" 
+            name="nome" 
+            value={formData.nome} 
+            onChange={handleChange} 
+            required 
+          />          
+          </div>
+          
           <div className="input-group">
             <label>CPF/CNPJ:</label>
             <input 
@@ -121,38 +150,24 @@ const Signup = () => {
             required 
           />  
           </div>
-          <div className="input-group">
-            <label>Telefone:</label>
-            <input 
-            type="text" 
-            className="form-control" 
-            id="telefone" 
-            name="telefone" 
-            value={formData.telefone} 
-            onChange={handleChange} 
-            required 
-          />  
-          </div>
-          <div className="input-group">
-            <label>Senha:</label>
-            <input 
-            type="password" 
-            className="form-control" 
-            id="senha" 
-            name="senha" 
-            value={formData.senha} 
-            onChange={handleChange} 
-            required 
-          />  
-          </div>
+          
           <p/>
-          <form id="tipoForm">
-            <label for="tipo">Tipo de Usuário:</label>
-            <select id="tipo" name="tipo">
+          <label>
+          Tipo de Usuário:
+          <select 
+            className="form-control" 
+            id="tipo"
+            name="tipo" 
+            value={formData.tipo} 
+            onChange={handleChange}
+            // onChange={(e) => settipo(e.target.value)} 
+            required
+          >
+            <option value=" ">Selecione o tipo</option>
             <option value="CLIENTE">Cliente</option>
             <option value="PROJETISTA">Projetista</option>
-            </select>
-          </form>
+          </select>
+        </label> 
           <p className="password-hint">
             Escolha uma senha com, no mínimo, 8 caracteres.
           </p>
