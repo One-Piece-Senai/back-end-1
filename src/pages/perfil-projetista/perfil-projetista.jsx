@@ -4,7 +4,10 @@ import SectionPerfil from "../../components/section-perfil/section-perfil";
 import SideBar from "../../components/sidebar/sidebar";
 import StatusGrup from "../../components/status-grup/status-grup";
 
+
+
 export default function PerfilProjetista(){
+    
     return(
         <div style={{display:"flex", backgroundColor: "#FFEA96"}}>
             <SideBar />

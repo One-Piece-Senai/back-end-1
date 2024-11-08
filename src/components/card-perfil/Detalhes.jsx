@@ -30,10 +30,11 @@ export default function Detalhes() {
   };
 
   return (
-    <div className="App">
-      <SideBar />
+    <div className="App" style={{ display: 'flex' }}>
+    <SideBar />
+    <div style={{ flex: 1 }}>
       <BarraDeBusca />
-      <div className="Conteudo">
+      <div className="box-branco">
         <ContainerPerfil>
           <h2>Detalhes do Item</h2><br />
           <p>Descrição: {item.descricao}</p>
@@ -50,6 +51,7 @@ export default function Detalhes() {
           </div>
         </ContainerPerfil>
       </div>
+    </div>
     </div>
   );
 }
