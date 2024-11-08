@@ -1,6 +1,7 @@
 import React from 'react';
 
 function Tabela({ vetor, selecionar }) {
+    
     return (
         <table className="table">
             <thead>

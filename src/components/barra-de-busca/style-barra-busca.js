@@ -5,7 +5,7 @@ export const BarraBusca = styled.div`
     align-items: center;
     justify-content: end;
 
-    background-color: blue;
+    background-color: #FFEA96;
 
     .conteudo-busca{
         width: 40%;
