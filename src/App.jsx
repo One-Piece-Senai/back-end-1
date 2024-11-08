@@ -33,8 +33,6 @@ function Nav() {
         <Route path="/projetista"        element={<Projetista />} />
         <Route path="/ajuda" element={<Ajuda />} />
         <Route path="/editar" element={<Editar />} />
-
-        
       </Routes>
     </Router>
    )

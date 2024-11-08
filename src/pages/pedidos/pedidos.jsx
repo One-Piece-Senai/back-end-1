@@ -11,20 +11,6 @@ const API_BASE_URL = 'http://localhost:8080/projetos/cliente/';
 
 function Pedidos() {
   const [projetos, setProjetos] = useState([]);
-  const [projetoForm, setProjetoForm] = useState({
-    descricao: '',
-    largura: '',
-    altura: '',
-    comprimento: '',
-    material: '',
-    statusprojeto: '',
-    followup: '',
-    dataFinalizacao: '',
-    imagem: '',
-    usuario: { id: '' },
-  });
-  const [editProjetoId, setEditProjetoId] = useState(null);
-  const [message, setMessage] = useState('');
 
   useEffect(() => {
     fetchProjetos();

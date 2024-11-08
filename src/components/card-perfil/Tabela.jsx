@@ -1,4 +1,7 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+
+
 
 function Tabela({ vetor, selecionar }) {
     
@@ -21,9 +24,9 @@ function Tabela({ vetor, selecionar }) {
                         <tr key={indice}>
                             <td>{indice + 1}</td>
                             <td>{obj.descricao}</td>
-                            <td>{obj.materiais}</td>
-                            <td>{obj.tecnologia}</td>
-                            <td>{obj.prazo}</td>
+                            <td>{obj.material}</td>
+                            <td>{obj.caminhoArquivo}</td>
+                            <td>{obj.dataFinalizacao}</td>
 
                             <button onClick={() => selecionar(indice)}>Selecionar</button>
                         </tr>
