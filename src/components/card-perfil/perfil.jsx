@@ -31,6 +31,10 @@ export default function CardPerfil() {
     navigate(`/detalhes/${indice}`); // Navega para a rota de detalhes passando o índice
   };
 
+  const handleCadastrarClick = () => {
+    navigate("/cadastrar_Projeto"); // substitua "/cadastrar" pela rota desejada
+  };
+
   return (
     <div className="App" style={{ display: 'flex' }}>
     <SideBar />
@@ -38,8 +42,13 @@ export default function CardPerfil() {
       <BarraDeBusca />
       <div className="box-branco">
         <ContainerPerfil>
-          <input type="button" value="Cadastrar" className="botao_novo" />
-          <div>
+        <input
+            type="button"
+            value="Cadastrar"
+            className="botao_novo"
+            onClick={handleCadastrarClick}
+        />          
+    <div>
             <Tabela vetor={vetor} selecionar={selecionar} />
           </div>
         </ContainerPerfil>

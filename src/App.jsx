@@ -7,11 +7,12 @@ import Editar from './pages/inputs_completo/FormPerfil'
 import Detalhes from './/components/card-perfil/Detalhes'; // O componente para mostrar os detalhes do item
 import Pedidos from './pages/pedidos/pedidos';
 import Orcamento from './components/card-perfil/perfil'
-import CadastraProjeto from './pages/NovoProjeto/Projeto'
+import CadastraProjeto from './pages/NovoProjeto/NovoProjeto'
 import PerfilProjetista from './pages/perfil-projetista/perfil-projetista';
 import Register from './pages/Cadastro/Register'
 import PerfilCliente from './pages/CLIENTE/perfil-cliente/perfil-cliente';
 import Ajuda from './pages/Ajuda/ajuda';
+
 
 const API_BASE_URL = 'http://localhost:8080/usuario';
 

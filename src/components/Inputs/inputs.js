@@ -7,10 +7,10 @@ export const    DivsInputs = styled.div`
     gap: 20px;
     display: flex;
     width: 1150px;
+    background-color: #DCDCDC;
     input{
         width: 150px;
         border-radius: 10px;
-        background-color: white;
         border: 0;
     }
     input[type="image"]{

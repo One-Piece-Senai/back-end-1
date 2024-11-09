@@ -7,13 +7,15 @@ import Input from "../../components/Inputs/Input";
 
 export default function Projeto() {
   return (
-    <div className="App">
-      <SideBar CorFundo={false} />
+    <div className="App" style={{ display: 'flex' }}>
+    <SideBar />
+    <div style={{ flex: 1 }}>
       <BarraDeBusca />
-      <div className="Conteudo">
+      <div className="box-branco">
         <ContainerPerfil style={{ borderRadius: "10px" }}>
           <Input />
         </ContainerPerfil>
+      </div>
       </div>
     </div>
   );

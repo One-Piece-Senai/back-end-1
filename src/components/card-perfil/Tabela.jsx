@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-
-
 
 function Tabela({ vetor, selecionar }) {
+    
     
     return (
         <table className="table">
@@ -12,7 +10,7 @@ function Tabela({ vetor, selecionar }) {
                     <th>#</th>
                     <th>Descrição do projeto</th>
                     <th>Materiais de impressão</th>
-                    <th>Tecnologia de impressão</th>
+                    <th>Caminho do arquivo</th>
                     <th>Prazo de entrega </th>
                     <th>Selecionar</th>
                 </tr>
