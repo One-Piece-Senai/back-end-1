@@ -3,6 +3,52 @@ import { DivsInputs } from "./inputs";
 import img from "../../assets/16410.png";
 
 export default function Input ()  {
+  const [projetos, setProjetos] = useState([]);
+  const [projetoForm, setProjetoForm] = useState({
+    descricao: '',
+    largura: '',
+    altura: '',
+    comprimento: '',
+    material: '',
+    statusprojeto: '',
+    followup: '',
+    dataFinalizacao: '',
+    imagem: '',
+    usuario: { id: '' },
+  });
+  const [editProjetoId, setEditProjetoId] = useState(null);
+  const [message, setMessage] = useState('');
+
+  useEffect(() => {
+    fetchProjetos();
+  }, []);
+
+  // Fetch all projetos
+  const fetchProjetos = async () => {
+    try {
+      const response = await axios.get(`${API_BASE_URL}/listar`);
+      setProjetos(response.data);
+    } catch (error) {
+      console.error('Error fetching projetos:', error);
+    }
+  };
+
+
+
+
+  // Create a new projeto
+  const createProjeto = async () => {
+    try {
+      const response = await axios.post(`${API_BASE_URL}/criar`, projetoForm);
+      setMessage(`Projeto criado com ID: ${response.data.id}`);
+      fetchProjetos();
+      setProjetoForm({});
+    } catch (error) {
+      handleError(error);
+    }
+  };
+
+
   return (
     <div>
         <DivsInputs>
