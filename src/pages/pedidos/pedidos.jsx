@@ -5,6 +5,7 @@ import { ContainerPerfil } from "../../components/card-perfil/style-perfil";
 import Cardprojetista from "../../components/Card_projetista/card_projetista";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import CardProjetistasDisp from "../../components/card-projetistas-disponiveis/projetistas-disponiveis";
 
 const API_BASE_URL = "http://localhost:8080/projetos/cliente/";
 
@@ -36,15 +37,7 @@ function Pedidos() {
             <h3>Lista de Projetos</h3>
             <ul>
               {projetos.map((projeto) => (
-                <li key={projeto.id}>
-                  <p>
-                    {projeto.descricao} - {projeto.material} -{" "}
-                    {projeto.dataFinalizacao} {projeto.statusprojeto}
-                  </p>
-                  <button onClick={() => EntregaProjeto(projeto.id)}>
-                    Finalizar Projeto
-                  </button>
-                </li>
+                <Cardprojetista titulo={projeto.descricao} />
               ))}
             </ul>
           </ContainerPerfil>

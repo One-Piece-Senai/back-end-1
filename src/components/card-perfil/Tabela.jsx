@@ -23,7 +23,7 @@ function Tabela({ vetor, selecionar }) {
             <td>{obj.caminhoArquivo}</td>
             <td>{obj.dataFinalizacao}</td>
 
-            <button onClick={() => selecionar(indice)}>Selecionar</button>
+            <button onClick={() => selecionar(obj.id)}>Selecionar</button>
           </tr>
         ))}
       </tbody>

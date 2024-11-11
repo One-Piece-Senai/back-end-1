@@ -15,7 +15,7 @@ const SectionPerfil = () => {
       const response = await axios.get(
         `http://localhost:8080/usuario/buscar/${userId}`,
       );
-      setUserName(response.data.username);
+      setUserName(response.data.nome);
       setUserDesc(response.data.descricaoPerfil);
     } catch (error) {
       console.error("Erro ao buscar nome do usuário:", error);

@@ -24,7 +24,7 @@ export default function CardPerfil() {
   const navigate = useNavigate(); // Hook para navegar entre rotas
 
   const selecionar = (indice) => {
-    console.log("Selecionado índice: ", indice);
+    console.log("Selecionado índice: ", vetor.id);
     navigate(`/detalhes/${indice}`); // Navega para a rota de detalhes passando o índice
   };
 

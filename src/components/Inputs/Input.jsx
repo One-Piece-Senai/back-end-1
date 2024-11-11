@@ -124,6 +124,7 @@ export default function Input() {
 
   return (
     <div>
+
       <DivsInputs>
         <label style={{ width: "100%" }}>Descrição do Projeto:</label>
         <form onSubmit={handleSubmit}>
@@ -247,6 +248,7 @@ export default function Input() {
 
         {message && <p>{message}</p>}
       </DivsInputs>
+      
     </div>
   );
 }
