@@ -7,7 +7,7 @@ export const ContainerPerfil = styled.div`
   border-radius: 16px;
   padding: 30px;
   margin-left: 70px;
-  background-color: white;
+  background-color: #f5f5f5;
   /* width: 1000px; */
   /* height: 500px; */
 
