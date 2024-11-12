@@ -70,7 +70,7 @@ const Login = () => {
       </div>
       <div className="form-section">
         <h1>Login</h1>
-        <p>Já possui uma conta? <a href="#">Entre aqui</a></p>
+        <p>Não possui uma conta? <a href="/register">Cadastre-se aqui</a></p>
         <form onSubmit={handleSubmit}>
           <div className="input-group">
             <label>E-mail:</label>
@@ -88,22 +88,15 @@ const Login = () => {
               required
             />
           </div>
-          <p className="password-hint">
-            Escolha uma senha com, no mínimo, 8 caracteres.
-          </p>
-          <div className="checkbox-group">
-            <input type="checkbox" />
-            <label>
-              Eu aceito os <a href="#">Termos e Condições</a> e entendi a <a href="#">Política de Privacidade</a>
-            </label>
-          </div>
+          
           <button type="submit" className="submit-btn">Sign in</button>
           {error && <p style={{ color: 'red' }}>{error}</p>}
         </form>
-        <p className="login-link">Já possui uma conta? <a href="#">Log in</a></p>
+        <p className="login-link">Esqueceu a senha? <a href="#">Redefinir</a></p>
       </div>
     </div>
   );
 }
+
 
 export default Login;

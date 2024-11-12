@@ -6,9 +6,14 @@ import { useNavigate } from 'react-router-dom'; // Importar o hook de navegaçã
 
 const Signup = () => {
   const [formData, setFormData] = useState({
-    name: '',
+    username: '',
+    nome: '',
     email: '',
-    password: ''
+    cpf_cnpj: '',
+    cep: '',
+    telefone: '',
+    senha: '',
+    tipo: '',
   });
 
   const [message, setMessage] = useState('');
@@ -19,12 +24,13 @@ const Signup = () => {
       ...formData,
       [e.target.name]: e.target.value
     });
+    console.log(formData.tipo)
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     
-    fetch('http://localhost:8080/api/users/register', {
+    fetch('http://localhost:8080/usuario/criar', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -57,13 +63,13 @@ const Signup = () => {
         <p>Já possui uma conta? <a href="#">Entre aqui</a> </p>
         <form onSubmit={handleSubmit}>
           <div className="input-group">
-            <label>Nome:</label>
+            <label>Nome do Usuário:</label>
             <input 
             type="text" 
             className="form-control" 
-            id="name" 
-            name="name" 
-            value={formData.name} 
+            id="username" 
+            name="username" 
+            value={formData.username} 
             onChange={handleChange} 
             required 
           />          
@@ -80,17 +86,88 @@ const Signup = () => {
             required 
           />          
           </div>
+
+          <div className="input-group">
+            <label>Telefone:</label>
+            <input 
+            type="text" 
+            className="form-control" 
+            id="telefone" 
+            name="telefone" 
+            value={formData.telefone} 
+            onChange={handleChange} 
+            required 
+          />  
+          </div>
+
           <div className="input-group">
             <label>Senha:</label>
             <input 
             type="password" 
             className="form-control" 
-            id="password" 
-            name="password" 
-            value={formData.password} 
+            id="senha" 
+            name="senha" 
+            value={formData.senha} 
             onChange={handleChange} 
             required 
-          />          </div>
+          />  
+          </div>
+
+          <div className="input-group">
+            <label>Nome (completo):</label>
+            <input 
+            type="text" 
+            className="form-control" 
+            id="nome" 
+            name="nome" 
+            value={formData.nome} 
+            onChange={handleChange} 
+            required 
+          />          
+          </div>
+          
+          <div className="input-group">
+            <label>CPF/CNPJ:</label>
+            <input 
+            type="text" 
+            className="form-control" 
+            id="cpf_cnpj" 
+            name="cpf_cnpj" 
+            value={formData.cpf_cnpj} 
+            onChange={handleChange} 
+            required 
+          />  
+          </div>
+          <div className="input-group">
+            <label>CEP:</label>
+            <input 
+            type="text" 
+            className="form-control" 
+            id="cep" 
+            name="cep" 
+            value={formData.cep} 
+            onChange={handleChange} 
+            required 
+          />  
+          </div>
+          
+          <p/>
+          <label>
+          Tipo de Usuário:
+          <select 
+            className="form-control" 
+            id="tipo"
+            name="tipo" 
+            value={formData.tipo} 
+            onChange={handleChange}
+            // onChange={(e) => settipo(e.target.value)} 
+            required
+          >
+            <option value=" ">Selecione o tipo</option>
+            <option value="CLIENTE">Cliente</option>
+            <option value="PROJETISTA">Projetista</option>
+          </select>
+        </label> 
           <p className="password-hint">
             Escolha uma senha com, no mínimo, 8 caracteres.
           </p>
@@ -103,7 +180,7 @@ const Signup = () => {
           <button type="submit" className="btn btn-primary">Cadastrar</button>
         </form>
         {message && <p className="mt-3">{message}</p>}
-        <p className="login-link">Already have an account? <a href="#">Log in</a></p>
+        <p className="login-link">Já possui uma conta? <a href="/login">Log in</a></p>
       </div>
     </div>
   );
