@@ -1,69 +1,69 @@
-import SideBar from '../../components/sidebar/sidebar';
-import BarraDeBusca from '../../components/barra-de-busca/barra-busca';
-import CardPerfil from '../../components/card-perfil/perfil';
+import SideBar from "../../components/sidebar/sidebar";
+import BarraDeBusca from "../../components/barra-de-busca/barra-busca";
 import { ContainerPerfil } from "../../components/card-perfil/style-perfil";
-import Cardprojetista from '../../components/Card_projetista/card_projetista';
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import Cardprojetista from "../../components/Card_projetista/card_projetista";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom"; // Para navegar para outra rota
+import Tabela from "../../components/card-perfil/tabela";
 
-const API_BASE_URL = 'http://localhost:8080/projetos/cliente/';
-
+const API_BASE_URL = "http://localhost:8080/projetos/cliente/";
 
 function Pedidos() {
   const [projetos, setProjetos] = useState([]);
-  const [projetoForm, setProjetoForm] = useState({
-    descricao: '',
-    largura: '',
-    altura: '',
-    comprimento: '',
-    material: '',
-    statusprojeto: '',
-    followup: '',
-    dataFinalizacao: '',
-    imagem: '',
-    usuario: { id: '' },
-  });
-  const [editProjetoId, setEditProjetoId] = useState(null);
-  const [message, setMessage] = useState('');
 
   useEffect(() => {
     fetchProjetos();
   }, []);
 
-  const userId = localStorage.getItem('userId');
+  const userId = localStorage.getItem("userId");
 
   const fetchProjetos = async () => {
     try {
       const response = await axios.get(`${API_BASE_URL}${userId}`);
       setProjetos(response.data);
     } catch (error) {
-      console.error('Error fetching projetos:', error);
+      console.error("Error fetching projetos:", error);
     }
   };
 
+  const navigate = useNavigate(); // Hook para navegar entre rotas
+
+  const handleCadastrarClick = () => {
+    navigate("/cadastrar_Projeto"); // substitua "/cadastrar" pela rota desejada
+  };
+
+  const selecionar = (indice) => {
+    console.log("Selecionado índice: ", vetor.id);
+    navigate(`/detalhes/${indice}`); // Navega para a rota de detalhes passando o índice
+  };
+
   return (
-    <div className="App" style={{ display: 'flex' }}>
-    <SideBar />
-    <div style={{ flex: 1 }}>
-      <BarraDeBusca />
-      <div className="box-branco">
-      <ContainerPerfil style={{ borderRadius: "10px" }}>
-      <h3>Lista de Projetos</h3>
-      <ul>
-        {projetos.map((projeto) => (
-          <li key={projeto.id}>
-            <p>{projeto.descricao} - {projeto.material} - {projeto.dataFinalizacao} {projeto.statusprojeto}</p>
-            <button onClick={() => EntregaProjeto(projeto.id)}>Finalizar Projeto</button>
-          </li>
-        ))}
-      </ul>
-        </ContainerPerfil>
+    <div className="App" style={{ display: "flex" }}>
+      <SideBar />
+      <div style={{ flex: 1 }}>
+        <BarraDeBusca />
+        <div className="box-branco">
+          <ContainerPerfil style={{ borderRadius: "10px" }}>
+          <input
+              type="button"
+              value="Cadastrar"
+              className="botao_novo"
+              onClick={handleCadastrarClick}
+            />
+            <h3>Lista de Projetos</h3>
+
+            <ul>
+              {projetos.map((projeto) => (
+                <Cardprojetista titulo={projeto.descricao} />
+                //<Tabela vetor={vetor} selecionar={selecionar} />
+              ))}
+            </ul>
+          </ContainerPerfil>
+        </div>
       </div>
     </div>
-    </div>
-
   );
 }
 
 export default Pedidos;
-

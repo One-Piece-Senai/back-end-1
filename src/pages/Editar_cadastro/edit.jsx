@@ -1,24 +1,22 @@
-import React from 'react';
-import './styles/edit.css';
-import profileImage from './assets/Frame.png';
-import { useState } from 'react'; // Adicionando a importação do useState
-import SideBar from '../../components/sidebar/sidebar';
-import BarraDeBusca from '../../components/barra-de-busca/barra-busca';
-
-
+import React from "react";
+import "./styles/edit.css";
+import profileImage from "./assets/Frame.png";
+import { useState } from "react"; // Adicionando a importação do useState
+import SideBar from "../../components/sidebar/sidebar";
+import BarraDeBusca from "../../components/barra-de-busca/barra-busca";
 
 function App() {
   const [formData, setFormData] = useState({
-    nome: '',
-    telefone: '',
-    cidade: '',
-    pais: ''
+    nome: "",
+    telefone: "",
+    cidade: "",
+    pais: "",
   });
 
   const handleChange = (e) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
@@ -121,7 +119,9 @@ function App() {
               />
             </div>
           </div>
-          <button type="submit" className="btn-submit">Cadastrar</button>
+          <button type="submit" className="btn-submit">
+            Cadastrar
+          </button>
         </form>
       </div>
     </div>
@@ -129,4 +129,3 @@ function App() {
 }
 
 export default App;
-
