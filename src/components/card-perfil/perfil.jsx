@@ -39,12 +39,7 @@ export default function CardPerfil() {
         <BarraDeBusca />
         <div className="box-branco">
           <ContainerPerfil>
-            <input
-              type="button"
-              value="Cadastrar"
-              className="botao_novo"
-              onClick={handleCadastrarClick}
-            />
+
             <div>
               <Tabela vetor={vetor} selecionar={selecionar} />
             </div>

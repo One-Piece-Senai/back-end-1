@@ -28,6 +28,7 @@ export default function Detalhes() {
   const handleVoltar = () => {
     navigate(-1); // Volta para a página anterior
   };
+  
 
   return (
     <div className="App" style={{ display: "flex" }}>
