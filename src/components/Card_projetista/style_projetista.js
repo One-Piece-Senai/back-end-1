@@ -16,7 +16,7 @@ export const Cardprojetista = styled.div`
         background-color: white;
         display: grid;
         border-radius: 16px;
-        padding: 30px;
+        padding: 40px;
         width: 900px;
         height: 100px;
         position: relative;
@@ -54,6 +54,8 @@ export const Cardprojetista = styled.div`
   background-color: #d3d3d3;
   transition: background-color 0.3s ease; /* Transição suave da cor */
   border-radius: 30%;
+  position: relative;
+  left: -70px;
 }
 .tex_botao{
   display: flex;
@@ -67,8 +69,11 @@ export const Cardprojetista = styled.div`
   background-color: #6200ea;
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 15px;
   cursor: pointer;
+  position: relative;
+  left: 500px;
+  top: -20px;
   transition: background-color 0.3s ease;
 }
 
