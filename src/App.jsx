@@ -12,10 +12,9 @@ import PerfilProjetista from "./pages/perfil-projetista/perfil-projetista";
 import Register from "./pages/Cadastro/Register";
 import PerfilCliente from "./pages/CLIENTE/perfil-cliente/perfil-cliente";
 import Ajuda from "./pages/Ajuda/ajuda";
-import EditarProjeto from "./pages/CLIENTE/Editar-projeto/Editar-projeto"
+import ProjetoCRUD from "./pages/CLIENTE/Editar-projeto/Editar-projeto"
 
-const API_BASE_URL = "http://localhost:8080/usuario";
-
+ 
 function Nav() {
   return (
     <Router>
@@ -32,8 +31,7 @@ function Nav() {
         <Route path="/projetista" element={<Projetista />} />
         <Route path="/ajuda" element={<Ajuda />} />
         <Route path="/editar" element={<Editar />} />
-        <Route path="/editar-projeto" element={<EditarProjeto />} />
-
+        <Route path="/editar-projeto" element={<ProjetoCRUD />} />
       </Routes>
     </Router>
   );

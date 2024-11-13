@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import SideBar from "../../components/sidebar/sidebar";
+
+import BarraDeBusca from "../../components/barra-de-busca/barra-busca";
+import { ContainerPerfil } from "../../components/card-perfil/style-perfil";
 
 const API_BASE_URL = 'http://localhost:8080/projetos';
 
