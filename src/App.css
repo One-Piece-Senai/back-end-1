@@ -1,4 +1,4 @@
-*{
+* {
   margin: 0;
   padding: 0;
   border: 0;
@@ -13,9 +13,9 @@
   position: absolute;
 }
 
-.Conteudo{
-    margin-top: 20vh;
-    margin-left: 20vw;
-    margin-bottom: 20vw;
-    height: 100%;
+.Conteudo {
+  margin-top: 20vh;
+  margin-left: 20vw;
+  margin-bottom: 20vw;
+  height: 100%;
 }
