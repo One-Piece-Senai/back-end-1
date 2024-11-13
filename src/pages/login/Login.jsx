@@ -48,7 +48,7 @@ const Login = () => {
           navigate("/admin"); // Rota para ADMIN
           break;
         case "PROJETISTA":
-          navigate("/projetista-perfil"); // Rota para FUNCIONARIO
+          navigate("/proj etista-perfil"); // Rota para FUNCIONARIO
           break;
         default:
           setError("Tipo de usuário desconhecido");

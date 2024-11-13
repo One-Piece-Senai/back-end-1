@@ -5,8 +5,7 @@ import Cardprojetista from "../../components/Card_projetista/card_projetista";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom"; // Para navegar para outra rota
-import Tabela from "../../components/card-perfil/tabela";
-
+import Tabela from "../../components/card-perfil/Tabela";
 const API_BASE_URL = "http://localhost:8080/projetos/cliente/";
 
 function Pedidos() {
@@ -26,6 +25,20 @@ function Pedidos() {
       console.error("Error fetching projetos:", error);
     }
   };
+
+  const [vetor, setVetor] = useState([]);
+
+  const fetchVetor = async () => {
+    try {
+      const response = await axios.get(`http://localhost:8080/projetos/listar`);
+      setVetor(response.data);
+    } catch (error) {
+      console.error("Error fetching projetos:", error);
+    }
+  };
+  useEffect(() => {
+    fetchVetor();
+  }, []);
 
   const navigate = useNavigate(); // Hook para navegar entre rotas
 
@@ -52,13 +65,7 @@ function Pedidos() {
               onClick={handleCadastrarClick}
             />
             <h3>Lista de Projetos</h3>
-
-            <ul>
-              {projetos.map((projeto) => (
-                <Cardprojetista titulo={projeto.descricao} />
-                //<Tabela vetor={vetor} selecionar={selecionar} />
-              ))}
-            </ul>
+                <Tabela vetor={projetos} selecionar={selecionar}/>           
           </ContainerPerfil>
         </div>
       </div>
