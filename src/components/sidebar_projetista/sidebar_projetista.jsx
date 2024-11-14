@@ -1,4 +1,4 @@
-import { SidebarComponent } from "./sideStyle.js";
+import { SidebarComponent } from "./sidebar_projetista.js";
 import { Link } from "react-router-dom";
 
 import logo from "../../assets/logo.svg";
@@ -18,14 +18,14 @@ export default function SideBar(props) {
         <ul>
           <li>
             <img className="icone" src={carrinho} />{" "}
-            <Link to="/orcamento">Orçamentos</Link>
+            <Link to="/orcamento">Fazer Orçamento</Link>
           </li>
           <li>
             <img className="icone" src={box} />{" "}
             <Link to="/pedidos">Meus projetos</Link>
           </li>
           <li>
-            <img className="icone" src={people} /> Projetistas
+            <img className="icone" src={people} /> Clientes
           </li>
           <li>
             <img className="icone" src={settings} />
