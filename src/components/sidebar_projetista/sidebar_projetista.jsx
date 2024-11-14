@@ -1,4 +1,3 @@
-import { SidebarComponent } from "./sidebar_projetista.js";
 import { Link } from "react-router-dom";
 
 import logo from "../../assets/logo.svg";
@@ -8,10 +7,10 @@ import people from "../../assets/people.svg";
 import settings from "../../assets/settings.svg";
 import askIcon from "../../assets/ask-icon.svg";
 
-export default function SideBar(props) {
+export default function SideBarProjetista(props) {
   return (
     <>
-      <SidebarComponent corfundo={props.CorFundo}>
+      <SidebarComponentProj corfundo={props.CorFundo}>
         <Link to="/">
           <img className="logo" src={logo} alt="" />
         </Link>
@@ -36,7 +35,7 @@ export default function SideBar(props) {
             <Link to="/ajuda">FAQ</Link>
           </li>
         </ul>
-      </SidebarComponent>
+      </SidebarComponentProj>
     </>
   );
 }
