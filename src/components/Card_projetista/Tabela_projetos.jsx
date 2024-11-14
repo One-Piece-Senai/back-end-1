@@ -7,7 +7,6 @@ function Tabela({ vetor, selecionar }) {
         <tr>
           <th>#</th>
           <th>Descrição do projeto</th>
-          <th>Username</th>
           <th>Materiais de impressão</th>
           <th>Caminho do arquivo</th>
           <th>Prazo de entrega </th>
@@ -20,7 +19,6 @@ function Tabela({ vetor, selecionar }) {
           <tr key={indice}>
             <td>{indice + 1}</td>
             <td>{obj.descricao}</td>
-            <td>{obj.usuario.nome}</td>
             <td>{obj.material}</td>
             <td>{obj.caminhoArquivo}</td>
             <td>{obj.dataFinalizacao}</td>
