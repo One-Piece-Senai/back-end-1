@@ -13,17 +13,20 @@ import Register from "./pages/Cadastro/Register";
 import PerfilCliente from "./pages/CLIENTE/perfil-cliente/perfil-cliente";
 import Ajuda from "./pages/Ajuda/ajuda";
 import ProjetoCRUD from "./pages/CLIENTE/Editar-projeto/Editar-projeto"
-impot 
- 
+import PedidosProjetistas from "./pages/pedidos_projetistas/pedidos_projetistas"
+import Feed from "./pages/Feed/feed";
+
 function Nav() {
   return (
     <Router>
       <Routes>
         <Route path="/register" element={<Register />} />
-        <Route path="/" element={<Login />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/edit" element={<Editar />} />
         <Route path="/detalhes/:indice" element={<Detalhes />} />
         <Route path="/pedidos" element={<Pedidos />} />
+        <Route path="/pedidos" element={<Pedidos />} />
+        <Route path="/pedidosprojetistas" element={<PedidosProjetistas />} />
         <Route path="/todosprojetos" element={<TodosProjetos />} />
         <Route path="/cadastrar_Projeto" element={<CadastraProjeto />} />
         <Route path="/projetista-perfil" element={<PerfilProjetista />} />
@@ -32,6 +35,7 @@ function Nav() {
         <Route path="/ajuda" element={<Ajuda />} />
         <Route path="/editar" element={<Editar />} />
         <Route path="/editar-projeto" element={<ProjetoCRUD />} />
+        <Route path="/" element={<Feed />} />
       </Routes>
     </Router>
   );
