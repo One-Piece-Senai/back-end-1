@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-
+import { SidebarComponent } from "../sidebar/sideStyle";
 import logo from "../../assets/logo.svg";
 import carrinho from "../../assets/carrinho-icon.svg";
 import box from "../../assets/box-ixon.svg";
@@ -10,7 +10,7 @@ import askIcon from "../../assets/ask-icon.svg";
 export default function SideBarProjetista(props) {
   return (
     <>
-      <SidebarComponentProj corfundo={props.CorFundo}>
+      <SidebarComponent corfundo={props.CorFundo}>
         <Link to="/">
           <img className="logo" src={logo} alt="" />
         </Link>
@@ -34,8 +34,12 @@ export default function SideBarProjetista(props) {
             <img className="icone" src={askIcon} />
             <Link to="/ajuda">FAQ</Link>
           </li>
+          <li>
+            <img className="Exit" src={askIcon} />
+            <Link to="/">Exit</Link>
+          </li>
         </ul>
-      </SidebarComponentProj>
+      </SidebarComponent>
     </>
   );
 }
