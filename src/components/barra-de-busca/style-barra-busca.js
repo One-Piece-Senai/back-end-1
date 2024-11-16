@@ -19,4 +19,10 @@ export const BarraBusca = styled.div`
   .sino {
     width: 10%;
   }
+
+  h3 {
+   width: 25%;
+   font-size: 15px;
+
+  }
 `;

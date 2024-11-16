@@ -68,10 +68,7 @@ const Login = () => {
       </div>
       <div className="form-section">
         <h1>Login</h1>
-<<<<<<< HEAD
         <p>Não possui uma conta? <a href="/register">Cadastre-se aqui</a></p>
-=======
->>>>>>> 413928f6031d3e83fd76ab5ae36c4eeff6a55578
         <form onSubmit={handleSubmit}>
           <div className="input-group">
             <label>E-mail:</label>
@@ -93,29 +90,11 @@ const Login = () => {
               required
             />
           </div>
-<<<<<<< HEAD
           
           <button type="submit" className="submit-btn">Sign in</button>
           {error && <p style={{ color: 'red' }}>{error}</p>}
         </form>
         <p className="login-link">Esqueceu a senha? <a href="#">Redefinir</a></p>
-=======
-          <p className="password-hint">
-            Escolha uma senha com, no mínimo, 8 caracteres.
-          </p>
-          <div className="checkbox-group">
-            <input type="checkbox" />
-            <label>
-              Eu aceito os <a href="#">Termos e Condições</a> e entendi a{" "}
-              <a href="#">Política de Privacidade</a>
-            </label>
-          </div>
-          <button type="submit" className="submit-btn">
-            Sign in
-          </button>
-          {error && <p style={{ color: "red" }}>{error}</p>}
-        </form>
->>>>>>> 413928f6031d3e83fd76ab5ae36c4eeff6a55578
       </div>
     </div>
   );
