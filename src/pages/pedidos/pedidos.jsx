@@ -1,4 +1,3 @@
-import SideBarProjetista from "../../components/sidebar_projetista/sidebar_projetista"
 import BarraDeBusca from "../../components/barra-de-busca/barra-busca";
 import { ContainerPerfil } from "../../components/card-perfil/style-perfil";
 import Cardprojetista from "../../components/Card_projetista/card_projetista";
@@ -6,12 +5,13 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom"; // Para navegar para outra rota
 import Tabela from "../../components/card-perfil/Tabela";
+import SideBar from "../../components/sidebar/sidebar";
 const API_BASE_URL_cliente = "http://localhost:8080/projetos/cliente/";
 
 const API_BASE_URL = "http://localhost:8080/projetos";
+const userId = localStorage.getItem("userId");
 
 function Pedidos() {
-  const userId = localStorage.getItem("userId");
   const [projetos, setProjetos] = useState([]);
   const [projetoForm, setProjetoForm] = useState({
     descricao: "",
@@ -87,6 +87,7 @@ function Pedidos() {
       setMessage(`Projeto criado com ID: ${response.data.id}`);
       fetchProjetos();
       setProjetoForm({});
+      window.location.reload(); // Recarrega a página
     } catch (error) {
       handleError(error);
     }
@@ -142,7 +143,7 @@ function Pedidos() {
 
   return (
     <div className="App" style={{ display: "flex" }}>
-      <SideBarProjetista />
+      <SideBar />
       <div style={{ flex: 1 }}>
         <BarraDeBusca />
         <div className="box-branco">

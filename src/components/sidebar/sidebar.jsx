@@ -29,7 +29,7 @@ export default function SideBar(props) {
           </li>
           <li>
             <img className="icone" src={settings} />
-            <Link to="/editar">Editar perfil</Link>{" "}
+            <Link to="/editar-cliente">Editar perfil</Link>{" "}
           </li>
           <li>
             <img className="icone" src={askIcon} />

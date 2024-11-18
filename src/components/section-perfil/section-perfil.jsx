@@ -30,7 +30,7 @@ const SectionPerfil = () => {
   return (
     <StyleSectionPerfil>
       <div className="title-box">
-        <h4>Bem Vind@!</h4>
+        <h4>Bem Vindo(a)!</h4>
         <img src={PerfilImg} alt="mulher foto" />
         <a href="/edit">Editar perfil</a>
       </div>
