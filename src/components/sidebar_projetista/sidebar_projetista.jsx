@@ -11,7 +11,7 @@ export default function SideBarProjetista(props) {
   return (
     <>
       <SidebarComponent corfundo={props.CorFundo}>
-        <Link to="/">
+        <Link to="/projetista-perfil">
           <img className="logo" src={logo} alt="" />
         </Link>
         <ul>

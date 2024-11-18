@@ -12,7 +12,7 @@ export default function SideBar(props) {
   return (
     <>
       <SidebarComponent corfundo={props.CorFundo}>
-        <Link to="/">
+        <Link to="/cliente-perfil">
           <img className="logo" src={logo} alt="" />
         </Link>
         <ul>
@@ -25,7 +25,9 @@ export default function SideBar(props) {
             <Link to="/pedidos">Meus projetos</Link>
           </li>
           <li>
-            <img className="icone" src={people} /> Projetistas
+          <img className="icone" src={people} /> {""}
+          <Link to="/projetista">Projetistas</Link>
+
           </li>
           <li>
             <img className="icone" src={settings} />
