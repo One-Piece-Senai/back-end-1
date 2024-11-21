@@ -1,9 +1,9 @@
-import { ContainerPerfil } from "./style-perfil";
 import { useParams, useNavigate } from "react-router-dom";
 import SideBar from "../../components/sidebar/sidebar";
 import BarraDeBusca from "../../components/barra-de-busca/barra-busca";
 import axios from "axios";
 import { useState, useEffect } from "react";
+
 
 export default function Detalhes() {
   const { indice } = useParams(); // Obtém o índice da URL

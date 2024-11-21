@@ -40,6 +40,7 @@ function Nav() {
         <Route path="/" element={<Feed />} />
         <Route path="/criar-orcamentos" element={<CriarOrcamento  />} />
 
+
       </Routes>
     </Router>
   );

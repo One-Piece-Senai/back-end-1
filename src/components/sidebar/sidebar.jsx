@@ -18,7 +18,7 @@ export default function SideBar(props) {
         <ul>
           <li>
             <img className="icone" src={carrinho} />{" "}
-            <Link to="/todosprojetos">Orçamentos</Link>
+            <Link to="/orcamentosCLI">Orçamentos</Link>
           </li>
           <li>
             <img className="icone" src={box} />{" "}

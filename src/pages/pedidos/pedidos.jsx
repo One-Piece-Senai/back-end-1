@@ -32,17 +32,16 @@ function Pedidos() {
     fetchProjetos();
   }, []);
 
-    // Atualiza o userId no projetoForm quando o componente é carregado
-    useEffect(() => {
-      if (userId) {
-        setProjetoForm((prevForm) => ({
-          ...prevForm,
-          usuario: { id: userId },
-        }));
-      }
-      fetchProjetos();
-    }, [userId]); // Adiciona userId como dependência para garantir que está definido
-  
+  // Atualiza o userId no projetoForm quando o componente é carregado
+  useEffect(() => {
+    if (userId) {
+      setProjetoForm((prevForm) => ({
+        ...prevForm,
+        usuario: { id: userId },
+      }));
+    }
+    fetchProjetos();
+  }, [userId]); // Adiciona userId como dependência para garantir que está definido
 
   // Fetch all projetos
   const fetchProjetos = async () => {
@@ -249,13 +248,22 @@ function Pedidos() {
                     <td>{obj.dataFinalizacao}</td>
 
                     <button onClick={() => editProjeto(obj)}>Editar</button>
-                    <button onClick={() => deleteProjeto(obj.id)}>
-                      Excluir
-                    </button>
+                    <button onClick={() => deleteProjeto(obj.id)}>Excluir</button>
                   </tr>
                 ))}
               </tbody>
             </table>
+            {projetos.map((obj, indice) => (
+                  
+            <div>
+              <Cardprojetista
+                titulo={obj.descricao}
+                projetista={obj.usuario?.nome || "Usuário não definido"}
+              />
+                                  <button onClick={() => editProjeto(obj)}>Editar</button>
+                                  <button onClick={() => deleteProjeto(obj.id)}>Excluir</button>
+            </div>
+          ))}
           </ContainerPerfil>
         </div>
       </div>
