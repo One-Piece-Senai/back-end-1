@@ -1,8 +1,9 @@
 
+
 import { StyleFooter } from "./EstiloFooter";
 import {  Moises } from "./EstilosMain";
 import {  Botao } from "./EstilosHeader";
-import LOGO from "../assets/LOGO.png"
+import LOGO from "../../assets/LOGO.png"
 export default function Footer() {
 
   return (

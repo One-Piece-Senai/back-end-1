@@ -1,4 +1,5 @@
 import { ContainerPerfil } from "./style-perfil";
+
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom"; // Para navegar para outra rota
 import Tabela from "./Tabela";

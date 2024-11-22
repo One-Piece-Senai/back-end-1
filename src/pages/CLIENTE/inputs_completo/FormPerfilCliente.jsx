@@ -1,12 +1,12 @@
 import React from "react";
-import "./FormPerfil.css";
-import SideBarProjetista from "../../components/sidebar_projetista/sidebar_projetista"
-import BarraDeBusca from "../../components/barra-de-busca/barra-busca";
+import "./FormPerfilCliente.css";
+import SideBar from "../../../components/sidebar/sidebar";
+import BarraDeBusca from "../../../components/barra-de-busca/barra-busca";
 
 function ProfileForm() {
   return (
     <div className="App" style={{ display: "flex" }}>
-      <SideBarProjetista />
+      <SideBar />
       <div style={{ flex: 1 }}>
         <BarraDeBusca />
         <div className="perfil-form">

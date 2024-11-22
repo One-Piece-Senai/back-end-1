@@ -1,3 +1,4 @@
+import SideBarProjetista from "../../components/sidebar_projetista/sidebar_projetista"
 import BarraDeBusca from "../../components/barra-de-busca/barra-busca";
 import { ContainerPerfil } from "../../components/card-perfil/style-perfil";
 import Cardprojetista from "../../components/Card_projetista/card_projetista";
@@ -5,13 +6,12 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom"; // Para navegar para outra rota
 import Tabela from "../../components/card-perfil/Tabela";
-import SideBar from "../../components/sidebar/sidebar";
 const API_BASE_URL_cliente = "http://localhost:8080/projetos/cliente/";
 
 const API_BASE_URL = "http://localhost:8080/projetos";
-const userId = localStorage.getItem("userId");
 
-function Pedidos() {
+function PedidosProjetistas() {
+  const userId = localStorage.getItem("userId");
   const [projetos, setProjetos] = useState([]);
   const [projetoForm, setProjetoForm] = useState({
     descricao: "",
@@ -32,16 +32,17 @@ function Pedidos() {
     fetchProjetos();
   }, []);
 
-  // Atualiza o userId no projetoForm quando o componente é carregado
-  useEffect(() => {
-    if (userId) {
-      setProjetoForm((prevForm) => ({
-        ...prevForm,
-        usuario: { id: userId },
-      }));
-    }
-    fetchProjetos();
-  }, [userId]); // Adiciona userId como dependência para garantir que está definido
+    // Atualiza o userId no projetoForm quando o componente é carregado
+    useEffect(() => {
+      if (userId) {
+        setProjetoForm((prevForm) => ({
+          ...prevForm,
+          usuario: { id: userId },
+        }));
+      }
+      fetchProjetos();
+    }, [userId]); // Adiciona userId como dependência para garantir que está definido
+  
 
   // Fetch all projetos
   const fetchProjetos = async () => {
@@ -86,7 +87,6 @@ function Pedidos() {
       setMessage(`Projeto criado com ID: ${response.data.id}`);
       fetchProjetos();
       setProjetoForm({});
-      window.location.reload(); // Recarrega a página
     } catch (error) {
       handleError(error);
     }
@@ -142,89 +142,12 @@ function Pedidos() {
 
   return (
     <div className="App" style={{ display: "flex" }}>
-      <SideBar />
+      <SideBarProjetista />
       <div style={{ flex: 1 }}>
         <BarraDeBusca />
         <div className="box-branco">
           <ContainerPerfil style={{ borderRadius: "10px" }}>
             <h2>Projeto CRUD Operations</h2>
-            <form onSubmit={handleSubmit}>
-              <input
-                type="text"
-                name="descricao"
-                placeholder="Descrição"
-                onChange={handleChange}
-                value={projetoForm.descricao || ""}
-                required
-              />
-              <input
-                type="text"
-                name="largura"
-                placeholder="Largura"
-                onChange={handleChange}
-                value={projetoForm.largura || ""}
-                required
-              />
-              <input
-                type="text"
-                name="altura"
-                placeholder="Altura"
-                onChange={handleChange}
-                value={projetoForm.altura || ""}
-                required
-              />
-              <input
-                type="text"
-                name="comprimento"
-                placeholder="Comprimento"
-                onChange={handleChange}
-                value={projetoForm.comprimento || ""}
-                required
-              />
-              <input
-                type="text"
-                name="material"
-                placeholder="Material"
-                onChange={handleChange}
-                value={projetoForm.material || ""}
-                required
-              />
-              <input
-                type="text"
-                name="statusprojeto"
-                placeholder="Status"
-                onChange={handleChange}
-                value={projetoForm.statusprojeto || ""}
-                required
-              />
-              <input
-                type="text"
-                name="followup"
-                placeholder="Followup"
-                onChange={handleChange}
-                value={projetoForm.followup || ""}
-              />
-              <input
-                type="date"
-                name="dataFinalizacao"
-                onChange={handleChange}
-                value={projetoForm.dataFinalizacao || ""}
-              />
-              <input
-                type="text"
-                name="imagem"
-                placeholder="Imagem URL"
-                onChange={handleChange}
-                value={projetoForm.imagem || ""}
-              />
-
-              <button type="submit">
-                {editProjetoId ? "Atualizar Projeto" : "Criar Projeto"}
-              </button>
-            </form>
-
-            {message && <p>{message}</p>}
-
             <table className="table">
               <thead>
                 <tr>
@@ -246,24 +169,10 @@ function Pedidos() {
                     <td>{obj.material}</td>
                     <td>{obj.caminhoArquivo}</td>
                     <td>{obj.dataFinalizacao}</td>
-
-                    <button onClick={() => editProjeto(obj)}>Editar</button>
-                    <button onClick={() => deleteProjeto(obj.id)}>Excluir</button>
                   </tr>
                 ))}
               </tbody>
             </table>
-            {projetos.map((obj, indice) => (
-                  
-            <div>
-              <Cardprojetista
-                titulo={obj.descricao}
-                projetista={obj.usuario?.nome || "Usuário não definido"}
-              />
-                                  <button onClick={() => editProjeto(obj)}>Editar</button>
-                                  <button onClick={() => deleteProjeto(obj.id)}>Excluir</button>
-            </div>
-          ))}
           </ContainerPerfil>
         </div>
       </div>
@@ -271,4 +180,4 @@ function Pedidos() {
   );
 }
 
-export default Pedidos;
+export default PedidosProjetistas;

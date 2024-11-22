@@ -1,24 +1,25 @@
 
+
 import { MainStyle, Moises } from "./EstilosMain";
 import {  Botao } from "./EstilosHeader";
-import Barco from "../assets/barco.jpeg"
-import Cubo from "../assets/cubo.jpeg"
-import Gaiola from "../assets/gaiola.jpeg"
-import Lg from "../assets/lgbt.jpeg"
-import Muros from "../assets/muros.jpeg"
-import Nulo from "../assets/nulo.jpeg"
-import Tri from "../assets/piramide.jpeg"
-import Anao from "../assets/anao.jpeg"
-import Engomados from "../assets/engomados.jpeg"
-import Estrutura from "../assets/estrutura.jpeg"
-import Estocao from "../assets/estocao.jpeg"
-import Qualidade from "../assets/qualidade.jpeg"
-import Tronco from "../assets/tronco.jpeg"
-import Zeca from "../assets/zeca.jpeg"
-import Zezin from "../assets/zezin.jpeg"
-import Violao from "../assets/violao.jpeg"
-import Estoque from "../assets/estoque.jpeg"
-import Lupa from "../assets/lupa.png"
+import Barco from "../../assets/barco.jpeg"
+import Cubo from "../../assets/cubo.jpeg"
+import Gaiola from "../../assets/gaiola.jpeg"
+import Lg from "../../assets/lgbt.jpeg"
+import Muros from "../../assets/muros.jpeg"
+import Nulo from "../../assets/nulo.jpeg"
+import Tri from "../../assets/piramide.jpeg"
+import Anao from "../../assets/anao.jpeg"
+import Engomados from "../../assets/engomados.jpeg"
+import Estrutura from "../../assets/estrutura.jpeg"
+import Estocao from "../../assets/estocao.jpeg"
+import Qualidade from "../../assets/qualidade.jpeg"
+import Tronco from "../../assets/tronco.jpeg"
+import Zeca from "../../assets/zeca.jpeg"
+import Zezin from "../../assets/zezin.jpeg"
+import Violao from "../../assets/violao.jpeg"
+import Estoque from "../../assets/estoque.jpeg"
+import Lupa from "../../assets/lupa.png"
 
 
 export default function Main() {
