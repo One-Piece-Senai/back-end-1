@@ -5,7 +5,7 @@ import BarraDeBusca from "../../components/barra-de-busca/barra-busca";
 
 
 // URL do backend para criar orçamento
-const API_BASE_URL = "http://localhost:8080/orcamentos";
+const API_BASE_ORCAMENTO = "http://localhost:8080/orcamentos";
 const userId = localStorage.getItem("userId");
 
 
@@ -34,7 +34,7 @@ function CriarOrcamento() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(`${API_BASE_URL}/criar`, formData);
+      const response = await axios.post(`${API_BASE_ORCAMENTO}/criar`, formData);
       setMessage(`Orçamento criado com sucesso! ID: ${response.data.id}`);
       setFormData({
         dataEntrega: "",

@@ -17,6 +17,7 @@ import ProjetoCRUD from "./pages/CLIENTE/Editar-projeto/Editar-projeto"
 import PedidosProjetistas from "./pages/pedidos_projetistas/pedidos_projetistas"
 import Feed from "./pages/Feed/feed";
 import CriarOrcamento from "./pages/Input_orcamentos/Input_orcamentos";
+import Orcamento from "./pages/Orcamentos_PROJ/orcamentos_proj";
 
 function Nav() {
   return (
@@ -25,7 +26,6 @@ function Nav() {
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="/detalhes/:indice" element={<Detalhes />} />
-        <Route path="/pedidos" element={<Pedidos />} />
         <Route path="/pedidos" element={<Pedidos />} />
         <Route path="/pedidosprojetistas" element={<PedidosProjetistas />} />
         <Route path="/todosprojetos" element={<TodosProjetos />} />
@@ -39,6 +39,8 @@ function Nav() {
         <Route path="/editar-projeto" element={<ProjetoCRUD />} />
         <Route path="/" element={<Feed />} />
         <Route path="/criar-orcamentos" element={<CriarOrcamento  />} />
+        <Route path="/orcamentos" element={<Orcamento  />} />
+
 
 
       </Routes>
