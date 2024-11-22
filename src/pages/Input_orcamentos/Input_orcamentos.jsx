@@ -50,9 +50,6 @@ function CriarOrcamento() {
 
   return (
     <div className="App" style={{ display: "flex" }}>
-    <SideBarProjetista />
-    <div style={{ flex: 1 }}>
-      <BarraDeBusca />
     <div style={{ maxWidth: "500px", margin: "auto", padding: "20px" }}>
       <h2>Criar Orçamento</h2>
       <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
@@ -112,7 +109,6 @@ function CriarOrcamento() {
 
       {/* Mensagem de sucesso ou erro */}
       {message && <p>{message}</p>}
-    </div>
     </div>
     </div>
   );
