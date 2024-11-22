@@ -1,3 +1,4 @@
+
 import styled from "styled-components";
 
 
@@ -64,4 +65,3 @@ export const Botao = styled.button`
     color: white;
     font-size: 15px;
     font-weight: 700;
-`

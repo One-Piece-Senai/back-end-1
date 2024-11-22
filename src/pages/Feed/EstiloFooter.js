@@ -1,3 +1,4 @@
+
 import styled from "styled-components";
 import imageUrl from "../../assets/finalImage.png"; // Corrigi o import da imagem
 

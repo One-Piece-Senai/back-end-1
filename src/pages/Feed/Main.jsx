@@ -1,4 +1,5 @@
 
+
 import { MainStyle, Moises } from "./EstilosMain";
 import {  Botao } from "./EstilosHeader";
 import Barco from "../../assets/barco.jpeg"
