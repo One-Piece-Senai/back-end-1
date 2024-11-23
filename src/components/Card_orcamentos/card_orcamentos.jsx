@@ -50,11 +50,12 @@ const CardButton = styled.button`
   }
 `;
 
-const Card = ({ titulo, descricao, onCardClick, onSaibaMais }) => {
+const Card = ({ titulo, descricao,id, onCardClick, onSaibaMais }) => {
   return (
     <CardContainer onClick={onCardClick}>
       <CardTitle>{titulo}</CardTitle>
       <CardInfo>{descricao}</CardInfo>
+      <CardInfo>{id}</CardInfo>
       <CardButton
         onClick={(e) => {
           e.stopPropagation(); // Evita disparar o clique no CardContainer
