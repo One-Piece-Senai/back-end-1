@@ -3,34 +3,32 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import BarraDeBusca from "../../components/barra-de-busca/barra-busca";
 import { ContainerPerfil } from "../../components/card-perfil/style-perfil";
-import Card_orcamentos from "../../components/Card_orcamentos/card_orcamentos";
-import CriarOrcamento from "../Input_orcamentos/Input_orcamentos"; // Import do componente
+import Card from "../../components/Card_orcamentos/card_orcamentos" // Certifique-se de que o caminho está correto
 import SideBarProjetista from "../../components/sidebar_projetista/sidebar_projetista";
 
 const API_BASE_URL = "http://localhost:8080/projetos/listar-aberto";
 
 function Pedidos() {
-    const [projetos, setProjetos] = useState([]);
-    const navigate = useNavigate();
-  
-    useEffect(() => {
-      fetchProjetos();
-    }, []);
-  
-    const fetchProjetos = async () => {
-      try {
-        const response = await axios.get(`${API_BASE_URL}`);
-        setProjetos(response.data);
-      } catch (error) {
-        console.error("Erro ao buscar projetos:", error);
-      }
-    };
-  
-    const handleSaibaMais = (projetoId) => {
-      // Navegar para a página de criação de orçamento com o projetoId
-      navigate("/criar-orcamento", { state: { projetoId } });
-    };
-  
+  const [projetos, setProjetos] = useState([]);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    fetchProjetos();
+  }, []);
+
+  const fetchProjetos = async () => {
+    try {
+      const response = await axios.get(`${API_BASE_URL}`);
+      setProjetos(response.data);
+    } catch (error) {
+      console.error("Erro ao buscar projetos:", error);
+    }
+  };
+
+  const handleSaibaMais = (projetoId) => {
+    // Navegar para a página de criação de orçamento com o projetoId
+    navigate("/criar-orcamentos", { state: { projetoId } });
+  };
 
   return (
     <div className="App" style={{ display: "flex" }}>
@@ -38,15 +36,14 @@ function Pedidos() {
       <div style={{ flex: 1 }}>
         <BarraDeBusca />
         <div className="box-branco">
-          {/* Lista de projetos */}
           <ContainerPerfil style={{ borderRadius: "10px", marginTop: "20px" }}>
             <div style={{ display: "flex", flexWrap: "wrap", gap: "20px" }}>
               {projetos.map((projeto) => (
-                <Card_orcamentos
+                <Card
                   key={projeto.id}
                   titulo={projeto.usuario?.nome || "Usuário indefinido"}
                   descricao={projeto.descricao}
-                  onCardClick={() => console.log("Card clicado!")} // Exemplo de clique no card
+                  onCardClick={() => console.log("Card clicado!")} // Clique no card completo
                   onSaibaMais={() => handleSaibaMais(projeto.id)} // Clique no botão "Saiba Mais"
                 />
               ))}

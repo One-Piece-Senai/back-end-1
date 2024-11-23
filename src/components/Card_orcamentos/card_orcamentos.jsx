@@ -50,7 +50,7 @@ const CardButton = styled.button`
   }
 `;
 
-const Card = ({ titulo, descricao, onCardClick }) => {
+const Card = ({ titulo, descricao, onCardClick, onSaibaMais }) => {
   return (
     <CardContainer onClick={onCardClick}>
       <CardTitle>{titulo}</CardTitle>

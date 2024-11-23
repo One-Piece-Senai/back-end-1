@@ -129,7 +129,7 @@ export default function EditarProjeto() {
       <div className="box-branco">
         <ContainerPerfil style={{ borderRadius: "10px" }}>
     <div>
-      <h2>Projeto CRUD Operations</h2>
+      <h2>Meus projetos</h2>
       <form onSubmit={handleSubmit}>
         <input type="text" name="descricao" placeholder="Descrição" onChange={handleChange} value={projetoForm.descricao || ''} required />
         <input type="text" name="largura" placeholder="Largura" onChange={handleChange} value={projetoForm.largura || ''} required />

@@ -147,7 +147,7 @@ function PedidosProjetistas() {
         <BarraDeBusca />
         <div className="box-branco">
           <ContainerPerfil style={{ borderRadius: "10px" }}>
-            <h2>Projeto CRUD Operations</h2>
+            <h2>Meus projetos</h2>
             <table className="table">
               <thead>
                 <tr>
