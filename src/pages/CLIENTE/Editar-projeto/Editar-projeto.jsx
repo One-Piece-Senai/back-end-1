@@ -10,6 +10,7 @@ export default function EditarProjeto() {
 
   const [projetos, setProjetos] = useState([]);
   const [projetoForm, setProjetoForm] = useState({
+    titulo: '',
     descricao: '',
     largura: '',
     altura: '',
@@ -97,6 +98,7 @@ export default function EditarProjeto() {
   const editProjeto = (projeto) => {
     setEditProjetoId(projeto.id);
     setProjetoForm({
+      titulo: projeto.titulo,
       descricao: projeto.descricao,
       largura: projeto.largura,
       altura: projeto.altura,
@@ -131,6 +133,7 @@ export default function EditarProjeto() {
     <div>
       <h2>Meus projetos</h2>
       <form onSubmit={handleSubmit}>
+      <input type="text" name="titulo" placeholder="Titulo" onChange={handleChange} value={projetoForm.titulo || ''} required />
         <input type="text" name="descricao" placeholder="Descrição" onChange={handleChange} value={projetoForm.descricao || ''} required />
         <input type="text" name="largura" placeholder="Largura" onChange={handleChange} value={projetoForm.largura || ''} required />
         <input type="text" name="altura" placeholder="Altura" onChange={handleChange} value={projetoForm.altura || ''} required />

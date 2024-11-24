@@ -41,7 +41,7 @@ function Pedidos() {
               {projetos.map((projeto) => (
                 <Card
                   key={projeto.id}
-                  titulo={projeto.usuario?.nome || "Usuário indefinido"}
+                  titulo={projeto.titulo?.nome || "Sem Titulo"}
                   descricao={projeto.descricao}
                   id={projeto.id}
                   onCardClick={() => console.log("Card clicado!")} // Clique no card completo
