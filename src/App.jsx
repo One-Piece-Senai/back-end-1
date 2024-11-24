@@ -18,6 +18,7 @@ import PedidosProjetistas from "./pages/pedidos_projetistas/pedidos_projetistas"
 import Feed from "./pages/Feed/feed";
 import CriarOrcamento from "./pages/Input_orcamentos/Input_orcamentos";
 import Orcamento from "./pages/Orcamentos_PROJ/orcamentos_proj";
+import OrcamentoProjetista from "./pages/Meus_orcamentos/meus_orcamentos"
 
 function Nav() {
   return (
@@ -40,6 +41,8 @@ function Nav() {
         <Route path="/" element={<Feed />} />
         <Route path="/criar-orcamentos" element={<CriarOrcamento  />} />
         <Route path="/orcamentos" element={<Orcamento  />} />
+        <Route path="/orcamentosprojetista" element={<OrcamentoProjetista  />} />
+
       </Routes>
     </Router>
   );

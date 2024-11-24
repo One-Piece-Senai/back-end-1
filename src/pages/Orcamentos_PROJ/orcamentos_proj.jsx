@@ -37,11 +37,12 @@ function Pedidos() {
         <BarraDeBusca />
         <div className="box-branco">
           <ContainerPerfil style={{ borderRadius: "10px", marginTop: "20px" }}>
+          <h1>Projetos em Abertos </h1>
             <div style={{ display: "flex", flexWrap: "wrap", gap: "20px" }}>
               {projetos.map((projeto) => (
                 <Card
                   key={projeto.id}
-                  titulo={projeto.titulo?.nome || "Sem Titulo"}
+                  titulo={projeto.titulo}
                   descricao={projeto.descricao}
                   id={projeto.id}
                   onCardClick={() => console.log("Card clicado!")} // Clique no card completo

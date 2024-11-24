@@ -24,6 +24,10 @@ export default function SideBarProjetista(props) {
             <Link to="/pedidosprojetistas">Meus projetos</Link>
           </li>
           <li>
+            <img className="icone" src={box} />{" "}
+            <Link to="/orcamentosprojetista">Meus Orcamentos</Link>
+          </li>
+          <li>
             <img className="icone" src={people} /> Clientes
           </li>
           <li>
