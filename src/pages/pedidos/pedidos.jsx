@@ -14,6 +14,7 @@ const userId = localStorage.getItem("userId");
 function Pedidos() {
   const [projetos, setProjetos] = useState([]);
   const [projetoForm, setProjetoForm] = useState({
+    titulo: "",
     descricao: "",
     largura: "",
     altura: "",
@@ -116,6 +117,7 @@ function Pedidos() {
   const editProjeto = (projeto) => {
     setEditProjetoId(projeto.id);
     setProjetoForm({
+      titulo: projeto.titulo,
       descricao: projeto.descricao,
       largura: projeto.largura,
       altura: projeto.altura,
@@ -147,8 +149,16 @@ function Pedidos() {
         <BarraDeBusca />
         <div className="box-branco">
           <ContainerPerfil style={{ borderRadius: "10px" }}>
-            <h2>Projeto CRUD Operations</h2>
+            <h2>Meus projetos</h2>
             <form onSubmit={handleSubmit}>
+            <input
+                type="text"
+                name="titulo"
+                placeholder="Titulo"
+                onChange={handleChange}
+                value={projetoForm.titulo || ""}
+                required
+              />
               <input
                 type="text"
                 name="descricao"
@@ -241,7 +251,7 @@ function Pedidos() {
                 {projetos.map((obj, indice) => (
                   <tr key={indice}>
                     <td>{indice + 1}</td>
-                    <td>{obj.descricao}</td>
+                    <td>{obj.titulo}</td>
                     <td>{obj.usuario.nome}</td>
                     <td>{obj.material}</td>
                     <td>{obj.caminhoArquivo}</td>
@@ -257,7 +267,7 @@ function Pedidos() {
                   
             <div>
               <Cardprojetista
-                titulo={obj.descricao}
+                titulo={obj.titulo}
                 projetista={obj.usuario?.nome || "Usuário não definido"}
               />
                                   <button onClick={() => editProjeto(obj)}>Editar</button>

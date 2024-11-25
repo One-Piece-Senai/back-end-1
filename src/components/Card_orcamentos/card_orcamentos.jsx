@@ -2,8 +2,8 @@ import React from "react";
 import styled from "styled-components";
 
 const CardContainer = styled.div`
-  width: 300px; /* Largura do card */
-  height: 300px; /* Altura do card */
+  width: 250px; /* Largura do card */
+  height: 200px; /* Altura do card */
   border-radius: 20px; /* Bordas arredondadas */
   background-color: #f5f5f5; /* Cor de fundo */
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
@@ -50,16 +50,19 @@ const CardButton = styled.button`
   }
 `;
 
-const Card = ({ titulo, descricao, onCardClick, onSaibaMais }) => {
+const Card = ({ titulo, descricao,id, onCardClick, onSaibaMais }) => {
   return (
     <CardContainer onClick={onCardClick}>
       <CardTitle>{titulo}</CardTitle>
       <CardInfo>{descricao}</CardInfo>
-      <CardButton onClick={(e) => {
-        e.stopPropagation(); // Evita disparar o clique do Card ao clicar no botão
-        onSaibaMais();
-      }}>
-        Saiba Mais
+      <CardInfo>{id}</CardInfo>
+      <CardButton
+        onClick={(e) => {
+          e.stopPropagation(); // Evita disparar o clique no CardContainer
+          onSaibaMais();
+        }}
+      >
+        Enviar Orçamento
       </CardButton>
     </CardContainer>
   );
