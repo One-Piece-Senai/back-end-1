@@ -203,14 +203,7 @@ function Pedidos() {
                 value={projetoForm.material || ""}
                 required
               />
-              <input
-                type="text"
-                name="CaminhoArquivo"
-                placeholder="CaminhoArquivo"
-                onChange={handleChange}
-                value={projetoForm.caminhoarquivo || ""}
-                required
-              />
+
               <input
                 type="text"
                 name="statusprojeto"
@@ -246,40 +239,11 @@ function Pedidos() {
             </form>
 
             {message && <p>{message}</p>}
-
-            <table className="table">
-              <thead>
-                <tr>
-                  <th>#</th>
-                  <th>Descrição do projeto</th>
-                  <th>Username</th>
-                  <th>Materiais de impressão</th>
-                  <th>Caminho do arquivo</th>
-                  <th>Prazo de entrega </th>
-                  <th>Selecionar</th>
-                </tr>
-              </thead>
-              <tbody>
-                {projetos.map((obj, indice) => (
-                  <tr key={indice}>
-                    <td>{indice + 1}</td>
-                    <td>{obj.titulo}</td>
-                    <td>{obj.usuario.nome}</td>
-                    <td>{obj.material}</td>
-                    <td>{obj.caminhoArquivo}</td>
-                    <td>{obj.dataFinalizacao}</td>
-
-                    <button onClick={() => editProjeto(obj)}>Editar</button>
-                    <button onClick={() => deleteProjeto(obj.id)}>Excluir</button>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
             {projetos.map((obj, indice) => (
               <div>
                 <Cardprojetista
                   titulo={obj.titulo}
-                  projetista={obj.usuario?.nome || "Usuário não definido"}
+                  projetista={obj.dataFinalizacao || "Sem Prazo"}
                 />
                 <button onClick={() => editProjeto(obj)}>Editar</button>
                 <button onClick={() => deleteProjeto(obj.id)}>Excluir</button>

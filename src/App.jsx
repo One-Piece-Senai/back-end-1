@@ -11,13 +11,13 @@ import Feed from "./pages/Feed/feed";
 import Login from "./pages/login/Login";
 import Orcamento from "./pages/Orcamentos_PROJ/orcamentos_proj";
 import OrcamentoProjetista from "./pages/Meus_orcamentos/meus_orcamentos";
-import OrcamentoCLI from "./components/card-perfil/perfil"
+import MeusProjetos from "./components/card-perfil/perfil"
 import Pedidos from "./pages/pedidos/pedidos";
 import PedidosProjetistas from "./pages/pedidos_projetistas/pedidos_projetistas";
 import PerfilCliente from "./pages/CLIENTE/perfil-cliente/perfil-cliente";
 import PerfilProjetista from "./pages/perfil-projetista/perfil-projetista";
 import Projetista from "./pages/CLIENTE/Projetista/projetista";
-import Teste from "./pages/CLIENTE/OrcamentosCLI/orcamentoCLI"
+import OrcamentoCLI from "./pages/CLIENTE/OrcamentosCLI/orcamentoCLI"
 
 
 function Projeto() {
@@ -41,7 +41,7 @@ function Projeto() {
         <Route path="/pedidosprojetistas" element={<PedidosProjetistas />} />
         <Route path="/projetista" element={<Projetista />} />
         <Route path="/projetista-perfil" element={<PerfilProjetista />} />
-        <Route path="/teste" element={<Teste />} />
+        <Route path="/meusprojetos" element={<MeusProjetos />} />
       </Routes>
     </Router>
   );
