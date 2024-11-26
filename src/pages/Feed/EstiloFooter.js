@@ -19,5 +19,4 @@ export const StyleFooter = styled.footer`
         width: 80px;
         
     }
-
 `

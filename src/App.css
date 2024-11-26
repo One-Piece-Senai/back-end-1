@@ -1,4 +1,4 @@
-*{
+* {
   margin: 0;
   padding: 0;
   border: 0;
@@ -11,4 +11,11 @@
   font-family: Arial, sans-serif;
   width: 100%;
   position: absolute;
+}
+
+.Conteudo {
+  margin-top: 20vh;
+  margin-left: 20vw;
+  margin-bottom: 20vw;
+  height: 100%;
 }

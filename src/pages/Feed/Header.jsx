@@ -1,4 +1,3 @@
-
 import { HeaderST } from "./EstilosHeader";
 import { PrimeiraParte } from "./EstilosHeader";
 import { SegundaParte, Botao } from "./EstilosHeader";

@@ -29,6 +29,7 @@ export default function     card_projetista() {
                 </div>
                         <div className="progress-container" >
                                                 {/* Renderiza as cinco barras */}
+
             {[...Array(5)].map((_, index) => (
               <div
                 key={index}
@@ -38,9 +39,7 @@ export default function     card_projetista() {
                 }}
               ></div>
             ))}
-                                            </div>
-
-                
+                                            </div>                
             </Cardprojetista>
         </>
     )

@@ -20,29 +20,4 @@ export const ContainerPerfil = styled.div`
         font-weight: 700;
         width: 100px;
     }
-
-    .botao_aceitar {
-        background-color: green;
-        padding: 15px;
-        height: 45px;
-        border-radius: 35px;
-        border: 0;
-        font-weight: 700;
-        width: 100px;
-    }
-    .botao_voltar {
-        background-color: red;
-        padding: 15px;
-        height: 45px;
-        border-radius: 35px;
-        border: 0;
-        font-weight: 700;
-        width: 100px;
-    }
-    .buttons { 
-        display: flex;
-        padding: 15px;
-        margin: 3%;
-
-    }
 `;

@@ -1,52 +1,96 @@
-import React from 'react';
 import { DivsInputs } from "./inputs";
 import img from "../../assets/16410.png";
+import axios from "axios";
+import { useState, useEffect } from "react";
 
-export default function Input ()  {
+const API_BASE_URL = "http://localhost:8080/projetos";
+
+export default function Input() {
+  const [projetos, setProjetos] = useState([]);
+  const [projetoForm, setProjetoForm] = useState({
+    descricao: "",
+    largura: "",
+    altura: "",
+    comprimento: "",
+    material: "",
+    statusprojeto: "",
+    followup: "",
+    dataFinalizacao: "",
+    imagem: "",
+    usuario: { id: "" },
+  });
+  const [editProjetoId, setEditProjetoId] = useState(null);
+  const [message, setMessage] = useState("");
+
+  useEffect(() => {
+    fetchProjetos();
+  }, []);
+
+  // Fetch all projetos
+  const fetchProjetos = async () => {
+    try {
+      const response = await axios.get(`${API_BASE_URL}/listar`);
+      setProjetos(response.data);
+    } catch (error) {
+      console.error("Error fetching projetos:", error);
+    }
+  };
+
+  // Handle form input changes
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setProjetoForm({
+      ...projetoForm,
+      [name]: value,
+    });
+  };
+
+  const handleUserChange = (e) => {
+    setProjetoForm({
+      ...projetoForm,
+      usuario: { id: e.target.value },
+    });
+  };
+
+  // Create a new projeto
+  const handleSubmit = async () => {
+    try {
+      const response = await axios.post(`${API_BASE_URL}/criar`, projetoForm);
+      setMessage(`Projeto criado com ID: ${response.data.id}`);
+      fetchProjetos();
+      setProjetoForm({});
+    } catch (error) {
+      handleError(error);
+    }
+  };
+
+
+  const handleError = (error) => {
+    setMessage(error.response ? error.response.data : "An error occurred");
+  };
+
   return (
     <div>
-        <DivsInputs>
-          <h1 style={{color: "black", fontSize: "40px"}}
-          >Especificações do projeto:</h1>
 
-          <label style={{width:"100%"}} >Descrição do Projeto:
-            <textarea type="text" style={{width:"100%", height: "200px"}}/>
-          </label>
-            <div>
-              <label style={{width:"33%"}} >Altura:
-                <input type="text" style={{width:"50%"}}/>
-              </label>
-              <label style={{width:"33%"}} >Largura:
-                <input type="text"  style={{width:"50%"}}/>
-              </label>
-              <label style={{width:"33%"}} >Cumprimento:
-                <input type="text"  style={{width:"50%"}}/>
-              </label>
-              <label style={{width:"33%"}} >Material de Impressão:
-                <input type="text" style={{width:"90%"}}/>
-              </label>
-            </div>
+      <DivsInputs>
+        <label style={{ width: "100%" }}>Descrição do Projeto:</label>
+        <form onSubmit={handleSubmit}>
+        <input type="text" name="descricao" placeholder="Descrição" onChange={handleChange} value={projetoForm.descricao || ''} required style={{ width: "100%", height: "200px" }}/>
+        <input type="text" name="largura" placeholder="Largura" onChange={handleChange} value={projetoForm.largura || ''} required style={{ width: "50%" }}/>
+        <input type="text" name="altura" placeholder="Altura" onChange={handleChange} value={projetoForm.altura || ''} required style={{ width: "50%" }}/>
+        <input type="text" name="comprimento" placeholder="Comprimento" onChange={handleChange} value={projetoForm.comprimento || ''} required style={{ width: "50%" }}/>
+        <input type="text" name="material" placeholder="Material" onChange={handleChange} value={projetoForm.material || ''} required style={{ width: "90%" }}/>
+        <input type="text" name="statusprojeto" placeholder="Status" onChange={handleChange} value={projetoForm.statusprojeto || ''} required />
+        <input type="text" name="followup" placeholder="Followup" onChange={handleChange} value={projetoForm.followup || ''} />
+        <input type="date" name="dataFinalizacao" onChange={handleChange} value={projetoForm.dataFinalizacao || ''} style={{ width: "60%" }}/>
+        <input type="text" name="imagem" placeholder="Imagem URL" onChange={handleChange} value={projetoForm.imagem || ''} />
+        <input type="number" name="usuario" placeholder="User ID" onChange={handleUserChange} value={projetoForm.usuario.id || ''} required style={{ width: "40%", height: "80px" }}/>
+        <button type="submit">{'Criar Projeto'}</button>
+      </form>
 
-            <div style={{
-              alignItems: "center", 
-              alignContent: "stretch",
-              justifyContent: "space-evenly"
-            }}>
-            <label style={{width:"33%"}} >Data de Finalização :
-                <input type="date"   style={{width:"60%"}}/>
-              </label>
-            <label style={{width:"33%"}} >Adicionar Arquivo:
-                <input type="file"  className='arquivo' style={{width:"40%", height:"80px", padding: "0px"}}/>
-              </label>
-              <label style={{width:"33%"}} >Adicionar Imagem:
-                <input type="image" src={img} style={{width:"40%", height:"80px"}}/>
-              </label>
+      {message && <p>{message}</p>}       
 
-              <button style={{marginRight: "20px"}}>Solicitar Projeto</button>
-            </div>
-
-             
-        </DivsInputs>
+      </DivsInputs> 
     </div>
- )
+  );
 }
