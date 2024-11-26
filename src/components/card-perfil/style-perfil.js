@@ -9,7 +9,7 @@ export const ContainerPerfil = styled.div`
     margin-left: 70px;
     width: 927px;
     gap: 20px;
-    height: 482px;
+    
 
     .botao_novo {
         background-color: #FFD32C;

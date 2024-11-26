@@ -1,6 +1,6 @@
 import { Cardprojetista } from './style_projetista';
 import React, { useState } from 'react';
-
+import { Botao } from "../../pages/Feed/EstilosHeader"
 
 export default function     card_projetista() {
     // Estado para controlar o progresso (de 0 a 4)
@@ -18,28 +18,29 @@ export default function     card_projetista() {
         <>
             <Cardprojetista className="card_pedidos">
                 <div className="modulo">
-                    <h2 className='titulo'>Engrenagens de um Motor</h2>
+                    <div className='casada'>
+                        <h5 className='titulo'>Engrenagens de um Motor</h5>
+                        <h6 className="projetista">Fabricio</h6>
+                    </div>
+                    <div className='lonely'>
+                       <Botao onClick={handleButtonClick} style={{color:"black", fontSize:"20px", width:"120px"}}> Avançar </Botao>
+                    </div>
                     
-                    <h3 className="projetista">Fabricio</h3>
-                    <button className="progress-button" onClick={handleButtonClick}>
-                                            Avançar
-                                        </button>
-                    
-
+                </div>
                         <div className="progress-container" >
-                                                {/* Renderizando as 5 barras */}
-                                                {colors.map((color, index) => (
-                                                    <div
-                                                        key={index}
-                                                        className="progress-bar"
-                                                        style={{    
-                                                            backgroundColor: index <= progress ? color : '#e0e0e0', // Cor muda conforme o progresso
-                                                        }}
-                                                    ></div>
-                                                ))}
+                                                {/* Renderiza as cinco barras */}
+            {[...Array(5)].map((_, index) => (
+              <div
+                key={index}
+                className="progress-bar"
+                style={{
+                  backgroundColor: index <= progress ? "#000000" : "#d3d3d3", // Preta se o progresso atingiu, cinza se não
+                }}
+              ></div>
+            ))}
                                             </div>
 
-                </div>
+                
             </Cardprojetista>
         </>
     )

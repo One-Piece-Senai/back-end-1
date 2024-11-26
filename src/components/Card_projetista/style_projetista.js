@@ -3,75 +3,54 @@ import styled from "styled-components";
 
 export const Cardprojetista = styled.div`
     display: flex;
-    /* flex-direction: row; */
-    align-items: center;
-    gap: 30px;
+    padding:  15px ;
+    background-color: white;
+    border-radius: 25px;
     width: 100%;
-    height: 100px;
-    padding: 10px;
-    border-radius: 10%;
-    margin-bottom: 1%;
-    
+    height: 125px;
+    flex-direction: column;
+
     .modulo{
-        background-color: white;
-        box-shadow: 10px 10px gray;
-        display: flex;
-        flex-direction: row-reverse ;
-        border-radius: 16px;
-        padding: 20px;
-        width: 900px;
-        height: 110px;
-        gap: 20px;
-        position: relative;
+      width: 100%;
+      height: 100%;
+      background-color: white;
+      display: flex;
+      flex-direction: row;
+}
+    .casada{
+      width: 50%;
+      height: 80%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
-    
+    .lonely{
+      width: 50%;
+      height: 60%;
+      display: flex;
+      justify-content: flex-end;
+      padding-top: 10px;
+    }
+
     .titulo{
-        position: absolute;
-        top: 0;  /* Posição no topo */
-        left: 0; /* Posição à esquerda */
-        margin: 10px; /* Espaçamento opcional */
-        font-size: 24px;
-        color: black;
-        }
-    
-    .botao_novo{
-        position: absolute;
-        right: 31px;
+      font-size: 23px;
     }
     .projetista{
-        position: absolute;
-        left: 10px;
-        top: 35px; 
+      font-size: 18px;
+    }
+
+    .progress-container{
+      width: 80%;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .progress-bar{
+      width: 18%;
+      height: 20px;
+      background-color: #d3d3d3;
+      border-radius: 30px;
+      transition: background-color 0.3s ease;
 
     }
-    
-    .progress-container {
-  display: flex;
-  
-  width: 80%;
-  margin: 0 auto;
-  align-items: flex-end;
-}
-
-.progress-bar {
-  width: 17%;
-  height: 25px;
-  transition: background-color 0.3s ease;
-  border-radius: 30px;
-}
-
-.progress-button {
-  margin-top: 20px;
-  padding: 10px 20px;
-  font-size: 16px;  
-  background-color: #FFD32C;
-  color: black;
-  border: none;
-  border-radius: 20px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.progress-button:hover {
-  background-color: #3700b3;
-}`
+`
