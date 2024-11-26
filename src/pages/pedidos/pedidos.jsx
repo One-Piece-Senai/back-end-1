@@ -20,6 +20,7 @@ function Pedidos() {
     altura: "",
     comprimento: "",
     material: "",
+    caminhoarquivo: "",
     statusprojeto: "",
     followup: "",
     dataFinalizacao: "",
@@ -28,6 +29,8 @@ function Pedidos() {
   });
   const [editProjetoId, setEditProjetoId] = useState(null);
   const [message, setMessage] = useState("");
+  const [vetor, setVetor] = useState([]);
+
 
   useEffect(() => {
     fetchProjetos();
@@ -123,6 +126,7 @@ function Pedidos() {
       altura: projeto.altura,
       comprimento: projeto.comprimento,
       material: projeto.material,
+      caminhoarquivo: projeto.caminhoArquivo,
       statusprojeto: projeto.statusprojeto,
       followup: projeto.followup,
       dataFinalizacao: projeto.dataFinalizacao,
@@ -151,7 +155,7 @@ function Pedidos() {
           <ContainerPerfil style={{ borderRadius: "10px" }}>
             <h2>Meus projetos</h2>
             <form onSubmit={handleSubmit}>
-            <input
+              <input
                 type="text"
                 name="titulo"
                 placeholder="Titulo"
@@ -197,6 +201,14 @@ function Pedidos() {
                 placeholder="Material"
                 onChange={handleChange}
                 value={projetoForm.material || ""}
+                required
+              />
+              <input
+                type="text"
+                name="CaminhoArquivo"
+                placeholder="CaminhoArquivo"
+                onChange={handleChange}
+                value={projetoForm.caminhoarquivo || ""}
                 required
               />
               <input
@@ -264,16 +276,15 @@ function Pedidos() {
               </tbody>
             </table>
             {projetos.map((obj, indice) => (
-                  
-            <div>
-              <Cardprojetista
-                titulo={obj.titulo}
-                projetista={obj.usuario?.nome || "Usuário não definido"}
-              />
-                                  <button onClick={() => editProjeto(obj)}>Editar</button>
-                                  <button onClick={() => deleteProjeto(obj.id)}>Excluir</button>
-            </div>
-          ))}
+              <div>
+                <Cardprojetista
+                  titulo={obj.titulo}
+                  projetista={obj.usuario?.nome || "Usuário não definido"}
+                />
+                <button onClick={() => editProjeto(obj)}>Editar</button>
+                <button onClick={() => deleteProjeto(obj.id)}>Excluir</button>
+              </div>
+            ))}
           </ContainerPerfil>
         </div>
       </div>

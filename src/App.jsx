@@ -8,17 +8,17 @@ import EditarCliente from "./pages/CLIENTE/inputs_completo/FormPerfilCliente";
 import EditarProjetista from "./pages/inputs_completo/FormPerfil";
 import EditarProjeto from "./pages/CLIENTE/Editar-projeto/Editar-projeto";
 import Feed from "./pages/Feed/feed";
-import Home from "./pages/Home/home";
 import Login from "./pages/login/Login";
 import Orcamento from "./pages/Orcamentos_PROJ/orcamentos_proj";
 import OrcamentoProjetista from "./pages/Meus_orcamentos/meus_orcamentos";
+import OrcamentoCLI from "./components/card-perfil/perfil"
 import Pedidos from "./pages/pedidos/pedidos";
 import PedidosProjetistas from "./pages/pedidos_projetistas/pedidos_projetistas";
 import PerfilCliente from "./pages/CLIENTE/perfil-cliente/perfil-cliente";
 import PerfilProjetista from "./pages/perfil-projetista/perfil-projetista";
 import Projetista from "./pages/CLIENTE/Projetista/projetista";
-import Register from "./pages/Cadastro/Register";
-import TodosProjetos from "./components/card-perfil/perfil";
+import Teste from "./pages/CLIENTE/OrcamentosCLI/orcamentoCLI"
+
 
 function Projeto() {
   return (
@@ -36,12 +36,12 @@ function Projeto() {
         <Route path="/login" element={<Login />} />
         <Route path="/orcamentos" element={<Orcamento />} />
         <Route path="/orcamentosprojetista" element={<OrcamentoProjetista />} />
+        <Route path="/orcamentoscli" element={<OrcamentoCLI />} />
         <Route path="/pedidos" element={<Pedidos />} />
         <Route path="/pedidosprojetistas" element={<PedidosProjetistas />} />
         <Route path="/projetista" element={<Projetista />} />
         <Route path="/projetista-perfil" element={<PerfilProjetista />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/todosprojetos" element={<TodosProjetos />} />
+        <Route path="/teste" element={<Teste />} />
       </Routes>
     </Router>
   );

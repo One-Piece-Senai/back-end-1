@@ -27,7 +27,6 @@ export default function SideBar(props) {
           <li>
           <img className="icone" src={people} /> {""}
           <Link to="/projetista">Projetistas</Link>
-
           </li>
           <li>
             <img className="icone" src={settings} />
