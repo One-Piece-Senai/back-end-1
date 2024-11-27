@@ -18,7 +18,7 @@ import PerfilCliente from "./pages/CLIENTE/perfil-cliente/perfil-cliente";
 import PerfilProjetista from "./pages/perfil-projetista/perfil-projetista";
 import Projetista from "./pages/CLIENTE/Projetista/projetista";
 import OrcamentoCLI from "./pages/CLIENTE/OrcamentosCLI/orcamentoCLI"
-
+import CadastroSenha from "./pages/Cadastro/Register"
 
 function Projeto() {
   return (
@@ -27,6 +27,7 @@ function Projeto() {
         <Route path="/" element={<Feed />} />
         <Route path="/ajuda" element={<Ajuda />} />
         <Route path="/cadastrar_Projeto" element={<CadastraProjeto />} />
+        <Route path="/cadastrar-senha" element={<CadastroSenha/>} />
         <Route path="/cliente-perfil" element={<PerfilCliente />} />
         <Route path="/criar-orcamentos" element={<CriarOrcamento />} />
         <Route path="/detalhes/:indice" element={<Detalhes />} />

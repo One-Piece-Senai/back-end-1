@@ -16,9 +16,8 @@ export default function Header() {
                 <SegundaParte>
                     <a href="#">SOBRE</a>
                     <a href="#">BUSINESS</a>
-                    <a href="#">BLOG</a>
                     <Botao > <a href="/login">LOGIN</a> </Botao>
-                    <Botao style={{ backgroundColor: '#FFEA96'}}> <a href="/register">CADASTRAR AQUI</a></Botao>
+                    <Botao style={{ backgroundColor: '#FFEA96'}}> <a href="/cadastrar-senha">CADASTRAR AQUI</a></Botao>
                 </SegundaParte>
                 <div className='SegundaMetade'></div>
         </HeaderST>
