@@ -15,6 +15,7 @@ export const BarraBusca = styled.div`
   }
   img {
     width: 20%;
+    left: 0% ;
   }
   .sino {
     width: 10%;

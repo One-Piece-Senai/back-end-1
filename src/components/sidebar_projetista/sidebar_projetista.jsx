@@ -17,7 +17,7 @@ export default function SideBarProjetista(props) {
         <ul>
           <li>
             <img className="icone" src={carrinho} />{" "}
-            <Link to="/orcamentoscli">Fazer Orçamento</Link>
+            <Link to="/orcamentos">Fazer Orçamento</Link>
           </li>
           <li>
             <img className="icone" src={box} />{" "}

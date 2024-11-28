@@ -6,28 +6,27 @@ import axios from "axios";
 
 const userId = localStorage.getItem("userId");
 
-
 function Orcamentocli() {
-    const [item, setItem] = useState([]);
-    const [projetos, setProjetos] = useState([]);
-  
-  
-    // Função para buscar projetos com orçamentos
-    const fetchOrcamentos = async () => {
-      try {
-        const response = await axios.get(
-          `http://localhost:8080/projetos/listar-com-orcamento/${userId}`
-        );
-        setProjetos(response.data);
-      } catch (error) {
-        console.error("Erro ao buscar orçamentos:", error);
-      }
-    };
-  
-    useEffect(() => {
-      fetchOrcamentos();
-    }, []);
-  
+  const [projetos, setProjetos] = useState([]); // Lista de projetos com orçamentos
+  const [message, setMessage] = useState(""); // Mensagem de feedback
+
+  // Função para buscar projetos com orçamentos
+  const fetchOrcamentos = async () => {
+    try {
+      const response = await axios.get(
+        `http://localhost:8080/projetos/listar-com-orcamento/${userId}`
+      );
+      setProjetos(response.data);
+    } catch (error) {
+      console.error("Erro ao buscar orçamentos:", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchOrcamentos();
+  }, []);
+
+
 
   return (
     <div className="App" style={{ display: "flex" }}>
@@ -36,7 +35,10 @@ function Orcamentocli() {
         <BarraDeBusca />
         <div className="box-branco">
           <h1>Meus Orçamentos</h1>
-          <Orcamentos projetos={projetos} />
+          {message && <p>{message}</p>}
+          <Orcamentos
+            projetos={projetos}/>
+        
         </div>
       </div>
     </div>

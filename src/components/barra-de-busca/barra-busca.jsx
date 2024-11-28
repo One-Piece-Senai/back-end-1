@@ -7,8 +7,6 @@ export default function BarraDeBusca() {
     <>
       <BarraBusca>
         <div className="conteudo-busca">
-          <input type="text" placeholder="Pesquisar..." />
-          <img src={sino} alt="" className="sino" />
           <img src={profileImage} alt="Perfil" className="profile-image" />
         </div>
       </BarraBusca>

@@ -31,7 +31,7 @@ export const ContainerPerfil = styled.div`
     width: 100px;
   }
   .botao_voltar {
-    background-color: red;
+    background-color: gray;
     padding: 15px;
     height: 45px;
     border-radius: 35px;

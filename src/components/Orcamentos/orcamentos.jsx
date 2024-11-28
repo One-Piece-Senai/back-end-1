@@ -1,6 +1,21 @@
 import React from 'react';
+import axios from 'axios';
 
 const Orcamentos = ({ projetos }) => {
+  // Função para atualizar o status de um orçamento
+  const atualizarStatus = async (idOrcamento, novoStatus) => {
+    try {
+      await axios.put(`http://localhost:8080/orcamentos/atualizar/${idOrcamento}`, {
+        status: novoStatus,
+      });
+      alert(`Orçamento ${novoStatus.toLowerCase()} com sucesso!`);
+      window.location.reload(); // Atualiza a página para refletir as alterações
+    } catch (error) {
+      console.error("Erro ao atualizar o orçamento:", error);
+      alert("Erro ao atualizar o orçamento.");
+    }
+  };
+
   return (
     <div style={{ padding: '20px' }}>
       {projetos.map((projeto) => (
@@ -45,6 +60,36 @@ const Orcamentos = ({ projetos }) => {
                 <p>
                   <strong>Projetista:</strong> {orc.usuario.nome}
                 </p>
+                {/* Botões para aceitar ou recusar orçamento */}
+                <div style={{ marginTop: '10px' }}>
+                  <button
+                    onClick={() => atualizarStatus(orc.id, "ACEITO")}
+                    style={{
+                      backgroundColor: 'green',
+                      color: 'white',
+                      border: 'none',
+                      borderRadius: '5px',
+                      padding: '10px 15px',
+                      marginRight: '10px',
+                      cursor: 'pointer',
+                    }}
+                  >
+                    Aceitar
+                  </button>
+                  <button
+                    onClick={() => atualizarStatus(orc.id, "RECUSADO")}
+                    style={{
+                      backgroundColor: 'red',
+                      color: 'white',
+                      border: 'none',
+                      borderRadius: '5px',
+                      padding: '10px 15px',
+                      cursor: 'pointer',
+                    }}
+                  >
+                    Recusar
+                  </button>
+                </div>
               </div>
             ))
           ) : (

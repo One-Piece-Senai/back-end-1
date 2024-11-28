@@ -50,7 +50,6 @@ export default function Detalhes() {
             <p><strong>Prazo:</strong> {item.dataFinalizacao}</p>
             <p><strong>Caminho do arquivo:</strong> {item.caminhoArquivo}</p>
             <div className="buttons">
-              <button className="botao_aceitar">Aceitar</button>
               <button onClick={handleVoltar} className="botao_voltar">
                 Voltar
               </button>
