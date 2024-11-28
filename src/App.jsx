@@ -30,7 +30,7 @@ function Projeto() {
         <Route path="/cadastrar-senha" element={<CadastroSenha/>} />
         <Route path="/cliente-perfil" element={<PerfilCliente />} />
         <Route path="/criar-orcamentos" element={<CriarOrcamento />} />
-        <Route path="/detalhes/:indice" element={<Detalhes />} />
+        <Route path="/detalhes" element={<Detalhes />} />
         <Route path="/editar-cliente" element={<EditarCliente />} />
         <Route path="/editar-projetista" element={<EditarProjetista />} />
         <Route path="/editar-projeto" element={<EditarProjeto />} />

@@ -6,6 +6,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom"; // Para navegar para outra rota
 import Tabela from "../../components/card-perfil/Tabela";
 import SideBar from "../../components/sidebar/sidebar";
+
 const API_BASE_URL_cliente = "http://localhost:8080/projetos/cliente/";
 
 const API_BASE_URL = "http://localhost:8080/projetos";
@@ -145,6 +146,12 @@ function Pedidos() {
       handleError(error);
     }
   };
+  const navigate = useNavigate(); // Hook para navegar entre rotas
+
+  const selecionar = (id) => {
+    navigate("/detalhes", { state: { id } }); // Passa o ID como estado
+  };
+  
 
   return (
     <div className="App" style={{ display: "flex" }}>
@@ -153,7 +160,7 @@ function Pedidos() {
         <BarraDeBusca />
         <div className="box-branco">
           <ContainerPerfil style={{ borderRadius: "10px" }}>
-            <h2>Meus projetos</h2>
+            <h2>Cadastrar projetos</h2>
             <form onSubmit={handleSubmit}>
               <input
                 type="text"
@@ -237,18 +244,20 @@ function Pedidos() {
                 {editProjetoId ? "Atualizar Projeto" : "Criar Projeto"}
               </button>
             </form>
-
+<br /><br /><br /><br />
+            <h2>Meus projetos</h2>
             {message && <p>{message}</p>}
             {projetos.map((obj, indice) => (
-              <div>
-                <Cardprojetista
-                  titulo={obj.titulo}
-                  projetista={obj.dataFinalizacao || "Sem Prazo"}
-                />
-                <button onClick={() => editProjeto(obj)}>Editar</button>
-                <button onClick={() => deleteProjeto(obj.id)}>Excluir</button>
-              </div>
-            ))}
+  <div key={obj.id || indice}>
+    <Cardprojetista
+      titulo={obj.titulo}
+      projetista={obj.dataFinalizacao || "Sem Prazo"}
+    />
+    <button onClick={() => selecionar(obj.id)}>Selecionar</button>
+    <button onClick={() => editProjeto(obj)}>Editar</button>
+    <button onClick={() => deleteProjeto(obj.id)}>Excluir</button>
+  </div>
+))}
           </ContainerPerfil>
         </div>
       </div>
