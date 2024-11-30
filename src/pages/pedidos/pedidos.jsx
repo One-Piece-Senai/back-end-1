@@ -1,10 +1,11 @@
 import BarraDeBusca from "../../components/barra-de-busca/barra-busca";
 import { ContainerPerfil } from "../../components/card-perfil/style-perfil";
-import Cardprojetista from "../../components/Card_projetista/card_projetista";
+import  Cardprojetista  from "../../components/Card_projetista/card_projetista";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom"; // Para navegar para outra rota
 import Tabela from "../../components/card-perfil/Tabela";
+import { Botao } from "../../pages/Feed/EstilosHeader";
 import SideBar from "../../components/sidebar/sidebar";
 
 const API_BASE_URL_cliente = "http://localhost:8080/projetos/cliente/";
@@ -19,7 +20,7 @@ function Pedidos() {
     descricao: "",
     largura: "",
     altura: "",
-    comprimento: "",
+    comprimento: "",   
     material: "",
     caminhoarquivo: "",
     statusprojeto: "",
@@ -159,10 +160,17 @@ function Pedidos() {
       <div style={{ flex: 1 }}>
         <BarraDeBusca />
         <div className="box-branco">
-          <ContainerPerfil style={{ borderRadius: "10px" }}>
+          <ContainerPerfil style={{ borderRadius: "10px", padding: "30px"}}>
             <h2>Cadastrar projetos</h2>
-            <form onSubmit={handleSubmit}>
-              <input
+            <form style={{display: "flex", 
+              flexWrap:"wrap" ,
+              gap:"20px",
+              alignContent:"stretch",
+              padding:"10px"}} onSubmit={handleSubmit}>
+
+
+              <label style={{display:"flex", flexDirection:"column"}}>Titulo:
+                <input
                 type="text"
                 name="titulo"
                 placeholder="Titulo"
@@ -170,7 +178,10 @@ function Pedidos() {
                 value={projetoForm.titulo || ""}
                 required
               />
-              <input
+              </label>
+              
+              <label style={{display:"flex", flexDirection:"column"}}>Descrição:
+                <input
                 type="text"
                 name="descricao"
                 placeholder="Descrição"
@@ -178,7 +189,10 @@ function Pedidos() {
                 value={projetoForm.descricao || ""}
                 required
               />
-              <input
+              </label>
+              
+              <label style={{display:"flex", flexDirection:"column"}}>Largura:
+                <input
                 type="text"
                 name="largura"
                 placeholder="Largura"
@@ -186,15 +200,21 @@ function Pedidos() {
                 value={projetoForm.largura || ""}
                 required
               />
-              <input
-                type="text"
-                name="altura"
-                placeholder="Altura"
-                onChange={handleChange}
-                value={projetoForm.altura || ""}
-                required
-              />
-              <input
+              </label>
+              
+              <label style={{display:"flex", flexDirection:"column"}}>Altura:
+                <input
+                                type="text"
+                                name="altura"
+                                placeholder="Altura"
+                                onChange={handleChange}
+                                value={projetoForm.altura || ""}
+                                required
+                              />
+              </label>
+              
+              <label style={{display:"flex", flexDirection:"column"}}>Comprimento:
+                <input
                 type="text"
                 name="comprimento"
                 placeholder="Comprimento"
@@ -202,7 +222,10 @@ function Pedidos() {
                 value={projetoForm.comprimento || ""}
                 required
               />
-              <input
+             </label>
+              
+              <label style={{display:"flex", flexDirection:"column"}}>Material: 
+                <input
                 type="text"
                 name="material"
                 placeholder="Material"
@@ -210,8 +233,10 @@ function Pedidos() {
                 value={projetoForm.material || ""}
                 required
               />
-
-              <input
+              </label>
+              
+              <label style={{display:"flex", flexDirection:"column"}}>Staus:
+                <input
                 type="text"
                 name="statusprojeto"
                 placeholder="Status"
@@ -219,30 +244,41 @@ function Pedidos() {
                 value={projetoForm.statusprojeto || ""}
                 required
               />
-              <input
+              </label>
+              
+              <label style={{display:"flex", flexDirection:"column"}}>Followup:
+                <input
                 type="text"
                 name="followup"
                 placeholder="Followup"
                 onChange={handleChange}
                 value={projetoForm.followup || ""}
               />
-              <input
-                type="date"
-                name="dataFinalizacao"
-                onChange={handleChange}
-                value={projetoForm.dataFinalizacao || ""}
-              />
-              <input
+              </label>
+              
+              <label style={{display:"flex", flexDirection:"column"}}>Data:
+                <input
+                                type="date"
+                                name="dataFinalizacao"
+                                onChange={handleChange}
+                                value={projetoForm.dataFinalizacao || ""}
+                              />
+              </label>
+              
+              <label style={{display:"flex", flexDirection:"column"}}>Imagem:
+                <input
                 type="text"
                 name="imagem"
                 placeholder="Imagem URL"
                 onChange={handleChange}
                 value={projetoForm.imagem || ""}
               />
+              </label>
+              
 
-              <button type="submit">
+              <Botao type="submit">
                 {editProjetoId ? "Atualizar Projeto" : "Criar Projeto"}
-              </button>
+              </Botao>
             </form>
 <br /><br /><br /><br />
             <h2>Meus projetos</h2>

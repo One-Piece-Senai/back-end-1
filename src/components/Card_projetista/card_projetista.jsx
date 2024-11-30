@@ -42,3 +42,4 @@ export default function card_projetista({ titulo, projetista }) {
     </>
   );
 }
+
