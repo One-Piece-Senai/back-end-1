@@ -5,7 +5,7 @@ const Orcamentos = ({ projetos }) => {
   // Função para atualizar o status de um orçamento
   const atualizarStatus = async (idOrcamento, novoStatus) => {
     try {
-      await axios.put(`http://localhost:8080/orcamentos/atualizar-status/${idOrcamento}?status=${novoStatus}`, {
+      await axios.put(`http://localhost:8080/orcamentos/atualizar/${idOrcamento}`, {
         status: novoStatus,
       });
       alert(`Orçamento ${novoStatus.toLowerCase()} com sucesso!`);

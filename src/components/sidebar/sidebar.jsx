@@ -9,6 +9,11 @@ import settings from "../../assets/settings.svg";
 import askIcon from "../../assets/ask-icon.svg";
 
 export default function SideBar(props) {
+  const handleLogout = () => {
+    localStorage.removeItem("userId"); // Remove o ID do usuário
+    localStorage.removeItem("token"); // Remove o token de autenticação, se houver
+    navigate("/login"); // Redireciona para a página de login
+  };
   return (
     <>
       <SidebarComponent corfundo={props.CorFundo}>
@@ -35,6 +40,24 @@ export default function SideBar(props) {
           <li>
             <img className="icone" src={askIcon} />
             <Link to="/ajuda">FAQ</Link>
+          </li>
+          <li>
+          <li>
+          <button
+          onClick={handleLogout}
+          style={{
+            backgroundColor: "ff0000",
+            color: "white",
+            border: "none",
+            borderRadius: "5px",
+            padding: "10px 15px",
+            cursor: "pointer",
+            marginTop: "20px",
+          }}
+        >
+          Sair
+        </button>
+          </li>
           </li>
         </ul>
       </SidebarComponent>

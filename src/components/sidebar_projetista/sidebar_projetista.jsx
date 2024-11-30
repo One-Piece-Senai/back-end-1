@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate  } from "react-router-dom";
 import { SidebarComponent } from "../sidebar/sideStyle";
 import logo from "../../assets/logo.svg";
 import carrinho from "../../assets/carrinho-icon.svg";
@@ -8,6 +8,13 @@ import settings from "../../assets/settings.svg";
 import askIcon from "../../assets/ask-icon.svg";
 
 export default function SideBarProjetista(props) {
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    localStorage.removeItem("userId"); // Remove o ID do usuário
+    localStorage.removeItem("token"); // Remove o token de autenticação, se houver
+    navigate("/"); // Redireciona para a página de login
+  };
   return (
     <>
       <SidebarComponent corfundo={props.CorFundo}>
@@ -21,11 +28,11 @@ export default function SideBarProjetista(props) {
           </li>
           <li>
             <img className="icone" src={box} />{" "}
-            <Link to="/pedidosprojetistas">Meus projetos</Link>
+            <Link to="/meusprojetos">Meus projetos</Link>
           </li>
           <li>
             <img className="icone" src={box} />{" "}
-            <Link to="/orcamentosprojetista">Meus Orcamentos</Link>
+            <Link to="/meusorcamentos">Meus Orcamentos</Link>
           </li>
           <li>
             <img className="icone" src={people} /> Clientes
@@ -38,10 +45,21 @@ export default function SideBarProjetista(props) {
             <img className="icone" src={askIcon} />
             <Link to="/ajuda">FAQ</Link>
           </li>
-          <li>
-            <img className="Exit" src={askIcon} />
-            <Link to="/">Exit</Link>
-          </li>
+
+          <button
+          onClick={handleLogout}
+          style={{
+            backgroundColor: "red",
+            color: "white",
+            border: "none",
+            borderRadius: "5px",
+            padding: "10px 15px",
+            cursor: "pointer",
+            marginTop: "20px",
+          }}
+        >
+          Sair
+        </button>
         </ul>
       </SidebarComponent>
     </>

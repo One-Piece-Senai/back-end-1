@@ -5,7 +5,7 @@ import axios from "axios";
 
 const API_BASE_URL_ORCAMENTO = "http://localhost:8080/orcamentos/listarPorUsuario/";
 
-function PedidosProjetistas() {
+function MeusOrcamentos() {
   const userId = localStorage.getItem("userId");
   const [orcamentos, setOrcamentos] = useState([]);
 
@@ -29,7 +29,8 @@ function PedidosProjetistas() {
       <div style={{ flex: 1 }}>
         <BarraDeBusca />
         <div className="box-branco">
-          <h2>Meus Orçamentos</h2>
+          <h1 style={{ display: "flex" }}>Meus Orçamentos</h1>
+          <div>
           <table className="table">
             <thead>
               <tr>
@@ -58,8 +59,9 @@ function PedidosProjetistas() {
           </table>
         </div>
       </div>
+      </div>
     </div>
   );
 }
 
-export default PedidosProjetistas;
+export default MeusOrcamentos;

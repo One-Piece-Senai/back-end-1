@@ -8,7 +8,6 @@ const userId = localStorage.getItem("userId");
 
 function Orcamentocli() {
   const [projetos, setProjetos] = useState([]); // Lista de projetos com orçamentos
-  const [message, setMessage] = useState(""); // Mensagem de feedback
 
   // Função para buscar projetos com orçamentos
   const fetchOrcamentos = async () => {
@@ -26,19 +25,22 @@ function Orcamentocli() {
     fetchOrcamentos();
   }, []);
 
-
-
   return (
     <div className="App" style={{ display: "flex" }}>
       <SideBar />
       <div style={{ flex: 1 }}>
         <BarraDeBusca />
-        <div className="box-branco">
+        <div className="box-branco" style={{ textAlign: "center" }}>
+        <div style={{ textAlign: "center" }}>
           <h1>Meus Orçamentos</h1>
-          {message && <p>{message}</p>}
-          <Orcamentos
-            projetos={projetos}/>
-        
+          {projetos.length > 0 ? ( // Verifica se há projetos
+            <Orcamentos projetos={projetos} />
+          ) : (
+            <p style={{ marginTop: "10px", color: "#666" }}>
+              Sem orçamentos disponíveis.
+            </p>
+          )}
+          </div>
         </div>
       </div>
     </div>
