@@ -55,6 +55,8 @@ function CriarOrcamento() {
     } catch (error) {
       setMessage("Erro ao criar orçamento.");
       console.error("Erro ao criar orçamento:", error);
+      console.log("userid:", userId);
+      
     }
   };
 

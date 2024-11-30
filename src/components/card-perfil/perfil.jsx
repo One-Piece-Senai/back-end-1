@@ -1,5 +1,5 @@
 import { ContainerPerfil } from "./style-perfil";
-
+import SideBarProjetista from "../../components/sidebar_projetista/sidebar_projetista";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom"; // Para navegar para outra rota
 import Tabela from "./Tabela";
@@ -35,16 +35,20 @@ export default function CardPerfil() {
 
   return (
     <div className="App" style={{ display: "flex" }}>
-      <SideBar />
+      <SideBarProjetista />
       <div style={{ flex: 1 }}>
         <BarraDeBusca />
         <div className="box-branco">
-          <ContainerPerfil>
-
+          {/* Lista de projetos */}
+          <ContainerPerfil style={{ borderRadius: "10px", marginTop: "20px" }}>
+            <div style={{ maxWidth: "500px", margin: "auto", padding: "20px" }}>
             <div>
               <Tabela vetor={vetor} selecionar={selecionar} />
             </div>
+            </div>
+
           </ContainerPerfil>
+
         </div>
       </div>
     </div>

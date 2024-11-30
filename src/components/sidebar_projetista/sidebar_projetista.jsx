@@ -17,7 +17,7 @@ export default function SideBarProjetista(props) {
   };
   return (
     <>
-      <SidebarComponent corfundo={props.CorFundo}>
+      <SidebarComponent style={{  backgroundColor: "#F2B929" }}>
         <Link to="/projetista-perfil">
           <img className="logo" src={logo} alt="" />
         </Link>
@@ -35,7 +35,8 @@ export default function SideBarProjetista(props) {
             <Link to="/meusorcamentos">Meus Orcamentos</Link>
           </li>
           <li>
-            <img className="icone" src={people} /> Clientes
+            <img className="icone" src={people} /> 
+            <Link to="/clientes">Clientes</Link>
           </li>
           <li>
             <img className="icone" src={settings} />

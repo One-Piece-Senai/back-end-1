@@ -3,6 +3,7 @@ import BarraDeBusca from "../../../components/barra-de-busca/barra-busca";
 import Orcamentos from "../../../components/Orcamentos/orcamentos";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { ContainerPerfil } from "../../../components/card-perfil/style-perfil";
 
 const userId = localStorage.getItem("userId");
 
@@ -30,8 +31,8 @@ function Orcamentocli() {
       <SideBar />
       <div style={{ flex: 1 }}>
         <BarraDeBusca />
-        <div className="box-branco" style={{ textAlign: "center" }}>
-        <div style={{ textAlign: "center" }}>
+        <div className="box-branco">
+          <ContainerPerfil style={{ borderRadius: "10px" }}>
           <h1>Meus Orçamentos</h1>
           {projetos.length > 0 ? ( // Verifica se há projetos
             <Orcamentos projetos={projetos} />
@@ -40,10 +41,11 @@ function Orcamentocli() {
               Sem orçamentos disponíveis.
             </p>
           )}
+                  </ContainerPerfil>
+
           </div>
         </div>
       </div>
-    </div>
   );
 }
 

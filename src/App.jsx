@@ -1,11 +1,13 @@
 import "./App.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Ajuda from "./pages/Ajuda/ajuda";
+import AjudaCLI from "./pages/Ajuda/ajuda";
+import AjudaPROJ from "./pages/PROJETISTA/Ajuda/ajuda";
 import CadastraProjeto from "./pages/NovoProjeto/NovoProjeto";
+import Clientes from "./pages/PROJETISTA/Clientes/clientes"
 import CriarOrcamento from "./pages/Input_orcamentos/Input_orcamentos";
 import Detalhes from ".//components/card-perfil/Detalhes"; // O componente para mostrar os detalhes do item
 import EditarCliente from "./pages/CLIENTE/inputs_completo/FormPerfilCliente";
-import EditarProjetista from "./pages/inputs_completo/FormPerfil";
+import EditarProjetista from "./pages/PROJETISTA/inputs_completo/FormPerfil";
 import EditarProjeto from "./pages/CLIENTE/Editar-projeto/Editar-projeto";
 import Feed from "./pages/Feed/feed";
 import Login from "./pages/login/Login";
@@ -15,7 +17,7 @@ import MeusProjetos from "./components/card-perfil/perfil"
 import Pedidos from "./pages/pedidos/pedidos";
 import MeusOrcamentos from "./pages/meus-orcamentos/MeusOrcamentos";
 import PerfilCliente from "./pages/CLIENTE/perfil-cliente/perfil-cliente";
-import PerfilProjetista from "./pages/perfil-projetista/perfil-projetista";
+import PerfilProjetista from "./pages/PROJETISTA/perfil-projetista/perfil-projetista";
 import Projetista from "./pages/CLIENTE/Projetista/projetista";
 import OrcamentoCLI from "./pages/CLIENTE/OrcamentosCLI/orcamentoCLI"
 import CadastroSenha from "./pages/Cadastro/Register"
@@ -25,9 +27,11 @@ function Projeto() {
     <Router>
       <Routes>
         <Route path="/" element={<Feed />} />
-        <Route path="/ajuda" element={<Ajuda />} />
+        <Route path="/ajudaCLI" element={<AjudaCLI />} />
+        <Route path="/ajuda" element={<AjudaPROJ />} />
         <Route path="/cadastrar_Projeto" element={<CadastraProjeto />} />
         <Route path="/cadastrar-senha" element={<CadastroSenha/>} />
+        <Route path="/clientes" element={<Clientes/>} />
         <Route path="/cliente-perfil" element={<PerfilCliente />} />
         <Route path="/criar-orcamentos" element={<CriarOrcamento />} />
         <Route path="/detalhes" element={<Detalhes />} />

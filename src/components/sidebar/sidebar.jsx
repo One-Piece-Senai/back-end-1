@@ -1,5 +1,5 @@
 import { SidebarComponent } from "./sideStyle.js";
-import { Link } from "react-router-dom";
+import { Link , useNavigate} from "react-router-dom";
 
 import logo from "../../assets/logo.svg";
 import carrinho from "../../assets/carrinho-icon.svg";
@@ -9,6 +9,9 @@ import settings from "../../assets/settings.svg";
 import askIcon from "../../assets/ask-icon.svg";
 
 export default function SideBar(props) {
+
+  const navigate = useNavigate();
+
   const handleLogout = () => {
     localStorage.removeItem("userId"); // Remove o ID do usuário
     localStorage.removeItem("token"); // Remove o token de autenticação, se houver
@@ -39,14 +42,13 @@ export default function SideBar(props) {
           </li>
           <li>
             <img className="icone" src={askIcon} />
-            <Link to="/ajuda">FAQ</Link>
+            <Link to="/ajudaCLI">FAQ</Link>
           </li>
-          <li>
-          <li>
+
           <button
           onClick={handleLogout}
           style={{
-            backgroundColor: "ff0000",
+            backgroundColor: "red",
             color: "white",
             border: "none",
             borderRadius: "5px",
@@ -57,8 +59,6 @@ export default function SideBar(props) {
         >
           Sair
         </button>
-          </li>
-          </li>
         </ul>
       </SidebarComponent>
     </>
