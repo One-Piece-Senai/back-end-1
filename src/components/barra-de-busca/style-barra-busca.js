@@ -8,13 +8,22 @@ export const BarraBusca = styled.div`
   background-color: #ffea96;
 
   .conteudo-busca {
-    width: 40%;
+    width: 50%;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: flex-end;
+    padding: 10px;
+    gap: 40px;
+  }
+
+  h8{
+    font-size: 30px;
+    font-weight: 600;
+    font-style: italic;
   }
   img {
     width: 20%;
+    padding-left: -1  0px;
     left: 0% ;
   }
   .sino {
