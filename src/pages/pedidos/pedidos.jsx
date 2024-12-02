@@ -33,7 +33,6 @@ function Pedidos() {
   const [message, setMessage] = useState("");
   const [vetor, setVetor] = useState([]);
 
-
   useEffect(() => {
     fetchProjetos();
   }, []);
@@ -152,7 +151,6 @@ function Pedidos() {
   const selecionar = (id) => {
     navigate("/detalhes", { state: { id } }); // Passa o ID como estado
   };
-  
 
   return (
     <div className="App" style={{ display: "flex" }}>
@@ -160,143 +158,158 @@ function Pedidos() {
       <div style={{ flex: 1 }}>
         <BarraDeBusca />
         <div className="box-branco">
-          <ContainerPerfil style={{ borderRadius: "10px", padding: "30px"}}>
+          <ContainerPerfil style={{ borderRadius: "10px", padding: "30px" }}>
             <h2>Cadastrar projetos</h2>
-            <form style={{display: "flex", 
-              flexWrap:"wrap" ,
-              gap:"20px",
-              alignContent:"stretch",
-              padding:"10px"}} onSubmit={handleSubmit}>
+            <form
+              style={{
+                display: "flex",
+                flexWrap: "wrap",
+                gap: "20px",
+                alignContent: "stretch",
+                padding: "10px",
+              }}
+              onSubmit={handleSubmit}
+            >
+              <label style={{ display: "flex", flexDirection: "column" }}>
+                Titulo:
+                <input
+                  type="text"
+                  name="titulo"
+                  placeholder="Titulo"
+                  onChange={handleChange}
+                  value={projetoForm.titulo || ""}
+                  required
+                />
+              </label>
 
+              <label style={{ display: "flex", flexDirection: "column" }}>
+                Descrição:
+                <input
+                  type="text"
+                  name="descricao"
+                  placeholder="Descrição"
+                  onChange={handleChange}
+                  value={projetoForm.descricao || ""}
+                  required
+                />
+              </label>
 
-              <label style={{display:"flex", flexDirection:"column"}}>Titulo:
+              <label style={{ display: "flex", flexDirection: "column" }}>
+                Largura:
                 <input
-                type="text"
-                name="titulo"
-                placeholder="Titulo"
-                onChange={handleChange}
-                value={projetoForm.titulo || ""}
-                required
-              />
+                  type="text"
+                  name="largura"
+                  placeholder="Largura"
+                  onChange={handleChange}
+                  value={projetoForm.largura || ""}
+                  required
+                />
               </label>
-              
-              <label style={{display:"flex", flexDirection:"column"}}>Descrição:
+
+              <label style={{ display: "flex", flexDirection: "column" }}>
+                Altura:
                 <input
-                type="text"
-                name="descricao"
-                placeholder="Descrição"
-                onChange={handleChange}
-                value={projetoForm.descricao || ""}
-                required
-              />
+                  type="text"
+                  name="altura"
+                  placeholder="Altura"
+                  onChange={handleChange}
+                  value={projetoForm.altura || ""}
+                  required
+                />
               </label>
-              
-              <label style={{display:"flex", flexDirection:"column"}}>Largura:
+
+              <label style={{ display: "flex", flexDirection: "column" }}>
+                Comprimento:
                 <input
-                type="text"
-                name="largura"
-                placeholder="Largura"
-                onChange={handleChange}
-                value={projetoForm.largura || ""}
-                required
-              />
+                  type="text"
+                  name="comprimento"
+                  placeholder="Comprimento"
+                  onChange={handleChange}
+                  value={projetoForm.comprimento || ""}
+                  required
+                />
               </label>
-              
-              <label style={{display:"flex", flexDirection:"column"}}>Altura:
+
+              <label style={{ display: "flex", flexDirection: "column" }}>
+                Material:
                 <input
-                                type="text"
-                                name="altura"
-                                placeholder="Altura"
-                                onChange={handleChange}
-                                value={projetoForm.altura || ""}
-                                required
-                              />
+                  type="text"
+                  name="material"
+                  placeholder="Material"
+                  onChange={handleChange}
+                  value={projetoForm.material || ""}
+                  required
+                />
               </label>
-              
-              <label style={{display:"flex", flexDirection:"column"}}>Comprimento:
+
+              <label style={{ display: "flex", flexDirection: "column" }}>
+                Staus:
                 <input
-                type="text"
-                name="comprimento"
-                placeholder="Comprimento"
-                onChange={handleChange}
-                value={projetoForm.comprimento || ""}
-                required
-              />
-             </label>
-              
-              <label style={{display:"flex", flexDirection:"column"}}>Material: 
-                <input
-                type="text"
-                name="material"
-                placeholder="Material"
-                onChange={handleChange}
-                value={projetoForm.material || ""}
-                required
-              />
+                  type="text"
+                  name="statusprojeto"
+                  placeholder="Status"
+                  onChange={handleChange}
+                  value={projetoForm.statusprojeto || ""}
+                  required
+                />
               </label>
-              
-              <label style={{display:"flex", flexDirection:"column"}}>Staus:
+
+              <label style={{ display: "flex", flexDirection: "column" }}>
+                Followup:
                 <input
-                type="text"
-                name="statusprojeto"
-                placeholder="Status"
-                onChange={handleChange}
-                value={projetoForm.statusprojeto || ""}
-                required
-              />
+                  type="text"
+                  name="followup"
+                  placeholder="Followup"
+                  onChange={handleChange}
+                  value={projetoForm.followup || ""}
+                />
               </label>
-              
-              <label style={{display:"flex", flexDirection:"column"}}>Followup:
+
+              <label style={{ display: "flex", flexDirection: "column" }}>
+                Data:
                 <input
-                type="text"
-                name="followup"
-                placeholder="Followup"
-                onChange={handleChange}
-                value={projetoForm.followup || ""}
-              />
+                  type="date"
+                  name="dataFinalizacao"
+                  onChange={handleChange}
+                  value={projetoForm.dataFinalizacao || ""}
+                />
               </label>
-              
-              <label style={{display:"flex", flexDirection:"column"}}>Data:
+
+              <label style={{ display: "flex", flexDirection: "column" }}>
+                Imagem:
                 <input
-                                type="date"
-                                name="dataFinalizacao"
-                                onChange={handleChange}
-                                value={projetoForm.dataFinalizacao || ""}
-                              />
+                  type="text"
+                  name="imagem"
+                  placeholder="Imagem URL"
+                  onChange={handleChange}
+                  value={projetoForm.imagem || ""}
+                />
               </label>
-              
-              <label style={{display:"flex", flexDirection:"column"}}>Imagem:
-                <input
-                type="text"
-                name="imagem"
-                placeholder="Imagem URL"
-                onChange={handleChange}
-                value={projetoForm.imagem || ""}
-              />
-              </label>
-              
 
               <Botao type="submit">
                 {editProjetoId ? "Atualizar Projeto" : "Criar Projeto"}
               </Botao>
             </form>
 
-<br /><br /><br /><br />
+            <br />
+            <br />
+            <br />
+            <br />
             <h1>Meus projetos</h1>
             {message && <p>{message}</p>}
             {projetos.map((obj, indice) => (
-  <div key={obj.id || indice}>
-    <Cardprojetista
-      titulo={obj.titulo}
-      projetista={obj.dataFinalizacao || "Sem Prazo"}
-    />
-    <Botao onClick={() => selecionar(obj.id)}>Selecionar</Botao>
-    <Botao onClick={() => editProjeto(obj)}>Editar</Botao>
-    <Botao onClick={() => deleteProjeto(obj.id)}>Excluir</Botao>
-    <br />
-    <br />
-  </div> 
-))}
+              <div key={obj.id || indice}>
+                <Cardprojetista
+                  titulo={obj.titulo}
+                  projetista={obj.dataFinalizacao || "Sem Prazo"}
+                />
+                <Botao onClick={() => selecionar(obj.id)}>Selecionar</Botao>
+                <Botao onClick={() => editProjeto(obj)}>Editar</Botao>
+                <Botao onClick={() => deleteProjeto(obj.id)}>Excluir</Botao>
+                <br />
+                <br />
+              </div>
+            ))}
           </ContainerPerfil>
         </div>
       </div>

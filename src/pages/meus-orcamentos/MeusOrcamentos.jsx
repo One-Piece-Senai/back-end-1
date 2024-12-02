@@ -2,6 +2,7 @@ import SideBarProjetista from "../../components/sidebar_projetista/sidebar_proje
 import BarraDeBusca from "../../components/barra-de-busca/barra-busca";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { ContainerPerfil } from "../../components/card-perfil/style-perfil";
 
 const API_BASE_URL_ORCAMENTO = "http://localhost:8080/orcamentos/listarPorUsuario/";
 
@@ -25,40 +26,65 @@ function MeusOrcamentos() {
 
   return (
     <div className="App" style={{ display: "flex" }}>
-      <SideBarProjetista />
-      <div style={{ flex: 1 }}>
-        <BarraDeBusca />
-        <div className="box-branco">
-          <h1 style={{ display: "flex" }}>Meus Orçamentos</h1>
-          <div>
-          <table className="table">
-            <thead>
-              <tr>
-                <th>#</th>
-                <th>ID</th>
-                <th>Valor</th>
-                <th>Data de Entrega</th>
-                <th>Forma de Pagamento</th>
-                <th>Status</th>
-                <th>Projetista</th>
-              </tr>
-            </thead>
-            <tbody>
-              {orcamentos.map((orc, index) => (
-                <tr key={orc.id}>
-                  <td>{index + 1}</td>
-                  <td>{orc.id}</td>
-                  <td>R$ {orc.valor}</td>
-                  <td>{orc.dataEntrega}</td>
-                  <td>{orc.formaPagamento}</td>
-                  <td>{orc.status}</td>
-                  <td>{orc.usuario.nome}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+    <SideBarProjetista />
+    <div style={{ flex: 1 }}>
+      <BarraDeBusca />
+      <div className="box-branco">
+        {/* Lista de projetos */}
+        <ContainerPerfil style={{ borderRadius: "10px", marginTop: "20px" }}>
+        <div style={{ padding: "20px" }}>
+      <h1>Meus Orçamentos</h1>
+
+      
+
+    
+      <div
+        style={{
+          display: "flex",
+          flexWrap: "wrap",
+          gap: "20px",
+          marginTop: "20px",
+        }}
+      >
+        {orcamentos.map((orcamento) => (
+          <div
+            key={orcamento.id}
+            style={{
+              border: "1px solid #ccc",
+              borderRadius: "10px",
+              padding: "15px",
+              width: "300px",
+              backgroundColor:
+                orcamento.status === "EM_ANALISE"
+                  ? "#fff3cd"
+                  : orcamento.status === "RECUSADO"
+                  ? "#f8d7da"
+                  : "#d4edda", // Amarelo para "EM_ANALISE", vermelho para "RECUSADO" e verde para "ACEITO"
+              boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)",
+            }}
+          >
+            <h3>Orçamento #{orcamento.id}</h3>
+            <p>
+              <strong>Valor:</strong> R$ {orcamento.valor}
+            </p>
+            <p>
+              <strong>Data de Entrega:</strong> {orcamento.dataEntrega}
+            </p>
+            <p>
+              <strong>Forma de Pagamento:</strong> {orcamento.formaPagamento}
+            </p>
+            <p>
+              <strong>Status:</strong> {orcamento.status}
+            </p>
+            <p>
+              <strong>Criado por:</strong> {orcamento.usuario.nome}
+            </p>
+          </div>
+        ))}
         </div>
-      </div>
+        </div>
+          </ContainerPerfil>
+</div>
       </div>
     </div>
   );

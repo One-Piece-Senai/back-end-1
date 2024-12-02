@@ -7,7 +7,7 @@ import SideBar from "../../components/sidebar/sidebar";
 import BarraDeBusca from "../../components/barra-de-busca/barra-busca";
 import axios from "axios";
 
-export default function CardPerfil() {
+export default function   CardPerfil() {
   const [vetor, setVetor] = useState([]);
 
   const fetchProjetos = async () => {
