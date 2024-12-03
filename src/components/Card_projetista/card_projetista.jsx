@@ -1,5 +1,7 @@
 import { Cardprojetista } from "./style_projetista";
 import React, { useState } from "react";
+import { Botao } from "../../pages/Feed/EstilosHeader"
+import { useNavigate } from "react-router-dom"; // Para navegar para outra rota
 
 export default function card_projetista({titulo, projetista}) {
   // Estado que controla o progresso, de 0 a 4 (5 estágios no total)
@@ -10,17 +12,23 @@ export default function card_projetista({titulo, projetista}) {
     setProgress((prevProgress) => (prevProgress < 4 ? prevProgress + 1 : 0)); // Reinicia ao alcançar o estágio final
   };
 
+
+  const colors = ['Black', 'Gray'];
   return (
     <>
-      <Cardprojetista>
+           <Cardprojetista className="card_pedidos">
         <div className="modulo">
+            
+        <div className='casada'>
           <h2 className="titulo">{titulo}</h2>
-          <div className="tex_botao">
             <h3 className="projetista">{projetista}</h3>
-            <button className="progress-button" onClick={handleButtonClick}>
-              Avançar
-            </button>
-          </div>
+            </div>
+            <div className='lonely'>
+            <Botao className="progress-button" onClick={handleButtonClick}>
+              Detalhes
+            </Botao>
+            </div>
+            </div>
           <div className="progress-container">
             {/* Renderiza as cinco barras */}
             {[...Array(5)].map((_, index) => (
@@ -33,7 +41,7 @@ export default function card_projetista({titulo, projetista}) {
               ></div>
             ))}
           </div>
-        </div>
+        
       </Cardprojetista>
     </>
   );

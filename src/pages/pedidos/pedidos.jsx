@@ -6,6 +6,8 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom"; // Para navegar para outra rota
 import Tabela from "../../components/card-perfil/Tabela";
 import SideBar from "../../components/sidebar/sidebar";
+import { Botao } from "../../pages/Feed/EstilosHeader";
+
 const API_BASE_URL_cliente = "http://localhost:8080/projetos/cliente/";
 
 const API_BASE_URL = "http://localhost:8080/projetos";
@@ -14,11 +16,13 @@ const userId = localStorage.getItem("userId");
 function Pedidos() {
   const [projetos, setProjetos] = useState([]);
   const [projetoForm, setProjetoForm] = useState({
+    titulo: "",
     descricao: "",
     largura: "",
     altura: "",
     comprimento: "",
     material: "",
+    caminhoarquivo: "",
     statusprojeto: "",
     followup: "",
     dataFinalizacao: "",
@@ -27,22 +31,22 @@ function Pedidos() {
   });
   const [editProjetoId, setEditProjetoId] = useState(null);
   const [message, setMessage] = useState("");
+  const [vetor, setVetor] = useState([]);
 
   useEffect(() => {
     fetchProjetos();
   }, []);
 
-    // Atualiza o userId no projetoForm quando o componente é carregado
-    useEffect(() => {
-      if (userId) {
-        setProjetoForm((prevForm) => ({
-          ...prevForm,
-          usuario: { id: userId },
-        }));
-      }
-      fetchProjetos();
-    }, [userId]); // Adiciona userId como dependência para garantir que está definido
-  
+  // Atualiza o userId no projetoForm quando o componente é carregado
+  useEffect(() => {
+    if (userId) {
+      setProjetoForm((prevForm) => ({
+        ...prevForm,
+        usuario: { id: userId },
+      }));
+    }
+    fetchProjetos();
+  }, [userId]); // Adiciona userId como dependência para garantir que está definido
 
   // Fetch all projetos
   const fetchProjetos = async () => {
@@ -117,11 +121,13 @@ function Pedidos() {
   const editProjeto = (projeto) => {
     setEditProjetoId(projeto.id);
     setProjetoForm({
+      titulo: projeto.titulo,
       descricao: projeto.descricao,
       largura: projeto.largura,
       altura: projeto.altura,
       comprimento: projeto.comprimento,
       material: projeto.material,
+      caminhoarquivo: projeto.caminhoArquivo,
       statusprojeto: projeto.statusprojeto,
       followup: projeto.followup,
       dataFinalizacao: projeto.dataFinalizacao,
@@ -140,6 +146,11 @@ function Pedidos() {
       handleError(error);
     }
   };
+  const navigate = useNavigate(); // Hook para navegar entre rotas
+
+  const selecionar = (id) => {
+    navigate("/detalhes", { state: { id } }); // Passa o ID como estado
+  };
 
   return (
     <div className="App" style={{ display: "flex" }}>
@@ -147,115 +158,158 @@ function Pedidos() {
       <div style={{ flex: 1 }}>
         <BarraDeBusca />
         <div className="box-branco">
-          <ContainerPerfil style={{ borderRadius: "10px" }}>
-            <h2>Projeto CRUD Operations</h2>
-            <form onSubmit={handleSubmit}>
-              <input
-                type="text"
-                name="descricao"
-                placeholder="Descrição"
-                onChange={handleChange}
-                value={projetoForm.descricao || ""}
-                required
-              />
-              <input
-                type="text"
-                name="largura"
-                placeholder="Largura"
-                onChange={handleChange}
-                value={projetoForm.largura || ""}
-                required
-              />
-              <input
-                type="text"
-                name="altura"
-                placeholder="Altura"
-                onChange={handleChange}
-                value={projetoForm.altura || ""}
-                required
-              />
-              <input
-                type="text"
-                name="comprimento"
-                placeholder="Comprimento"
-                onChange={handleChange}
-                value={projetoForm.comprimento || ""}
-                required
-              />
-              <input
-                type="text"
-                name="material"
-                placeholder="Material"
-                onChange={handleChange}
-                value={projetoForm.material || ""}
-                required
-              />
-              <input
-                type="text"
-                name="statusprojeto"
-                placeholder="Status"
-                onChange={handleChange}
-                value={projetoForm.statusprojeto || ""}
-                required
-              />
-              <input
-                type="text"
-                name="followup"
-                placeholder="Followup"
-                onChange={handleChange}
-                value={projetoForm.followup || ""}
-              />
-              <input
-                type="date"
-                name="dataFinalizacao"
-                onChange={handleChange}
-                value={projetoForm.dataFinalizacao || ""}
-              />
-              <input
-                type="text"
-                name="imagem"
-                placeholder="Imagem URL"
-                onChange={handleChange}
-                value={projetoForm.imagem || ""}
-              />
+          <ContainerPerfil style={{ borderRadius: "10px", padding: "30px" }}>
+            <h2>Cadastrar projetos</h2>
+            <form
+              style={{
+                display: "flex",
+                flexWrap: "wrap",
+                gap: "20px",
+                alignContent: "stretch",
+                padding: "10px",
+              }}
+              onSubmit={handleSubmit}
+            >
+              <label style={{ display: "flex", flexDirection: "column" }}>
+                Titulo:
+                <input
+                  type="text"
+                  name="titulo"
+                  placeholder="Titulo"
+                  onChange={handleChange}
+                  value={projetoForm.titulo || ""}
+                  required
+                />
+              </label>
 
-              <button type="submit">
+              <label style={{ display: "flex", flexDirection: "column" }}>
+                Descrição:
+                <input
+                  type="text"
+                  name="descricao"
+                  placeholder="Descrição"
+                  onChange={handleChange}
+                  value={projetoForm.descricao || ""}
+                  required
+                />
+              </label>
+
+              <label style={{ display: "flex", flexDirection: "column" }}>
+                Largura:
+                <input
+                  type="text"
+                  name="largura"
+                  placeholder="Largura"
+                  onChange={handleChange}
+                  value={projetoForm.largura || ""}
+                  required
+                />
+              </label>
+
+              <label style={{ display: "flex", flexDirection: "column" }}>
+                Altura:
+                <input
+                  type="text"
+                  name="altura"
+                  placeholder="Altura"
+                  onChange={handleChange}
+                  value={projetoForm.altura || ""}
+                  required
+                />
+              </label>
+
+              <label style={{ display: "flex", flexDirection: "column" }}>
+                Comprimento:
+                <input
+                  type="text"
+                  name="comprimento"
+                  placeholder="Comprimento"
+                  onChange={handleChange}
+                  value={projetoForm.comprimento || ""}
+                  required
+                />
+              </label>
+
+              <label style={{ display: "flex", flexDirection: "column" }}>
+                Material:
+                <input
+                  type="text"
+                  name="material"
+                  placeholder="Material"
+                  onChange={handleChange}
+                  value={projetoForm.material || ""}
+                  required
+                />
+              </label>
+
+              <label style={{ display: "flex", flexDirection: "column" }}>
+                Staus:
+                <input
+                  type="text"
+                  name="statusprojeto"
+                  placeholder="Status"
+                  onChange={handleChange}
+                  value={projetoForm.statusprojeto || ""}
+                  required
+                />
+              </label>
+
+              <label style={{ display: "flex", flexDirection: "column" }}>
+                Followup:
+                <input
+                  type="text"
+                  name="followup"
+                  placeholder="Followup"
+                  onChange={handleChange}
+                  value={projetoForm.followup || ""}
+                />
+              </label>
+
+              <label style={{ display: "flex", flexDirection: "column" }}>
+                Data:
+                <input
+                  type="date"
+                  name="dataFinalizacao"
+                  onChange={handleChange}
+                  value={projetoForm.dataFinalizacao || ""}
+                />
+              </label>
+
+              <label style={{ display: "flex", flexDirection: "column" }}>
+                Imagem:
+                <input
+                  type="text"
+                  name="imagem"
+                  placeholder="Imagem URL"
+                  onChange={handleChange}
+                  value={projetoForm.imagem || ""}
+                />
+              </label>
+
+              <Botao type="submit">
                 {editProjetoId ? "Atualizar Projeto" : "Criar Projeto"}
-              </button>
+              </Botao>
             </form>
 
+            <br />
+            <br />
+            <br />
+            <br />
+            <h1>Meus projetos</h1>
             {message && <p>{message}</p>}
-
-            <table className="table">
-              <thead>
-                <tr>
-                  <th>#</th>
-                  <th>Descrição do projeto</th>
-                  <th>Username</th>
-                  <th>Materiais de impressão</th>
-                  <th>Caminho do arquivo</th>
-                  <th>Prazo de entrega </th>
-                  <th>Selecionar</th>
-                </tr>
-              </thead>
-              <tbody>
-                {projetos.map((obj, indice) => (
-                  <tr key={indice}>
-                    <td>{indice + 1}</td>
-                    <td>{obj.descricao}</td>
-                    <td>{obj.usuario.nome}</td>
-                    <td>{obj.material}</td>
-                    <td>{obj.caminhoArquivo}</td>
-                    <td>{obj.dataFinalizacao}</td>
-
-                    <button onClick={() => editProjeto(obj)}>Editar</button>
-                    <button onClick={() => deleteProjeto(obj.id)}>
-                      Excluir
-                    </button>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+            {projetos.map((obj, indice) => (
+              <div key={obj.id || indice}>
+                <Cardprojetista
+                  titulo={obj.titulo}
+                  projetista={obj.dataFinalizacao || "Sem Prazo"}
+                />
+                <Botao onClick={() => selecionar(obj.id)}>Selecionar</Botao>
+                <Botao onClick={() => editProjeto(obj)}>Editar</Botao>
+                <Botao onClick={() => deleteProjeto(obj.id)}>Excluir</Botao>
+                <br />
+                <br />
+              </div>
+            ))}
           </ContainerPerfil>
         </div>
       </div>

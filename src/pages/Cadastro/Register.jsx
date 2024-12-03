@@ -59,7 +59,8 @@ const Signup = () => {
       <img src={image} alt="teste" />
       </div>
       <div className="form-section">
-        <h1>Registre-se</h1>        
+        <h1>Registre-se</h1>
+        <p>Já possui uma conta? <a href="#">Entre aqui</a> </p>
         <form onSubmit={handleSubmit}>
           <div className="input-group">
             <label>Nome do Usuário:</label>
@@ -179,7 +180,7 @@ const Signup = () => {
           <button type="submit" className="btn btn-primary">Cadastrar</button>
         </form>
         {message && <p className="mt-3">{message}</p>}
-        <p className="login-link">Já possui uma conta? <a href="/login">Log in</a></p>
+        <p className="login-link">Already have an account? <a href="#">Log in</a></p>
       </div>
     </div>
   );

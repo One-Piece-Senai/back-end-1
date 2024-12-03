@@ -1,7 +1,7 @@
 import React from "react";
 import "./FormPerfil.css";
-import SideBarProjetista from "../../components/sidebar_projetista/sidebar_projetista"
-import BarraDeBusca from "../../components/barra-de-busca/barra-busca";
+import SideBarProjetista from "../../../components/sidebar_projetista/sidebar_projetista"
+import BarraDeBusca from "../../../components/barra-de-busca/barra-busca";
 
 function ProfileForm() {
   return (

@@ -241,7 +241,7 @@ export default function Main() {
                         alignItems: 'center',
                         gap: '30px',
                       }}>
-                    <h1>Proucure uma ideia </h1>
+                    <h1>Procure uma ideia </h1>
                     <p style={{textAlign: 'center'}}>
                         O que você deseja imprimir?
                         

@@ -64,4 +64,5 @@ export const Botao = styled.button`
     color: white;
     font-size: 15px;
     font-weight: 700;
+    margin: 0.2%;
 `

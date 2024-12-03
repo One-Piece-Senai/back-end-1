@@ -1,8 +1,8 @@
-import { BarraBusca } from "../../components/barra-de-busca/style-barra-busca";
-import CardPerfil from "../../components/card-perfil/perfil";
-import SectionPerfil from "../../components/section-perfil/section-perfil";
-import SideBarProjetista from "../../components/sidebar_projetista/sidebar_projetista"
-import StatusGrup from "../../components/status-grup/status-grup";
+import { BarraBusca } from "../../../components/barra-de-busca/style-barra-busca";
+import CardPerfil from "../../../components/card-perfil/perfil";
+import SectionPerfil from "../../../components/section-perfil/section-perfil";
+import SideBarProjetista from "../../../components/sidebar_projetista/sidebar_projetista"
+import StatusGrup from "../../../components/status-grup/status-grup";
 
 export default function PerfilProjetista() {
   return (
