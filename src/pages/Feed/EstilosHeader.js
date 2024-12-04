@@ -41,8 +41,8 @@ export const SegundaParte = styled.div`
     height: 100px;
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    padding: 15px 15px ;
+    justify-content: flex-end;
+    gap: 30px;
     
     a{
         @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
@@ -57,7 +57,7 @@ export const SegundaParte = styled.div`
 `
 export const Botao = styled.button`
     background-color: #F2B929;
-    padding: 15px 15px;
+    padding: 15px 15px; 
     height: 48px;
     border-radius: 35px;
     border: 0;

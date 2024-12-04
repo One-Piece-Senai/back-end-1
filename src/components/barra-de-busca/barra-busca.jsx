@@ -39,6 +39,7 @@ export default function BarraDeBusca() {
           <h8>{userName ? userName : "usuário"}</h8>
           <img src={profileImage} alt="Perfil" className="profile-image" />
           
+          
         </div>
       </BarraBusca>
     </>

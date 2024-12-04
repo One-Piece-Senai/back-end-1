@@ -9,6 +9,7 @@ export const Cardprojetista = styled.div`
     height: 125px;
     flex-direction: column;
 
+      
     .modulo{
       width: 100%;
       height: 100%;
