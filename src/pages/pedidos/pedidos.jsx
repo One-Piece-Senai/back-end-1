@@ -1,11 +1,10 @@
 import BarraDeBusca from "../../components/barra-de-busca/barra-busca";
 import { ContainerPerfil } from "../../components/card-perfil/style-perfil";
-import  Cardprojetista  from "../../components/Card_projetista/card_projetista";
+import Cardprojetista from "../../components/Card_projetista/card_projetista";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom"; // Para navegar para outra rota
 import Tabela from "../../components/card-perfil/Tabela";
-import { Botao } from "../../pages/Feed/EstilosHeader";
 import SideBar from "../../components/sidebar/sidebar";
 import { Botao } from "../../pages/Feed/EstilosHeader";
 
@@ -21,7 +20,7 @@ function Pedidos() {
     descricao: "",
     largura: "",
     altura: "",
-    comprimento: "",   
+    comprimento: "",
     material: "",
     caminhoarquivo: "",
     statusprojeto: "",
@@ -289,7 +288,6 @@ function Pedidos() {
 
               <Botao type="submit">
                 {editProjetoId ? "Atualizar Projeto" : "Criar Projeto"}
-              </Botao>
               </Botao>
             </form>
 
