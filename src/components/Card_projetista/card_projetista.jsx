@@ -24,9 +24,6 @@ export default function card_projetista({titulo, projetista}) {
             <h3 className="projetista">{projetista}</h3>
             </div>
             <div className='lonely'>
-            <Botao className="progress-button" onClick={handleButtonClick}>
-              Detalhes
-            </Botao>
             </div>
             </div>
           <div className="progress-container">

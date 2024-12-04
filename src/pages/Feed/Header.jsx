@@ -10,8 +10,6 @@ export default function Header() {
         <HeaderST>
                 <PrimeiraParte>
                     <img src={LOGO} alt="logo" />
-                    <a href="#">HOJE </a>
-                    <a href="#">EXPLORAR</a>
                 </PrimeiraParte>
                 <SegundaParte>
                     <a href="#">SOBRE</a>
