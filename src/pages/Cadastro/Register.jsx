@@ -60,13 +60,13 @@ const Signup = () => {
       </div>
       <div className="form-section">
         <h1>Registre-se</h1>
-        <p>Já possui uma conta? <a href="#">Entre aqui</a> </p>
         <form onSubmit={handleSubmit}>
           <div className="input-group">
             <label>Nome do Usuário:</label>
             <input 
             type="text" 
             className="form-control" 
+            placeholder='Escolha um username'
             id="username" 
             name="username" 
             value={formData.username} 
@@ -79,6 +79,7 @@ const Signup = () => {
             <input 
             type="email" 
             className="form-control" 
+            placeholder='Insira seu e-mail'
             id="email" 
             name="email" 
             value={formData.email} 
@@ -91,7 +92,8 @@ const Signup = () => {
             <label>Telefone:</label>
             <input 
             type="text" 
-            className="form-control" 
+            className="form-control"
+            placeholder='Telefone para contato'
             id="telefone" 
             name="telefone" 
             value={formData.telefone} 
@@ -104,7 +106,8 @@ const Signup = () => {
             <label>Senha:</label>
             <input 
             type="password" 
-            className="form-control" 
+            className="form-control"
+            placeholder='Escolha uma senha com, no mínimo, 8 caracteres.' 
             id="senha" 
             name="senha" 
             value={formData.senha} 
@@ -118,6 +121,7 @@ const Signup = () => {
             <input 
             type="text" 
             className="form-control" 
+            placeholder='Insira seu nome completo'
             id="nome" 
             name="nome" 
             value={formData.nome} 
@@ -130,7 +134,8 @@ const Signup = () => {
             <label>CPF/CNPJ:</label>
             <input 
             type="text" 
-            className="form-control" 
+            className="form-control"
+            placeholder='Insira seu CPF ou CNPJ'
             id="cpf_cnpj" 
             name="cpf_cnpj" 
             value={formData.cpf_cnpj} 
@@ -143,6 +148,7 @@ const Signup = () => {
             <input 
             type="text" 
             className="form-control" 
+            placeholder='Insira seu CEP'
             id="cep" 
             name="cep" 
             value={formData.cep} 
@@ -168,9 +174,6 @@ const Signup = () => {
             <option value="PROJETISTA">Projetista</option>
           </select>
         </label> 
-          <p className="password-hint">
-            Escolha uma senha com, no mínimo, 8 caracteres.
-          </p>
           <div className="checkbox-group">
             <input type="checkbox" />
             <label>
