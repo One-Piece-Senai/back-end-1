@@ -1,4 +1,4 @@
-import PerfilImg from "../../assets/Frame.png";
+import PerfilImg from "../../assets/6.svg";
 import { StyleSectionPerfil } from "./style-section-perfil";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
@@ -37,12 +37,8 @@ const SectionPerfil = () => {
 
       <article>
         <h3>{userName ? userName : "usuário"}</h3>
-        <p>xp 1500</p>
-      </article>
-      <div className="linha-xp">
-        <div className="xp"></div>
-      </div>
 
+      </article>
       <p>{userDesc ? userDesc : "Descrição"}</p>
     </StyleSectionPerfil>
   );

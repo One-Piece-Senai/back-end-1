@@ -1,4 +1,4 @@
-import profileImage from "../../assets/Frame.png";
+import profileImage from "../../assets/6.svg";
 import { BarraBusca } from "./style-barra-busca";
 import sino from "../../assets/sino.png";
 import { BiFont, BiFontSize } from "react-icons/bi";

@@ -67,4 +67,9 @@ export const StyleSectionPerfil = styled.div`
     text-align: center;
     font-size: 18px;
   }
+  img {
+    width: 20%;
+    padding-left: -1  0px;
+    left: 0% ;
+  }
 `;
