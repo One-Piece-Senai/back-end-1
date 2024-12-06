@@ -166,7 +166,6 @@ const Signup = () => {
             name="tipo" 
             value={formData.tipo} 
             onChange={handleChange}
-            // onChange={(e) => settipo(e.target.value)} 
             required
           >
             <option value=" ">Selecione o tipo</option>
@@ -180,7 +179,9 @@ const Signup = () => {
               Eu aceito os <a href="#">Termos e Condições</a> e entendi a <a href="#">Política de Privacidade</a>
             </label>
           </div>
-          <button type="submit" className="btn btn-primary">Cadastrar</button>
+          <div className='central-btn'>
+            <button type="submit" className="btn-primary">Cadastrar</button>
+          </div>
         </form>
         {message && <p className="mt-3">{message}</p>}
         <p className="login-link">Already have an account? <a href="#">Log in</a></p>
