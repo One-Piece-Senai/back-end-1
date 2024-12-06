@@ -17,7 +17,7 @@ function MeusOrcamentos() {
     } else {
       console.error("Usuário não identificado.");
       setLoading(false);
-    }
+    } 
   }, [userId]);
 
   // Fetch projetos
