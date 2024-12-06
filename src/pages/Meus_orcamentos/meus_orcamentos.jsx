@@ -61,47 +61,9 @@ function MeusOrcamentos() {
                     <strong>Descrição:</strong> {projeto.descricao}
                   </p>
                   <p>
-                    <strong>Material:</strong> {projeto.material}
+                    <strong>Status do Projeto:</strong> {projeto.statusProjeto}
                   </p>
-                  <p>
-                    <strong>Status do Projeto:</strong> {projeto.statusprojeto}
-                  </p>
-                  <h4>Orçamentos:</h4>
-                  {projeto.orcamentos.length === 0 ? (
-                    <p>Sem orçamentos disponíveis.</p>
-                  ) : (
-                    projeto.orcamentos.map((orcamento) => (
-                      <div
-                        key={orcamento.id}
-                        style={{
-                          border: "1px solid #ddd",
-                          borderRadius: "5px",
-                          margin: "10px 0",
-                          padding: "10px",
-                          backgroundColor:
-                            orcamento.status === "ACEITO"
-                              ? "#d4edda"
-                              : orcamento.status === "RECUSADO"
-                              ? "#f8d7da"
-                              : "#fff3cd", // Verde, vermelho ou amarelo dependendo do status
-                        }}
-                      >
-                        <p>
-                          <strong>Valor:</strong> R$ {orcamento.valor.toFixed(2)}
-                        </p>
-                        <p>
-                          <strong>Data de Entrega:</strong> {orcamento.dataEntrega}
-                        </p>
-                        <p>
-                          <strong>Forma de Pagamento:</strong> {orcamento.formaPagamento}
-                        </p>
-                        <p>
-                          <strong>Status:</strong> {orcamento.status}
-                        </p>
-                      </div>
-                    ))
-                  )}
-                </div>
+                </div> // Added closing div for each projeto
               ))
             )}
           </ContainerPerfil>
