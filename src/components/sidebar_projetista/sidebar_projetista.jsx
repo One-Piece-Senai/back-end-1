@@ -28,7 +28,7 @@ export default function SideBarProjetista(props) {
           </li>
           <li>
             <img className="icone" src={box} />{" "}
-            <Link to="/meusprojetos">Meus projetos</Link>
+            <Link to="/orcamentosprojetista">Meus projetos</Link>
           </li>
           <li>
             <img className="icone" src={box} />{" "}

@@ -12,7 +12,7 @@ export default function   CardPerfil() {
 
   const fetchProjetos = async () => {
     try {
-      const response = await axios.get(`http://localhost:8080/projetos/listar`);
+      const response = await axios.get(`http://localhost:8080/orcamentos/listarProjetosAceitosPorUsuario`);
       setVetor(response.data);
     } catch (error) {
       console.error("Error fetching projetos:", error);
@@ -24,14 +24,6 @@ export default function   CardPerfil() {
 
   const navigate = useNavigate(); // Hook para navegar entre rotas
 
-  const selecionar = (indice) => {
-    console.log("Selecionado índice: ", vetor.id);
-    navigate(`/detalhes/${indice}`); // Navega para a rota de detalhes passando o índice
-  };
-
-  const handleCadastrarClick = () => {
-    navigate("/cadastrar_Projeto"); // substitua "/cadastrar" pela rota desejada
-  };
 
   return (
     <div className="App" style={{ display: "flex" }}>
@@ -43,9 +35,8 @@ export default function   CardPerfil() {
           <ContainerPerfil style={{ borderRadius: "10px", marginTop: "20px" }}>
             <div style={{ maxWidth: "500px", margin: "auto", padding: "20px" }}>
             <div>
-              <Tabela vetor={vetor} selecionar={selecionar} />
             </div>
-            </div>
+            </div>  
 
           </ContainerPerfil>
 

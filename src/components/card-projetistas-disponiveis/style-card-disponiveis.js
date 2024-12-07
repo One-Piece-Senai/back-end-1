@@ -29,4 +29,5 @@ export const StyleCardProjetistas = styled.div`
     border-left: px solid;
     padding-left: 10px;
   }
+    
 `;

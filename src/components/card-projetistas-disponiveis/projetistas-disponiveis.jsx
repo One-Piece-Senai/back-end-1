@@ -1,5 +1,5 @@
 import { StyleCardProjetistas } from "./style-card-disponiveis";
-import PerfilImg from "../../assets/Frame.png";
+import PerfilImg from "../../assets/6.svg";
 import MiniCard from "../mini-card/mini-card";
 
 export default function CardProjetistasDisp({descricao, nome}) {

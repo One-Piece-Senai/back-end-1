@@ -1,15 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import axios from "axios";
 
 const Orcamentos = ({ projetos }) => {
+  // Estado para rastrear orçamentos atualizados
+  const [orcamentosAtualizados, setOrcamentosAtualizados] = useState([]);
+
   // Função para atualizar o status de um orçamento
   const atualizarStatus = async (idOrcamento, novoStatus) => {
     try {
-      await axios.put(`http://localhost:8080/orcamentos/atualizar-status/${idOrcamento}?status=${novoStatus}`, {
-        status: novoStatus,
-      });
+      await axios.put(
+        `http://localhost:8080/orcamentos/atualizar-status/${idOrcamento}?status=${novoStatus}`,
+        {
+          status: novoStatus,
+        }
+      );
       alert(`Orçamento ${novoStatus.toLowerCase()} com sucesso!`);
-      window.location.reload(); // Atualiza a página para refletir as alterações
+      setOrcamentosAtualizados([...orcamentosAtualizados, idOrcamento]); // Adiciona o ID ao estado
     } catch (error) {
       console.error("Erro ao atualizar o orçamento:", error);
       alert("Erro ao atualizar o orçamento.");
@@ -81,35 +87,37 @@ const Orcamentos = ({ projetos }) => {
                       <strong>Projetista:</strong> {orc.usuario.nome}
                     </p>
                     {/* Botões para aceitar ou recusar orçamento */}
-                    <div style={{ marginTop: "10px" }}>
-                      <button
-                        onClick={() => atualizarStatus(orc.id, "ACEITO")}
-                        style={{
-                          backgroundColor: "green",
-                          color: "white",
-                          border: "none",
-                          borderRadius: "5px",
-                          padding: "10px 15px",
-                          marginRight: "10px",
-                          cursor: "pointer",
-                        }}
-                      >
-                        Aceitar
-                      </button>
-                      <button
-                        onClick={() => atualizarStatus(orc.id, "RECUSADO")}
-                        style={{
-                          backgroundColor: "red",
-                          color: "white",
-                          border: "none",
-                          borderRadius: "5px",
-                          padding: "10px 15px",
-                          cursor: "pointer",
-                        }}
-                      >
-                        Recusar
-                      </button>
-                    </div>
+                    {!orcamentosAtualizados.includes(orc.id) && ( // Verifica se o ID está no estado
+                      <div style={{ marginTop: "10px" }}>
+                        <button
+                          onClick={() => atualizarStatus(orc.id, "ACEITO")}
+                          style={{
+                            backgroundColor: "green",
+                            color: "white",
+                            border: "none",
+                            borderRadius: "5px",
+                            padding: "10px 15px",
+                            marginRight: "10px",
+                            cursor: "pointer",
+                          }}
+                        >
+                          Aceitar
+                        </button>
+                        <button
+                          onClick={() => atualizarStatus(orc.id, "RECUSADO")}
+                          style={{
+                            backgroundColor: "red",
+                            color: "white",
+                            border: "none",
+                            borderRadius: "5px",
+                            padding: "10px 15px",
+                            cursor: "pointer",
+                          }}
+                        >
+                          Recusar
+                        </button>
+                      </div>
+                    )}
                   </div>
                 );
               })

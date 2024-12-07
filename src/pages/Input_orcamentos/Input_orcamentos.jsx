@@ -111,14 +111,7 @@ function CriarOrcamento() {
                 </select>
 
                 <label>ID do Projeto</label>
-                <input
-                  type="Text"
-                  name="idProjeto"
-                  placeholder={projetoId}
-                  value={formData.idProjeto}
-                  onChange={handleChange}
-                  required
-                />
+                <p>{projetoId}</p>
 
                 <button type="submit">Criar Orçamento</button>
               </form>
