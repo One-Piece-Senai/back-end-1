@@ -12,7 +12,7 @@ const CardContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 20px;
-  margin: 10px;
+  margin: 1px;
   cursor: pointer; /* Indica que o card é clicável */
   transition: transform 0.2s, box-shadow 0.2s;
 
@@ -36,8 +36,8 @@ const CardInfo = styled.p`
 `;
 
 const CardButton = styled.button`
-  background-color: #007bff; /* Cor do botão */
-  color: white;
+  background-color: #fbff00; /* Cor do botão */
+  color: #000000;
   border: none;
   border-radius: 10px;
   padding: 10px 20px;
@@ -46,7 +46,7 @@ const CardButton = styled.button`
   transition: background-color 0.3s;
 
   &:hover {
-    background-color: #0056b3; /* Cor ao passar o mouse */
+    background-color: #fbff00; /* Cor ao passar o mouse */
   }
 `;
 
