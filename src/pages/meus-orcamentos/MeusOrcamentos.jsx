@@ -34,10 +34,6 @@ function MeusOrcamentos() {
         <ContainerPerfil style={{ borderRadius: "10px", marginTop: "20px" }}>
         <div style={{ padding: "20px" }}>
       <h1>Meus Orçamentos</h1>
-
-      
-
-    
       <div
         style={{
           display: "flex",
