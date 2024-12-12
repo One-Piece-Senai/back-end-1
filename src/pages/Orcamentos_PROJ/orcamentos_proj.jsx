@@ -44,7 +44,7 @@ function Pedidos() {
                   key={projeto.id}
                   titulo={projeto.titulo}
                   descricao={projeto.descricao}
-                  id={projeto.id}
+                  dataentrega={projeto.dataFinalizacao}
                   onCardClick={() => console.log("Card clicado!")} // Clique no card completo
                   onSaibaMais={() => handleSaibaMais(projeto.id)} // Clique no botão "Saiba Mais"
                 />

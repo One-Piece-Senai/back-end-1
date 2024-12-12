@@ -36,7 +36,7 @@ const CardInfo = styled.p`
 `;
 
 const CardButton = styled.button`
-  background-color: #fbff00; /* Cor do botão */
+  background-color: #F2B929; /* Cor do botão */
   color: #000000;
   border: none;
   border-radius: 10px;
@@ -46,16 +46,16 @@ const CardButton = styled.button`
   transition: background-color 0.3s;
 
   &:hover {
-    background-color: #fbff00; /* Cor ao passar o mouse */
+    background-color: #FFEA96; /* Cor ao passar o mouse */
   }
 `;
 
-const Card = ({ titulo, descricao,id, onCardClick, onSaibaMais }) => {
+const Card = ({ titulo, descricao,dataentrega, onCardClick, onSaibaMais }) => {
   return (
     <CardContainer onClick={onCardClick}>
       <CardTitle>{titulo}</CardTitle>
       <CardInfo>{descricao}</CardInfo>
-      <CardInfo>{id}</CardInfo>
+      <CardInfo>{dataentrega}</CardInfo>
       <CardButton
         onClick={(e) => {
           e.stopPropagation(); // Evita disparar o clique no CardContainer
