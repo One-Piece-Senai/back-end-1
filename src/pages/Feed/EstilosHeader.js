@@ -7,7 +7,7 @@ export const HeaderST = styled.header`
     display: flex;
     flex-direction: row;
     align-items:  center;
-    justify-content: stretch;
+    justify-content: end;
     box-shadow: 2px 5px 10px #888888;
     background-color: white;
     position: fixed;
@@ -41,7 +41,7 @@ export const SegundaParte = styled.div`
     height: 100px;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: end;
     padding: 15px 15px ;
     
     a{

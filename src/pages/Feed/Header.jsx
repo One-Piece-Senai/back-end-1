@@ -14,7 +14,6 @@ export default function Header() {
                     <img src={logo} alt="logo" />
                 </PrimeiraParte>
                 <SegundaParte>
-                    <a href="#">SOBRE</a>
                      <Botao > <a href="/login">LOGIN</a> </Botao>
                     <Botao style={{ backgroundColor: '#FFEA96'}}> <a href="/cadastrar-senha">CADASTRAR AQUI</a></Botao>
                 </SegundaParte>
