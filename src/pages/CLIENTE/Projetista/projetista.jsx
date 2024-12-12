@@ -27,19 +27,18 @@ function Clientes() {
       <div style={{ flex: 1 }}>
         <BarraDeBusca />
         <div className="box-branco">
-          <ContainerPerfil style={{ borderRadius: "10px" }}>
+        <ContainerPerfil style={{ borderRadius: "10px", marginTop: "20px" }}>
+        <div style={{ padding: "20px" }}>          
           <h1>Projetistas Disponíveis</h1>
-            {projetos.length === 0 ? (
-              <p>Nenhum projetista encontrado.</p>
-            ) : (
-              <section
-                style={{
-                  display: "grid",
-                  gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))", // Ajusta largura mínima dos cards
-                  gap: "20px",
-                  padding: "1px 0",
-                }}
-              >
+          <div
+        style={{
+          display: "flex",
+          flexWrap: "wrap",
+          gap: "20px",
+          marginTop: "20px",
+        }}
+      >
+        
                 {projetos.map((obj) => (
                   <CardProjetistasDisp
                     key={obj.id}
@@ -47,8 +46,8 @@ function Clientes() {
                     descricao={obj.descricaoPerfil || "Sem descrição"}
                   />
                 ))}
-              </section>
-            )}
+            </div>
+            </div>
         </ContainerPerfil>
 
       </div>

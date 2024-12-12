@@ -38,14 +38,18 @@ function MeusOrcamentos() {
       <div style={{ flex: 1 }}>
         <BarraDeBusca />
         <div className="box-branco">
-          <ContainerPerfil style={{ borderRadius: "10px", marginTop: "20px" }}>
-            <h2>Meus Projetos</h2>
-            {loading ? (
-              <p>Carregando projetos...</p>
-            ) : projetos.length === 0 ? (
-              <p>Nenhum projeto encontrado.</p>
-            ) : (
-              projetos.map((projeto) => (
+        <ContainerPerfil style={{ borderRadius: "10px", marginTop: "20px" }}>
+        <div style={{ padding: "20px" }}>
+            <h1>Meus Projetos</h1>
+            <div
+        style={{
+          display: "flex",
+          flexWrap: "wrap",
+          gap: "20px",
+          marginTop: "20px",
+        }}
+      >
+              {projetos.map((projeto) => (
                 <div
                   key={projeto.id}
                   style={{
@@ -64,8 +68,8 @@ function MeusOrcamentos() {
                     <strong>Status do Projeto:</strong> {projeto.statusProjeto}
                   </p>
                 </div> // Added closing div for each projeto
-              ))
-            )}
+                   ))}
+</div></div>
           </ContainerPerfil>
         </div>
       </div>
